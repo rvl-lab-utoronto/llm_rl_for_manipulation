@@ -25,7 +25,7 @@ Hyper parameters
 parser = argparse.ArgumentParser()
 parser.add_argument('--grounding-model', default="IDEA-Research/grounding-dino-tiny")
 parser.add_argument("--text-prompt", default="car. tire.")
-parser.add_argument("--img-path", default=f"{PATH_TO_GROUNDED_SAM_2}/notebooks/images/truck.jpg")
+parser.add_argument("--img-path", default=f"./test1.jpg")
 parser.add_argument("--sam2-checkpoint", default=f"{PATH_TO_GROUNDED_SAM_2}/checkpoints/sam2.1_hiera_large.pt")
 parser.add_argument("--sam2-model-config", default=f"configs/sam2.1/sam2.1_hiera_l.yaml")
 parser.add_argument("--output-dir", default=f"outputs/test_sam2.1")
@@ -34,7 +34,7 @@ parser.add_argument("--force-cpu", action="store_true")
 args = parser.parse_args()
 
 GROUNDING_MODEL = args.grounding_model
-TEXT_PROMPT = args.text_prompt
+TEXT_PROMPT = "red cube. yellow cube. green cube. blue cube." #args.text_prompt
 IMG_PATH = args.img_path
 SAM2_CHECKPOINT = args.sam2_checkpoint
 SAM2_MODEL_CONFIG = args.sam2_model_config
