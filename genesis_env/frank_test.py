@@ -17,9 +17,9 @@ scene = gs.Scene(
     sim_options = gs.options.SimOptions(
         dt = 0.01,
     ),
-    show_viewer = True,
+    show_viewer = False,
 )
-
+#cam = scene.add_camera(res=(640, 480), pos = (0,3,2), lookat=(0,0,0.5), fov=30, GUI=False)
 ########################## entities ##########################
 plane = scene.add_entity(
     gs.morphs.Plane(),
@@ -31,7 +31,7 @@ franka = scene.add_entity(
 )
 ########################## build ##########################
 scene.build()
-
+#cam.start_recording()
 jnt_names = [
     'joint1',
     'joint2',
@@ -113,3 +113,6 @@ for i in range(1250):
     print('internal force:', franka.get_dofs_force(dofs_idx))
 
     scene.step()
+
+#cam.render()
+#cam.stop_recording(save_to_filename='test1.mp4', fps=60)
