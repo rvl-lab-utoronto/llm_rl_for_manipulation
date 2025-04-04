@@ -1,0 +1,6 @@
+End Effector is at position 0.425, 0.0, 0.05
+Red cube is at position 0.525, -0.1, 0.02
+Blue cube is at position 0.525, 0.1, 0.02
+Orange cube is at position 0.325, 0.1, 0.02
+Green cube is at position 0.325, -0.1, 0.02
+where each position is a x,y,z tuple. 
