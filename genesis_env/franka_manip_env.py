@@ -68,7 +68,9 @@ class FrankaManipEnv:
         
         self.green_cube = self.scene.add_entity(gs.morphs.Box(size=(0.04, 0.04, 0.04),pos=(-0.25,0.5,0.02),),
                                           surface=gs.surfaces.Default(color=(0.2, 0.8, 0.2, 1.0)))
-
+        # camera shit
+        if self.render_video:
+            self.cam = self.scene.add_camera(res=(640, 480), pos = (0,3,2), lookat=(0,0,0.5), fov=30, GUI=False)
         # build
         self.scene.build()
 
@@ -128,9 +130,7 @@ class FrankaManipEnv:
         # check if it has been initalized with a goal yet
         self.goal_initialized = False
 
-        # camera shit
-        if self.render_video:
-            self.cam = self.scene.add_camera(res=(640, 480), pos = (0,3,2), lookat=(0,0,0.5), fov=30, GUI=False)
+        
         
 
     def move_ee_pos(self,distance,dimension):
