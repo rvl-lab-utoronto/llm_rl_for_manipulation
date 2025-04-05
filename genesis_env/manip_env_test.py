@@ -1,11 +1,10 @@
 from franka_manip_env import FrankaManipEnv
 
-env = FrankaManipEnv(num_envs=1,
-                     render_video=False)
+env = FrankaManipEnv(render_video=False)
 goal_dict = {'red_cube_goal':[.25,.25,0.02],
              'blue_cube_goal':[-.25,.25,0.02],
              'yellow_cube_goal':[.25,.5,0.02],
-             'blue_cube_goal':[0,.5,0.02]}
+             'green_cube_goal':[0,.5,0.02]}
 env.reset(goal_location=goal_dict)
 # correct plan
 llm_plan = 'move_x(-0.25)\nmove_y(0.5)\nmove_z(0.02)\ngripper_close()\nmove_z(0.5)\nmove_x(0.25)\nmove_z(-0.5)\ngripper_open()'

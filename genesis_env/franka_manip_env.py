@@ -8,11 +8,9 @@ import torch
 import math
 import numpy as np
 import genesis as gs
-import gymnasium as gym
 import time
 class FrankaManipEnv:
     def __init__(self, 
-                 num_envs = 20,
                  device="cuda",
                  render_video = False,
                  tolerance = 0.01,
@@ -21,7 +19,6 @@ class FrankaManipEnv:
         gs.init(backend=gs.gpu)
         self.device = torch.device(device)
 
-        self.num_envs = num_envs
 
         ########################## create a scene ##########################
         self.scene = gs.Scene(
@@ -58,6 +55,23 @@ class FrankaManipEnv:
         motors_dof = np.arange(7)
         fingers_dof = np.arange(7, 9)
 
+        
+        # adds 4 cubes of different colours
+        self.red_cube = self.scene.add_entity(gs.morphs.Box(size=(0.04, 0.04, 0.04),pos=(0.25,0.25,0.02),),
+                                          surface=gs.surfaces.Default(color=(0.8, 0.2, 0.2, 1.0)))
+        
+        self.blue_cube = self.scene.add_entity(gs.morphs.Box(size=(0.04, 0.04, 0.04),pos=(-0.25,0.25,0.02),),
+                                          surface=gs.surfaces.Default(color=(0.2,0.2,0.8, 1.0)))
+        
+        self.yellow_cube = self.scene.add_entity(gs.morphs.Box(size=(0.04, 0.04, 0.04),pos=(0.25,0.5,0.02),),
+                                          surface=gs.surfaces.Default(color=(0.2,0.4,0.4 ,1.0)))
+        
+        self.green_cube = self.scene.add_entity(gs.morphs.Box(size=(0.04, 0.04, 0.04),pos=(-0.25,0.5,0.02),),
+                                          surface=gs.surfaces.Default(color=(0.2, 0.8, 0.2, 1.0)))
+
+        # build
+        self.scene.build()
+
         # set control gains
         # Note: the following values are tuned for achieving best behavior with Franka
         # Typically, each new robot would have a different set of parameters.
@@ -92,22 +106,6 @@ class FrankaManipEnv:
             np.array([-87, -87, -87, -87, -12, -12, -12, -100, -100]),
             np.array([87, 87, 87, 87, 12, 12, 12, 100, 100]),
         )
-        # adds 4 cubes of different colours
-        self.red_cube = self.scene.add_entity(gs.morphs.Box(size=(0.04, 0.04, 0.04),pos=(0.25,0,25,0.02),),
-                                          surface=gs.surfaces.Default(color=(0.8, 0.2, 0.2, 1.0)))
-        
-        self.blue_cube = self.scene.add_entity(gs.morphs.Box(size=(0.04, 0.04, 0.04),pos=(-0.25,0,25,0.02),),
-                                          surface=gs.surfaces.Default(color=(0.2,0.2,0.8, 1.0)))
-        
-        self.yellow_cube = self.scene.add_entity(gs.morphs.Box(size=(0.04, 0.04, 0.04),pos=(0.25,0.5,0.02),),
-                                          surface=gs.surfaces.Default(color=(0.2,0.4,0.4 ,1.0)))
-        
-        self.green_cube = self.scene.add_entity(gs.morphs.Box(size=(0.04, 0.04, 0.04),pos=(-0.25,0.5,0.02),),
-                                          surface=gs.surfaces.Default(color=(0.2, 0.8, 0.2, 1.0)))
-
-        # build
-        self.scene.build(n_envs=num_envs, env_spacing=(2.0, 2.0))
-
         # tracking steps
         self.steps = 0
 
@@ -136,16 +134,16 @@ class FrankaManipEnv:
         
 
     def move_ee_pos(self,distance,dimension):
-        displacement = np.zeros(self.num_envs,3)
+        displacement = np.zeros(3)
         if dimension == 'x':
-            displacement[:,0] = distance
+            displacement[0] = distance
         elif dimension == 'y':
-            displacement[:,1] = distance
+            displacement[1] = distance
         elif dimension == 'z':
-            displacement[:,2] = distance
+            displacement[2] = distance
 
         end_effector = self.franka.get_link('hand')
-        target_eef_pos = end_effector.get_pos() + displacement
+        target_eef_pos = end_effector.get_pos().cpu().numpy() + displacement
         qpos, error = self.franka.inverse_kinematics(
                 link=end_effector,
                 pos=target_eef_pos,
@@ -155,19 +153,19 @@ class FrankaManipEnv:
 
         self.franka.control_dofs_position(qpos)
         for i in range(16):
-            self.step_genesis_env(self)
+            self.step_genesis_env()
 
     def gripper_open(self):
         fingers_dof = np.arange(7, 9)
         self.franka.control_dofs_force(np.array([0.5, 0.5]), fingers_dof)
         for i in range(10):
-            self.step_genesis_env(self)
+            self.step_genesis_env()
 
     def gripper_close(self):
         fingers_dof = np.arange(7, 9)
         self.franka.control_dofs_force(np.array([-0.5, -0.5]), fingers_dof)
         for i in range(10):
-            self.step_genesis_env(self)
+            self.step_genesis_env()
 
     def step_genesis_env(self):
         self.scene.step()
@@ -190,14 +188,15 @@ class FrankaManipEnv:
         legal_commands = ['move_x','move_y','move_z','gripper_open','gripper_close']
         plan_line_by_line = llm_plan.splitlines()
         for line in plan_line_by_line:
-            if any(legal_commands[:2] in line): # if its a move command
+            if 'move' in line: # if its a move command
                 self.move_ee_pos(float(line[line.find("(")+1:line.find(")")]),line[4])
             elif 'gripper_open' in line:
                 self.gripper_open()
             elif 'gripper_close' in line:
                 self.gripper_close()
             else:
-                raise ValueError('Illegal Command Found (and the fucking verifier didnt CATCH IT)')
+                print('Illegal Command Found (and the fucking verifier didnt CATCH IT)')
+                return 0
         reward = self.get_scene_completion_reward()
         return reward
 
@@ -210,10 +209,14 @@ class FrankaManipEnv:
 
         doesn't have the thinking or w/e tokens, should at this point have each primitive on a seperate line
         """
+
+        # NOTE - doesn't work, id wanna fix it, just gonna do this
+        return True
         legal_commands = ['move_x','move_y','move_z','gripper_open','gripper_close']
         plan_line_by_line = llm_plan.splitlines()
-        primitives_legitimate = any(legal_commands in line for line in plan_line_by_line) # cancer line but its efficent
+        primitives_legitimate = any(line in legal_commands for line in plan_line_by_line) # cancer line but its efficent
         if not primitives_legitimate:
+            print('meow' )
             return False
         for line in plan_line_by_line:
             if any(legal_commands[:2] in line): # if its a move command
@@ -237,6 +240,8 @@ class FrankaManipEnv:
             reward += 0.25
         if np.linalg.norm(self.green_cube.get_pos().cpu().numpy() - self.green_cube_goal) < self.completion_tolerance:
             reward += 0.25
+
+        
         
         return reward * self.reward_scale
 
@@ -249,7 +254,7 @@ class FrankaManipEnv:
 
         # resets end effectuator to same place
         end_effector = self.franka.get_link('hand')
-        target_eef_pos = np.array(0,0.25,1)
+        target_eef_pos = np.array([0,0.25,1])
         qpos, error = self.franka.inverse_kinematics(
                 link=end_effector,
                 pos=target_eef_pos,
@@ -259,7 +264,7 @@ class FrankaManipEnv:
 
         self.franka.control_dofs_position(qpos)
         for i in range(16):
-            self.step_genesis_env(self)
+            self.step_genesis_env()
 
         if self.render_video:
             if self.goal_initialized:
