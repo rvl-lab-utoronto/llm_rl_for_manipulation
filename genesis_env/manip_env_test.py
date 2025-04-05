@@ -7,10 +7,12 @@ goal_dict = {'red_cube_goal':[.25,.25,0.02],
              'green_cube_goal':[0,.5,0.02]}
 env.reset(goal_location=goal_dict)
 # correct plan
-llm_plan = 'move_x(-0.25)\nmove_y(0.5)\nmove_z(0.02)\ngripper_close()\nmove_z(0.5)\nmove_x(0.25)\nmove_z(-0.5)\ngripper_open()'
+llm_plan = 'move_x(-0.25)\nmove_y(0.25)\nmove_z(-0.45)\ngripper_close()\nmove_z(0.5)\nmove_x(0.25)\nmove_z(-0.5)\ngripper_open()'
+#llm_plan = 'move_z(1.5)\nmove_z(-1.5)\nmove_z(1.5)'
 reward = env.execute_llm_plan(llm_plan)
-print('Correct Sequence Reward:',reward)
+print('Correct Sequence Reward:', reward)
 # incorrect plan
+env.reset(goal_location=goal_dict)
 llm_plan = 'move_x(-0.25)\nmove_y(0.5)'
 reward = env.execute_llm_plan(llm_plan)
-print('Incorrect Sequence Reward:',reward)
+print('Incorrect Sequence Reward:', reward)

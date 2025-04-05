@@ -13,7 +13,7 @@ class FrankaManipEnv:
     def __init__(self, 
                  device="cuda",
                  render_video = False,
-                 tolerance = 0.01,
+                 tolerance = 0.05,
                  reward_scale = 2.0):
         self.render_video = render_video
         gs.init(backend=gs.gpu)
@@ -40,8 +40,8 @@ class FrankaManipEnv:
                 dt=0.01,
             ),
             # renderer=gs.renderers.RayTracer(),
-            show_viewer=False,
-            show_FPS=True
+            show_viewer=True,
+            show_FPS=False
         )
         ### various parameters
         ############## other parameters ##############
@@ -64,7 +64,7 @@ class FrankaManipEnv:
                                           surface=gs.surfaces.Default(color=(0.2,0.2,0.8, 1.0)))
         
         self.yellow_cube = self.scene.add_entity(gs.morphs.Box(size=(0.04, 0.04, 0.04),pos=(0.25,0.5,0.02),),
-                                          surface=gs.surfaces.Default(color=(0.2,0.4,0.4 ,1.0)))
+                                          surface=gs.surfaces.Default(color=(0.8,0.8,0.0 ,1.0)))
         
         self.green_cube = self.scene.add_entity(gs.morphs.Box(size=(0.04, 0.04, 0.04),pos=(-0.25,0.5,0.02),),
                                           surface=gs.surfaces.Default(color=(0.2, 0.8, 0.2, 1.0)))
@@ -85,24 +85,31 @@ class FrankaManipEnv:
         finger_multiplier = 1.0  # For the gripper
 
         # Base PD gains
-        base_kp = np.array([2500, 2500, 2600, 3000, 2000, 2000, 2000, 100, 100])
-        base_kv = np.array([450, 450, 350, 350, 200, 200, 200, 10, 10])
+        # base_kp = np.array([2500, 2500, 2600, 3000, 2000, 2000, 2000, 100, 100])*0.5
+        # base_kv = np.array([450, 450, 350, 350, 200, 200, 200, 10, 10])
 
-        # Apply different multipliers to different joint groups
-        kp_values = np.array([
-            *list(base_kp[:4] * base_multiplier),
-            *list(base_kp[4:7] * wrist_multiplier),
-            *list(base_kp[7:] * finger_multiplier)
-        ])
+        # # Apply different multipliers to different joint groups
+        # kp_values = np.array([
+        #     *list(base_kp[:4] * base_multiplier),
+        #     *list(base_kp[4:7] * wrist_multiplier),
+        #     *list(base_kp[7:] * finger_multiplier)
+        # ])
 
-        kv_values = np.array([
-            *list(base_kv[:4] * base_multiplier),
-            *list(base_kv[4:7] * wrist_multiplier),
-            *list(base_kv[7:] * finger_multiplier)
-        ])
+        # kv_values = np.array([
+        #     *list(base_kv[:4] * base_multiplier),
+        #     *list(base_kv[4:7] * wrist_multiplier),
+        #     *list(base_kv[7:] * finger_multiplier)
+        # ])
 
-        self.franka.set_dofs_kp(kp_values)
-        self.franka.set_dofs_kv(kv_values)
+        # self.franka.set_dofs_kp(kp_values)
+        # self.franka.set_dofs_kv(kv_values)
+
+        self.franka.set_dofs_kp(
+            np.array([4500, 4500, 3500, 3500, 2000, 2000, 2000, 100, 100])*0.5,
+        )
+        self.franka.set_dofs_kv(
+            np.array([450, 450, 350, 350, 200, 200, 200, 10, 10]),
+        )
 
         self.franka.set_dofs_force_range(
             np.array([-87, -87, -87, -87, -12, -12, -12, -100, -100]),
@@ -126,7 +133,7 @@ class FrankaManipEnv:
         self.jnt_names = jnt_names
         dofs_idx = [self.franka.get_joint(name).dof_idx_local for name in jnt_names]
         self.dofs_idx = dofs_idx
-
+        self.start_dof_position = self.franka.get_dofs_position()
         # check if it has been initalized with a goal yet
         self.goal_initialized = False
 
@@ -143,34 +150,50 @@ class FrankaManipEnv:
             displacement[2] = distance
 
         end_effector = self.franka.get_link('hand')
-        target_eef_pos = end_effector.get_pos().cpu().numpy() + displacement
+        print("START EE:", end_effector.get_pos().cpu().numpy())
+        target_eef_pos = end_effector.get_pos().cpu().numpy() + displacement 
+        target_eef_pos[2] = max(0.11, target_eef_pos[2])
         qpos, error = self.franka.inverse_kinematics(
                 link=end_effector,
                 pos=target_eef_pos,
                 quat=np.array([0, 1, 0, 0]),
                 return_error=True,
+
             )
+        print("TARGET_POS:", target_eef_pos)
 
-        self.franka.control_dofs_position(qpos)
-        for i in range(16):
+        # path = self.franka.plan_path(
+        #     qpos_goal     = qpos,
+        #     num_waypoints = 200, # 2s duration
+        # )
+        # # execute the planned path
+        # for waypoint in path:
+        #     self.franka.control_dofs_position(waypoint)
+        #     self.scene.step()
+
+        
+
+        self.franka.control_dofs_position(qpos[:-2], self.dofs_idx[:-2])
+        for i in range(200):
             self.step_genesis_env()
-
+        print("END_POS", end_effector.get_pos().cpu().numpy())
     def gripper_open(self):
         fingers_dof = np.arange(7, 9)
         self.franka.control_dofs_force(np.array([0.5, 0.5]), fingers_dof)
-        for i in range(10):
+        for i in range(100):
             self.step_genesis_env()
 
     def gripper_close(self):
+        print("CLOSING GRIPPER!")
         fingers_dof = np.arange(7, 9)
-        self.franka.control_dofs_force(np.array([-0.5, -0.5]), fingers_dof)
-        for i in range(10):
+        self.franka.control_dofs_force(np.array([-4.0, -4.0]), fingers_dof)
+        for i in range(100):
             self.step_genesis_env()
 
     def step_genesis_env(self):
         self.scene.step()
         if self.render_video:
-                self.cam.render()
+            self.cam.render()
 
     def execute_llm_plan(self,llm_plan):
         """
@@ -184,12 +207,13 @@ class FrankaManipEnv:
             raise ValueError('Scene is not yet initialized with a goal!')
         if not self.verify_llm_plan_formatting(llm_plan):
             return 0
-        
+
         legal_commands = ['move_x','move_y','move_z','gripper_open','gripper_close']
         plan_line_by_line = llm_plan.splitlines()
         for line in plan_line_by_line:
+            print("EXECUTING:", line)
             if 'move' in line: # if its a move command
-                self.move_ee_pos(float(line[line.find("(")+1:line.find(")")]),line[4])
+                self.move_ee_pos(float(line[line.find("(")+1:line.find(")")]),line[5])
             elif 'gripper_open' in line:
                 self.gripper_open()
             elif 'gripper_close' in line:
@@ -251,10 +275,13 @@ class FrankaManipEnv:
         """
         self.scene.reset()
         self.steps = 0
-
+        # self.franka.set_dofs_position(
+        #     self.start_dof_position,
+        #     self.dofs_idx
+        # )
         # resets end effectuator to same place
         end_effector = self.franka.get_link('hand')
-        target_eef_pos = np.array([0,0.25,1])
+        target_eef_pos = np.array([0,0.25,0.5])
         qpos, error = self.franka.inverse_kinematics(
                 link=end_effector,
                 pos=target_eef_pos,
@@ -263,9 +290,9 @@ class FrankaManipEnv:
             )
 
         self.franka.control_dofs_position(qpos)
-        for i in range(16):
+        for i in range(100):
             self.step_genesis_env()
-
+        self.gripper_open()
         if self.render_video:
             if self.goal_initialized:
                 self.cam.stop_recording(save_to_filename='video' + str(time.time()) + '.mp4', fps=60)
