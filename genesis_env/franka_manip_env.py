@@ -9,12 +9,14 @@ import math
 import numpy as np
 import genesis as gs
 import gymnasium as gym
+import time
 class FrankaManipEnv:
     def __init__(self, 
                  num_envs = 20,
-                 timeout = 250,
                  device="cuda",
-                 render_video = False):
+                 render_video = False,
+                 tolerance = 0.01,
+                 reward_scale = 2.0):
         self.render_video = render_video
         gs.init(backend=gs.gpu)
         self.device = torch.device(device)
@@ -46,14 +48,8 @@ class FrankaManipEnv:
         )
         ### various parameters
         ############## other parameters ##############
-        self.destination = torch.tensor((0.25, -0.25, 0.02),device=self.device)
-        self.cube_start = (0.25, 0.25, 0.02)
-        self.state_size = 48
-        self.action_size = 7
-        # gymnasium stuff 
-        self.single_observation_space = gym.spaces.Box(-np.inf,np.inf,shape=(self.state_size,),dtype=float)
-        self.single_action_space = gym.spaces.Box(-1.0,1.0,shape=(self.action_size,),dtype=float)
-        self.completion_tolerance = torch.ones(self.num_envs,device = self.device) * 0.01
+        self.completion_tolerance = tolerance
+        self.reward_scale = reward_scale
         ########################## entities ##########################
         # adds floor plane
         self.plane = self.scene.add_entity(gs.morphs.Plane(),) 
@@ -96,26 +92,24 @@ class FrankaManipEnv:
             np.array([-87, -87, -87, -87, -12, -12, -12, -100, -100]),
             np.array([87, 87, 87, 87, 12, 12, 12, 100, 100]),
         )
-        # adds cube 
-        self.cube = self.scene.add_entity(gs.morphs.Box(size=(0.04, 0.04, 0.04),pos=self.cube_start,),
+        # adds 4 cubes of different colours
+        self.red_cube = self.scene.add_entity(gs.morphs.Box(size=(0.04, 0.04, 0.04),pos=(0.25,0,25,0.02),),
                                           surface=gs.surfaces.Default(color=(0.8, 0.2, 0.2, 1.0)))
-        # adds camera
-        if self.render_video:
-            self.cam = self.scene.add_camera(
-                res    = (640, 480),
-                pos    = (3.5, 0.0, 2.5),
-                lookat = (0, 0, 0.5),
-                fov    = 30,
-                GUI    = False,
-            )
+        
+        self.blue_cube = self.scene.add_entity(gs.morphs.Box(size=(0.04, 0.04, 0.04),pos=(-0.25,0,25,0.02),),
+                                          surface=gs.surfaces.Default(color=(0.2,0.2,0.8, 1.0)))
+        
+        self.yellow_cube = self.scene.add_entity(gs.morphs.Box(size=(0.04, 0.04, 0.04),pos=(0.25,0.5,0.02),),
+                                          surface=gs.surfaces.Default(color=(0.2,0.4,0.4 ,1.0)))
+        
+        self.green_cube = self.scene.add_entity(gs.morphs.Box(size=(0.04, 0.04, 0.04),pos=(-0.25,0.5,0.02),),
+                                          surface=gs.surfaces.Default(color=(0.2, 0.8, 0.2, 1.0)))
+
         # build
         self.scene.build(n_envs=num_envs, env_spacing=(2.0, 2.0))
 
         # tracking steps
         self.steps = 0
-        self.timeout = timeout
-
-        
 
         ## idk gain tuning shit for the arm
         jnt_names = [
@@ -132,110 +126,167 @@ class FrankaManipEnv:
         self.jnt_names = jnt_names
         dofs_idx = [self.franka.get_joint(name).dof_idx_local for name in jnt_names]
         self.dofs_idx = dofs_idx
-        
 
-    def step(self, actions):
-        # actions should be size (n_envs, 7)
+        # check if it has been initalized with a goal yet
+        self.goal_initialized = False
 
-        self.franka.control_dofs_force(
-            # clips to [-1,1] range, then normalizes to constraint max/min
-            torch.clip(actions,min=-1.0,max=1.0) * self.action_norm, 
-            self.dofs_idx[:-2])
-        self.scene.step() # steps through the simulator
+        # camera shit
         if self.render_video:
-            self.cam.render()
-        obs,reward = self.get_observation(),self.get_reward()
-        self.steps += 1
-        done = self.steps > self.timeout
-        if done:
-            self.reset()
-            dones = self.yes_done
-        else:
-            dones = self.no_done
+            self.cam = self.scene.add_camera(res=(640, 480), pos = (0,3,2), lookat=(0,0,0.5), fov=30, GUI=False)
         
-        return obs, reward, dones, self.no_done, {}
 
-    def reset(self,seed = None,options = {}):
+    def move_ee_pos(self,distance,dimension):
+        displacement = np.zeros(self.num_envs,3)
+        if dimension == 'x':
+            displacement[:,0] = distance
+        elif dimension == 'y':
+            displacement[:,1] = distance
+        elif dimension == 'z':
+            displacement[:,2] = distance
 
-        # resets franka arm
-        #end_effector = self.franka.get_link('hand')
-        #end_effector.set_pos(self.ee_start_pos)
-        # resets cube
-        #self.cube.set_pos((self.cube_start))
-        #print(self.cube.get_pos())
+        end_effector = self.franka.get_link('hand')
+        target_eef_pos = end_effector.get_pos() + displacement
+        qpos, error = self.franka.inverse_kinematics(
+                link=end_effector,
+                pos=target_eef_pos,
+                quat=np.array([0, 1, 0, 0]),
+                return_error=True,
+            )
+
+        self.franka.control_dofs_position(qpos)
+        for i in range(16):
+            self.step_genesis_env(self)
+
+    def gripper_open(self):
+        fingers_dof = np.arange(7, 9)
+        self.franka.control_dofs_force(np.array([0.5, 0.5]), fingers_dof)
+        for i in range(10):
+            self.step_genesis_env(self)
+
+    def gripper_close(self):
+        fingers_dof = np.arange(7, 9)
+        self.franka.control_dofs_force(np.array([-0.5, -0.5]), fingers_dof)
+        for i in range(10):
+            self.step_genesis_env(self)
+
+    def step_genesis_env(self):
+        self.scene.step()
+        if self.render_video:
+                self.cam.render()
+
+    def execute_llm_plan(self,llm_plan):
+        """
+        Note - primitives are move_x, move_y, move_z, gripper_open and gripper_close
+
+        LLM plan should have the formating shit stripped out of it by now and each command should be on one line
+
+        returns the reward from the whatever 
+        """
+        if not self.goal_initialized:
+            raise ValueError('Scene is not yet initialized with a goal!')
+        if not self.verify_llm_plan_formatting(llm_plan):
+            return 0
+        
+        legal_commands = ['move_x','move_y','move_z','gripper_open','gripper_close']
+        plan_line_by_line = llm_plan.splitlines()
+        for line in plan_line_by_line:
+            if any(legal_commands[:2] in line): # if its a move command
+                self.move_ee_pos(float(line[line.find("(")+1:line.find(")")]),line[4])
+            elif 'gripper_open' in line:
+                self.gripper_open()
+            elif 'gripper_close' in line:
+                self.gripper_close()
+            else:
+                raise ValueError('Illegal Command Found (and the fucking verifier didnt CATCH IT)')
+        reward = self.get_scene_completion_reward()
+        return reward
+
+        
+
+
+    def verify_llm_plan_formatting(self,llm_plan):
+        """
+        Verifies that the plan meets the formatting restrictions.
+
+        doesn't have the thinking or w/e tokens, should at this point have each primitive on a seperate line
+        """
+        legal_commands = ['move_x','move_y','move_z','gripper_open','gripper_close']
+        plan_line_by_line = llm_plan.splitlines()
+        primitives_legitimate = any(legal_commands in line for line in plan_line_by_line) # cancer line but its efficent
+        if not primitives_legitimate:
+            return False
+        for line in plan_line_by_line:
+            if any(legal_commands[:2] in line): # if its a move command
+                # gets content between parentheses
+                stuff = line[line.find("(")+1:line.find(")")]
+                if not self.is_number(stuff):
+                    return False
+
+    def get_scene_completion_reward(self):
+        """
+        Four cubes, returns reward proportional to percentage 
+        out of 1 of cubes in right place, times the env. reward
+        scaling parameter
+        """
+        reward = 0
+        if np.linalg.norm(self.red_cube.get_pos().cpu().numpy() - self.red_cube_goal) < self.completion_tolerance:
+            reward += 0.25
+        if np.linalg.norm(self.blue_cube.get_pos().cpu().numpy() - self.blue_cube_goal) < self.completion_tolerance:
+            reward += 0.25
+        if np.linalg.norm(self.yellow_cube.get_pos().cpu().numpy() - self.yellow_cube_goal) < self.completion_tolerance:
+            reward += 0.25
+        if np.linalg.norm(self.green_cube.get_pos().cpu().numpy() - self.green_cube_goal) < self.completion_tolerance:
+            reward += 0.25
+        
+        return reward * self.reward_scale
+
+    def reset(self,goal_location):
+        """
+        Goal location should be a dictionary
+        """
         self.scene.reset()
         self.steps = 0
+
+        # resets end effectuator to same place
+        end_effector = self.franka.get_link('hand')
+        target_eef_pos = np.array(0,0.25,1)
+        qpos, error = self.franka.inverse_kinematics(
+                link=end_effector,
+                pos=target_eef_pos,
+                quat=np.array([0, 1, 0, 0]),
+                return_error=True,
+            )
+
+        self.franka.control_dofs_position(qpos)
+        for i in range(16):
+            self.step_genesis_env(self)
+
         if self.render_video:
-            self.cam.stop_recording(save_to_filename='video.mp4', fps=60)
+            if self.goal_initialized:
+                self.cam.stop_recording(save_to_filename='video' + str(time.time()) + '.mp4', fps=60)
             self.cam.start_recording()
+        
+
+        self.blue_cube_goal = goal_location['blue_cube_goal']
+        self.red_cube_goal = goal_location['red_cube_goal']
+        self.green_cube_goal = goal_location['green_cube_goal']
+        self.yellow_cube_goal = goal_location['yellow_cube_goal']
+
+        self.goal_initialized = True
         return self.get_observation(), {}
     
-    def get_reward(self):
-        cube_pos = self.cube.get_pos() # position of cube (n_env, 3)
-        ee_pos = self.franka.get_link('hand').get_pos() # position of hand (n_env, 3)
-
-        # encourages cube to get pushed towards the goal
-        cube_goal_distance = torch.linalg.vector_norm(cube_pos-self.destination,dim=1)
-        cube_goal_distance_reward = -cube_goal_distance
-
-        # encourages end effector to be near the cube
-        ee_cube_distance = torch.linalg.vector_norm(cube_pos-ee_pos,dim=1)
-        ee_cube_distance_reward = -ee_cube_distance
-
-        # encourages end effector to put cube between itself and the goal
-        # cosine sim. between cube2goal and ee2cube should be large ideally
-        cube2goal = (self.destination - cube_pos)
-        ee2cube = (cube_pos - ee_pos)
-        cos_sim = torch.nn.CosineSimilarity(dim=1) 
-        cos_reward = ((cos_sim(cube2goal, ee2cube)-1)/2) # normalizes to [-1,0] range
-
-        # aggregates+weights reward components and normalizes 
-        """ reward = (cube_goal_distance_reward + 
-                  cos_reward * cube_goal_distance / 3 +
-                  cos_reward / 3 +
-                  ee_cube_distance_reward / 3 + 
-                  cos_reward * ee_cube_distance / 3
-                  ) / 1000 # to roughly normalize advantage """
-        
-        reward = (cube_goal_distance_reward * 2 +
-                 cos_reward / 4 +
-                 ee_cube_distance_reward / 4
-                 ) / 100
-        #reward = cube_goal_distance_reward / 1000
-        #return reward * (not cube_goal_distance < self.completion_tolerance).long()
-        return reward * torch.gt(cube_goal_distance,self.completion_tolerance).long()
-        # gives 0 reward if goal is complete 
-        if cube_goal_distance < self.completion_tolerance:
-            return torch.zeros_like(reward)
-        else:
-            #return np.float64(reward.item())
-            return reward
+    
 
     def get_observation(self):
-        obs = []
-
-        # gets the raw things
-        cube_pos = self.cube.get_pos() # position of cube (n_env, 3)
-        cube_vel = self.cube.get_vel() # velocity of cube (n_env, 3)
-        end_effector = self.franka.get_link('hand')
-        ee_pos = end_effector.get_pos() # position of ee (n_env, 3)
-        ee_vel = end_effector.get_vel() # velocity of ee (n_env, 3)
-
-        obs.append(cube_pos)
-        obs.append(cube_vel)
-        obs.append(ee_pos)
-        obs.append(ee_vel)
-        # stuff
-        jnt_names = self.jnt_names
-        joints = [self.franka.get_joint(name) for name in jnt_names]
-        for joint in joints:
-            obs.append(joint.get_pos()) # position of joint (n_env, 3)
-            #obs.append(joint.get_vel()) # position of joint (n_env, 3)
-        #self.franka.get_dofs_force(self.dofs_idx)
-        obs.append(self.franka.get_dofs_force(self.dofs_idx))
-        obs = torch.cat(obs,dim = 1) # obs (n_env,12)
-        #print(obs.shape)
-        return obs
+        # TODO implement. Or not? I shouldn't actually have to implement this 
+        pass
     def close(self):
         pass
+
+    def is_number(self,s):
+        try:
+            float(s)
+            return True
+        except ValueError:
+            return False
     

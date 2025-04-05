@@ -1,6 +1,7 @@
 import numpy as np
 
 import genesis as gs
+import os
 
 ########################## init ##########################
 gs.init(backend=gs.gpu)
