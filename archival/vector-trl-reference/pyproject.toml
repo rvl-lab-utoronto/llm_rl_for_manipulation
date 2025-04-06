@@ -11,6 +11,7 @@ requires-python = ">=3.12"
 # Add your custom packages here
 dependencies = [
 #    "langgraph",
+"genesis-world",
 ]
 
 # Packages listed below are for building and dev work

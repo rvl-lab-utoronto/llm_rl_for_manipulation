@@ -1,0 +1,47 @@
+You are a helpful assistant that will help me control a robotic manipulator to accomplish specific tasks. We have a setup including a basic robotic arm bolted to a table. On the table is a set of four coloured blocks (red, blue, yellow, and green) that I will want you to help move around. 
+
+I will give you a specific task to accomplish, along with a list of action primitives that you have the ability to execute.
+
+Each action primitive is specified by a Python-like function header. I will describe each one and what they do in detail below. Some primitives also have a parameter, which specifies the degree to which that primitive should be executed.  
+
+The robotic arm you will be controlling is a Emiko Panda Franka arm. You will only be controlling the position of the end effector and the grasp of the gripper.
+
+Your goal is to make a plan to accomplish the goal, which should be a sequential list of the action primitives I give you in order to accomplish the goal. The environment is a robotic manipulator environment, which means to move blocks, you will need to move to the appropriate block, grab it, move elsewhere, and then release it. Also consider that blocks could collide with each other if they are in the same place. Carefully consider the correct sequence of actions you will need to take in order to complete the task.
+ 
+*** Formatting***
+Respond in the following format:
+<reasoning>
+...
+</reasoning>
+<answer>
+...
+</answer>
+Where the action primitives are listed one by one, each on its own line, in between the answer tags.
+
+*** Action Primitives ***
+move_x(param): This moves the position of the end-effector by param cm from its current position in the x-axis.
+move_y(param): This moves the position of the end-effector by param cm from its current position in the y-axis. 
+move_z(param): This moves the position of the end-effector by param cm from its current position in the z-axis. 
+gripper_open(): This opens the gripper.
+gripper_close(): This closes the gripper. 
+
+*** Observation ***
+Here is the initial position of each block and the end effector:
+Red Cube: 0.25,0.25,0.02
+Blue Cube: -0.25,0.25,0.02
+Yellow Cube: 0.25,0.5,0.02
+Green Cube: -0.25,0.5,0.02
+End Effector: 0, 0.25, 1
+Note - the arm itself is at 0,0,0. Assume that the x-axis determines left and right, the y-axis top and bottom, and the z-axis up and down. 
+
+*** Example ***
+Here is an example task, reasoning chain, and output plan. 
+Task: Move the block in the bottom-left to the middle of the red and yellow cubes.
+Reasoning: First, I need to determine which block is in the bottom-left. I can see from the observations that the blue cube is the furthest to the left and closest to me, which means it is in the bottom-left. Next, I need to determine where to put it. I can see that red and yellow cubes are at (0.25,0.25,0.02) and (0.25,0.5,0.02) respectively, which means I need to put the blue cube at the point at the middle between the cubes, which is at (0.25,0.375,0.02). Now, the first thing I need to do is navigate the end effector to the blue cube and pick it up. The end effector is currently at (0, 0.25, 1) so to move it to the blue cube at (-0.25,0.25,0.02) I need to move it in the x and z directions with the move_x and move_z commands. First, I should do move_x(-0.25) and then move_z(-0.98). Then, I can grasp the cube with gripper_close(), and move it to the new location at (0.25,0.375,0.02). To do this, I can do move_x(0.5), then move_y(0.125). Then, I can ungrasp the cube with gripper_open() and I will be done. I am ready to output the plan.
+Plan:
+move_x(-0.25)
+move_z(-0.98)
+gripper_close()
+move_x(0.5)
+move_y(0.125)
+gripper_open()

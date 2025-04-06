@@ -1,3 +1,7 @@
+# Note
+
+Why is this here? it's just for reference nothing here should get directly uesd
+
 # Vector TRL Examples
 
 This repository currently a reference implementstion of GPRO for use on the Vector Cluster. We will explore extending it to other examples of other LLM RL algorithms in the future.
