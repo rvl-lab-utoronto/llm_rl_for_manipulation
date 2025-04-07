@@ -121,7 +121,12 @@ dataset = get_manipulation_questions()
 
 # Reward functions
 def find_between(s, start, end):
-    return s.split(start)[1].split(end)[0]
+    plan = ''
+    try:
+        plan = s.split(start)[1].split(end)[0]
+    except:
+        plan = ''
+    return plan
 def genesis_reward_func(prompts, completions, answer, **kwargs) -> list[float]:
     """Reward function that gets signal from Genesis simulator
 
@@ -136,8 +141,8 @@ def genesis_reward_func(prompts, completions, answer, **kwargs) -> list[float]:
     rewards = []
     for prompt,completion,goal in zip(prompts,completions,answer):
         env.reset(goal_location=goal)
-        llm_plan = find_between(completion[0]["content"],'<reasoning>','</reasoning>')
-        print(llm_plan)
+        llm_plan = find_between(completion[0]["content"],'<answer>','</answer>')
+        #print(llm_plan)
         reward = env.execute_llm_plan(llm_plan)
         rewards.append(reward)
         print(
