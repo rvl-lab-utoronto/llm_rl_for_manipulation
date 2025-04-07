@@ -210,6 +210,7 @@ class FrankaManipEnv:
             return 0
 
         legal_commands = ['move_x','move_y','move_z','gripper_open','gripper_close']
+        print(plan_line_by_line)
         plan_line_by_line = llm_plan.splitlines()
         for line in plan_line_by_line:
             print("EXECUTING:", line)
