@@ -257,8 +257,8 @@ class FrankaManipEnv:
         scaling parameter
         """
         reward = 0
-        print(self.red_cube.get_pos().cpu().numpy())
-        print(np.array(self.red_cube_goal))
+        #print(self.red_cube.get_pos().cpu().numpy())
+        #print(np.array(self.red_cube_goal))
         if np.linalg.norm(self.red_cube.get_pos().cpu().numpy() - self.red_cube_goal) < self.completion_tolerance:
             reward += 0.25
         if np.linalg.norm(self.blue_cube.get_pos().cpu().numpy() - self.blue_cube_goal) < self.completion_tolerance:

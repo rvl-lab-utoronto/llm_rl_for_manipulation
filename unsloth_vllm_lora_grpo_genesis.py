@@ -96,10 +96,10 @@ def get_manipulation_questions(path = 'data/manipulation_tasks.xlsx'):
     gcg = df['green_cube_goal'].to_list()
     answers = []
     for i in range(len(rcg)):
-        answers.append({'red_cube_goal':rcg[i],
-                        'blue_cube_goal':bcg[i],
-                        'yellow_cube_goal':ycg[i],
-                        'green_cube_goal':gcg[i]})
+        answers.append({'red_cube_goal':eval(rcg[i]),
+                        'blue_cube_goal':eval(bcg[i]),
+                        'yellow_cube_goal':eval(ycg[i]),
+                        'green_cube_goal':eval(gcg[i])})
     data = Dataset.from_dict({'question':questions,'answer':answers})
 
     # does some other fucky thing idk
