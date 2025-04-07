@@ -138,9 +138,6 @@ class FrankaManipEnv:
         # check if it has been initalized with a goal yet
         self.goal_initialized = False
 
-        
-        
-
     def move_ee_pos(self,distance,dimension):
         displacement = np.zeros(3)
         if dimension == 'x':
@@ -151,18 +148,16 @@ class FrankaManipEnv:
             displacement[2] = distance
 
         end_effector = self.franka.get_link('hand')
-        print("START EE:", end_effector.get_pos().cpu().numpy())
         target_eef_pos = end_effector.get_pos().cpu().numpy() + displacement 
         target_eef_pos[2] = max(0.11, target_eef_pos[2])
         qpos, error = self.franka.inverse_kinematics(
-                link=end_effector,
-                pos=target_eef_pos,
-                quat=np.array([0, 1, 0, 0]),
-                return_error=True,
-
-            )
-        print("TARGET_POS:", target_eef_pos)
-
+            link=end_effector,
+            pos=target_eef_pos,
+            quat=np.array([0, 1, 0, 0]),
+            return_error=True,
+        )
+        
+        # Option to use path planning instead
         # path = self.franka.plan_path(
         #     qpos_goal     = qpos,
         #     num_waypoints = 200, # 2s duration
@@ -175,9 +170,9 @@ class FrankaManipEnv:
         
 
         self.franka.control_dofs_position(qpos[:-2], self.dofs_idx[:-2])
-        for i in range(200):
+        for i in range(100):
             self.step_genesis_env()
-        print("END_POS", end_effector.get_pos().cpu().numpy())
+
     def gripper_open(self):
         fingers_dof = np.arange(7, 9)
         self.franka.control_dofs_force(np.array([0.5, 0.5]), fingers_dof)
