@@ -13,6 +13,7 @@ class FrankaManipEnv:
     def __init__(self, 
                  device="cuda",
                  render_video = False,
+                 show_viewer = False,
                  tolerance = 0.05,
                  reward_scale = 2.0):
         self.render_video = render_video
@@ -40,7 +41,7 @@ class FrankaManipEnv:
                 dt=0.01,
             ),
             # renderer=gs.renderers.RayTracer(),
-            show_viewer=True,
+            show_viewer=show_viewer,
             show_FPS=False
         )
         ### various parameters
