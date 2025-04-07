@@ -216,8 +216,7 @@ class FrankaManipEnv:
             elif 'gripper_close' in line:
                 self.gripper_close()
             else:
-                print('Illegal Command Found (and the fucking verifier didnt CATCH IT)')
-                return 0
+                print('Illegal Command Found (and the fucking verifier didnt CATCH IT). Skipping line.')
         reward = self.get_scene_completion_reward()
         return reward
 
