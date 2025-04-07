@@ -214,7 +214,10 @@ class FrankaManipEnv:
             if self.verbose:
                 print("EXECUTING:", line)
             if 'move' in line: # if its a move command
-                self.move_ee_pos(float(line[line.find("(")+1:line.find(")")]),line[5])
+                try:
+                    self.move_ee_pos(float(line[line.find("(")+1:line.find(")")]),line[5])
+                except:
+                    print('Illegal arugment to move made.')
             elif 'gripper_open' in line:
                 self.gripper_open()
             elif 'gripper_close' in line:
