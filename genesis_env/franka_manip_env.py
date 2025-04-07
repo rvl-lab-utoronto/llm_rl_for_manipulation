@@ -15,10 +15,12 @@ class FrankaManipEnv:
                  render_video = False,
                  show_viewer = False,
                  tolerance = 0.05,
-                 reward_scale = 2.0):
+                 reward_scale = 2.0,
+                 verbose = False):
         self.render_video = render_video
         gs.init(backend=gs.gpu)
         self.device = torch.device(device)
+        self.verbose = verbose
 
 
         ########################## create a scene ##########################
@@ -180,7 +182,8 @@ class FrankaManipEnv:
             self.step_genesis_env()
 
     def gripper_close(self):
-        print("CLOSING GRIPPER!")
+        if self.verbose:
+            print("CLOSING GRIPPER!")
         fingers_dof = np.arange(7, 9)
         self.franka.control_dofs_force(np.array([-4.0, -4.0]), fingers_dof)
         for i in range(100):
@@ -208,7 +211,8 @@ class FrankaManipEnv:
         #print(llm_plan)
         plan_line_by_line = llm_plan.splitlines()
         for line in plan_line_by_line:
-            print("EXECUTING:", line)
+            if self.verbose:
+                print("EXECUTING:", line)
             if 'move' in line: # if its a move command
                 self.move_ee_pos(float(line[line.find("(")+1:line.find(")")]),line[5])
             elif 'gripper_open' in line:
@@ -216,7 +220,8 @@ class FrankaManipEnv:
             elif 'gripper_close' in line:
                 self.gripper_close()
             else:
-                print('Illegal Command Found (and the fucking verifier didnt CATCH IT). Skipping line.')
+                if self.verbose:
+                    print('Illegal Command Found (and the fucking verifier didnt CATCH IT). Skipping line.')
         reward = self.get_scene_completion_reward()
         return reward
 
@@ -252,6 +257,8 @@ class FrankaManipEnv:
         scaling parameter
         """
         reward = 0
+        print(self.red_cube.get_pos().cpu().numpy())
+        print(self.red_cube_goal)
         if np.linalg.norm(self.red_cube.get_pos().cpu().numpy() - self.red_cube_goal) < self.completion_tolerance:
             reward += 0.25
         if np.linalg.norm(self.blue_cube.get_pos().cpu().numpy() - self.blue_cube_goal) < self.completion_tolerance:
