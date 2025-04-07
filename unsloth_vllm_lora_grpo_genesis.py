@@ -23,7 +23,8 @@ from genesis_env import FrankaManipEnv
 PatchFastRL("GRPO", FastLanguageModel)
 
 # Load up `Qwen 2.5 3B Instruct`, and set parameters
-model_name = "Qwen/Qwen2.5-3B-Instruct"
+#model_name = "Qwen/Qwen2.5-3B-Instruct"
+model_name = 'Qwen/Qwen2.5-7B-Instruct'
 
 max_seq_length = 4096  # Can increase for longer reasoning traces
 lora_rank = 64  # Larger rank = smarter, but slower
@@ -34,7 +35,7 @@ model, tokenizer = FastLanguageModel.from_pretrained(
     load_in_4bit=True,  # False for LoRA 16bit
     fast_inference=True,  # Enable vLLM fast inference
     max_lora_rank=lora_rank,
-    gpu_memory_utilization=0.5,  # Reduce if out of memory
+    gpu_memory_utilization=1.0,  # Reduce if out of memory
 )
 
 model = FastLanguageModel.get_peft_model(
