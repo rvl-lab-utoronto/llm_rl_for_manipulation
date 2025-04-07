@@ -8,15 +8,6 @@ https://docs.unsloth.ai/basics/reasoning-grpo-and-rl
 import re
 import sys
 
-sys.path = [
-    "",
-    ".venv/lib/python3.12/site-packages",
-    "/usr/lib/python312.zip",
-    "/usr/lib/python3.12",
-    "/usr/lib/python3.12/lib-dynload",
-    "/usr/local/lib/python3.12/dist-packages",
-    "/usr/lib/python3/dist-packages",
-]
 
 # Must import unsloth before trl.
 from unsloth import FastLanguageModel, PatchFastRL, is_bfloat16_supported
