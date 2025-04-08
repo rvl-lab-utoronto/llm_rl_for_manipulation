@@ -155,7 +155,7 @@ class FrankaManipEnv:
 
         end_effector = self.franka.get_link('hand')
         target_eef_pos = end_effector.get_pos().cpu().numpy() + displacement 
-        target_eef_pos[2] = max(0.11, target_eef_pos[2])
+        target_eef_pos[2] = max(0.13, target_eef_pos[2])
         qpos, error = self.franka.inverse_kinematics(
             link=end_effector,
             pos=target_eef_pos,
@@ -201,23 +201,23 @@ class FrankaManipEnv:
             self.cam.render()
     def pick_block(self):
         self.gripper_open()
-        self.move_ee_pos(-0.20,'z')
-        self.move_ee_pos(-0.10,'z')
+        self.move_ee_pos(-0.25,'z')
+        self.move_ee_pos(-0.12,'z')
         self.gripper_close()
-        for i in range(10):
+        for i in range(100):
             self.step_genesis_env()
-        self.move_ee_pos(0.10,'z')
-        self.move_ee_pos(0.20,'z')
+        self.move_ee_pos(0.12,'z')
+        self.move_ee_pos(0.25,'z')
 
     def place_block(self):
 
-        self.move_ee_pos(-0.20,'z')
-        self.move_ee_pos(-0.10,'z')
+        self.move_ee_pos(-0.25,'z')
+        self.move_ee_pos(-0.12,'z')
         self.gripper_open()
-        for i in range(10):
+        for i in range(100):
             self.step_genesis_env()
-        self.move_ee_pos(0.10,'z')
-        self.move_ee_pos(0.20,'z')
+        self.move_ee_pos(0.12,'z')
+        self.move_ee_pos(0.25,'z')
 
 
     def execute_llm_plan(self,llm_plan):
@@ -335,7 +335,7 @@ class FrankaManipEnv:
             )
 
         self.franka.control_dofs_position(qpos)
-        for i in range(100):
+        for i in range(250):
             self.step_genesis_env()
         self.gripper_open()
         if self.render_video:
