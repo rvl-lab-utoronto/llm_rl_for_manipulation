@@ -215,13 +215,13 @@ class FrankaManipEnv:
         #self.move_ee_pos(-0.23,'z')
         #self.move_ee_pos(-0.20,'z')
         #self.move_ee_pos(-0.05,'z')
-        self.move_ee_pos(-0.48,'z')
+        self.move_ee_pos(-0.35,'z')
         self.gripper_close()
 
         for i in range(10):
             self.step_genesis_env()
 
-        self.move_ee_pos(0.48,'z')
+        self.move_ee_pos(0.35,'z')
         #self.move_ee_pos(0.05,'z')
         #self.move_ee_pos(0.43,'z')
 
@@ -229,13 +229,13 @@ class FrankaManipEnv:
         #self.move_ee_pos(-0.23,'z')
         #self.move_ee_pos(-0.20,'z')
         #self.move_ee_pos(-0.05,'z')
-        self.move_ee_pos(-0.48,'z')
+        self.move_ee_pos(-0.35,'z')
         self.gripper_open()
         for i in range(100):
             self.step_genesis_env()
         #for i in range(12):
         #    self.move_ee_pos(0.03,'z',quick=True)
-        self.move_ee_pos(0.48,'z')
+        self.move_ee_pos(0.35,'z')
 
 
     def execute_llm_plan(self,llm_plan):
