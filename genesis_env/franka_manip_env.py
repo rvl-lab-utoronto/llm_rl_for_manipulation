@@ -78,7 +78,7 @@ class FrankaManipEnv:
                                           surface=gs.surfaces.Default(color=(0.2, 0.8, 0.2, 1.0)))
         # camera shit
         if self.render_video:
-            self.cam = self.scene.add_camera(res=(640, 480), pos = (1,0.25,1), lookat=(0.25,0.25,0), fov=30, GUI=False)
+            self.cam = self.scene.add_camera(res=(640, 480), pos = (2,0,3), lookat=(0,0,0.5), fov=30, GUI=False)
         # build
         self.scene.build()
 
