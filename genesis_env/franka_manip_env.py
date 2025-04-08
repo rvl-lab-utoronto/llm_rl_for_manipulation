@@ -14,7 +14,7 @@ class FrankaManipEnv:
                  device="cuda",
                  render_video = False,
                  show_viewer = False,
-                 tolerance = 0.05,
+                 tolerance = 0.1,
                  reward_scale = 2.0,
                  verbose = False,
                  use_gpu = False):
