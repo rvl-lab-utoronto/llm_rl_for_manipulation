@@ -25,7 +25,7 @@ class FrankaManipEnv:
             gs.init(backend=gs.cpu)
         self.device = torch.device(device)
         self.verbose = verbose
-
+        self.gripper_closed = False
 
         ########################## create a scene ##########################
         self.scene = gs.Scene(
@@ -164,26 +164,26 @@ class FrankaManipEnv:
         )
         
         # Option to use path planning instead
-        # path = self.franka.plan_path(
-        #     qpos_goal     = qpos,
-        #     num_waypoints = 200, # 2s duration
-        # )
-        # # execute the planned path
-        # for waypoint in path:
-        #     self.franka.control_dofs_position(waypoint)
-        #     self.scene.step()
-
-        motors_dof = np.arange(7)
-        self.franka.control_dofs_position(qpos[:-2], motors_dof)
-        #  self.franka.control_dofs_position(qpos[:-2], self.dofs_idx[:-2])
-        if quick:
-            for i in range(25):
-                self.step_genesis_env()
+        if self.gripper_closed:
+            qpos[-2:] = -0.04
         else:
-            for i in range(500):
-                self.step_genesis_env()
+            qpos[-2:] = 0.04
+        path = self.franka.plan_path(
+            qpos_goal     = qpos,
+            num_waypoints = 100, # 2s duration
+            ignore_collision = True
+        )
+        # execute the planned path
+        for waypoint in path:
+            self.franka.control_dofs_position(waypoint)
+            self.step_genesis_env()
+
+        #self.franka.control_dofs_position(qpos[:-2], self.dofs_idx[:-2])
+        for i in range(40):
+            self.step_genesis_env()
 
     def gripper_open(self):
+        self.gripper_closed = False
         fingers_dof = np.arange(7, 9)
         self.franka.control_dofs_force(np.array([0.5, 0.5]), fingers_dof)
         
@@ -192,10 +192,11 @@ class FrankaManipEnv:
         
 
     def gripper_close(self):
+        self.gripper_closed = True
         if self.verbose:
             print("CLOSING GRIPPER!")
         fingers_dof = np.arange(7, 9)
-        self.franka.control_dofs_force(np.array([-4.0, -4.0]), fingers_dof)
+        self.franka.control_dofs_force(np.array([-35.0, -35.0]), fingers_dof)
         for i in range(20):
             self.step_genesis_env()
 
@@ -203,21 +204,29 @@ class FrankaManipEnv:
         self.scene.step()
         if self.render_video:
             self.cam.render()
+
+    def compute_ee_height(self):
+        end_effector = self.franka.get_link('hand')
+        eef_pos = end_effector.get_pos().cpu().numpy()
+        return eef_pos[2]
+    
     def pick_block(self):
-        self.gripper_open() # should move total of -0.37
-        for i in range(15):
-            self.move_ee_pos(-0.03,'z',quick=True)
+        self.gripper_open()
+        self.move_ee_pos(-0.23,'z')
+        self.move_ee_pos(-0.20,'z')
+        self.move_ee_pos(-0.05,'z')
         self.gripper_close()
-        for i in range(100):
+
+        for i in range(10):
             self.step_genesis_env()
-        for i in range(15):
-            self.move_ee_pos(0.03,'z',quick=True)
-        
+
+        self.move_ee_pos(0.05,'z')
+        self.move_ee_pos(0.43,'z')
 
     def place_block(self):
-
-        for i in range(12):
-            self.move_ee_pos(-0.03,'z',quick=True)
+        self.move_ee_pos(-0.23,'z')
+        self.move_ee_pos(-0.20,'z')
+        self.move_ee_pos(-0.05,'z')
         self.gripper_open()
         for i in range(100):
             self.step_genesis_env()
@@ -332,15 +341,34 @@ class FrankaManipEnv:
         # resets end effectuator to same place
         end_effector = self.franka.get_link('hand')
         target_eef_pos = np.array([0,0.25,0.5])
-        qpos, error = self.franka.inverse_kinematics(
-                link=end_effector,
-                pos=target_eef_pos,
-                quat=np.array([0, 1, 0, 0]),
-                return_error=True,
-            )
 
-        self.franka.control_dofs_position(qpos)
-        for i in range(200):
+        # Previously, we used an ik solver to reset joint positions
+        # now we harcode the reset position
+        # qpos, error = self.franka.inverse_kinematics(
+        #         link=end_effector,
+        #         pos=target_eef_pos,
+        #         quat=np.array([0, 1, 0, 0]),
+        #         return_error=True,
+        #     )
+        # print("joint_positons", qpos)
+
+        # Reset joints to the following positions:
+        qpos = np.array([ 1.1125, -1.0921,  0.3125, -2.6978,  0.2768,  1.6241,  2.0305,  0.0087, 0.0249])
+        if self.gripper_closed:
+            qpos[-2:] = -0.04
+        else:
+            qpos[-2:] = 0.04
+        path = self.franka.plan_path(
+            qpos_goal     = qpos,
+            num_waypoints = 100, # 2s duration
+            ignore_collision = True
+        )
+        # execute the planned path
+        for waypoint in path:
+            self.franka.control_dofs_position(waypoint)
+            self.step_genesis_env()
+
+        for i in range(100):
             self.step_genesis_env()
         self.gripper_open()
         if self.render_video:
