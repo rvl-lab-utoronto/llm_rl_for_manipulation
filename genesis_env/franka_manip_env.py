@@ -164,18 +164,18 @@ class FrankaManipEnv:
         )
         
         # Option to use path planning instead
-        # path = self.franka.plan_path(
-        #     qpos_goal     = qpos,
-        #     num_waypoints = 200, # 2s duration
-        # )
-        # # execute the planned path
-        # for waypoint in path:
-        #     self.franka.control_dofs_position(waypoint)
-        #     self.scene.step()
+        path = self.franka.plan_path(
+            qpos_goal     = qpos,
+            num_waypoints = 200, # 2s duration
+        )
+        # execute the planned path
+        for waypoint in path:
+            self.franka.control_dofs_position(waypoint)
+            self.scene.step()
 
         
 
-        self.franka.control_dofs_position(qpos[:-2], self.dofs_idx[:-2])
+        # self.franka.control_dofs_position(qpos[:-2], self.dofs_idx[:-2])
         for i in range(100):
             self.step_genesis_env()
 
