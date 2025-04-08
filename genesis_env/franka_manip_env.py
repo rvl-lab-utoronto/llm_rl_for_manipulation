@@ -77,7 +77,7 @@ class FrankaManipEnv:
                                           surface=gs.surfaces.Default(color=(0.2, 0.8, 0.2, 1.0)))
         # camera shit
         if self.render_video:
-            self.cam = self.scene.add_camera(res=(640, 480), pos = (0,3,2), lookat=(0,0,0.5), fov=30, GUI=False)
+            self.cam = self.scene.add_camera(res=(640, 480), pos = (0,1.5,1), lookat=(0,0,0), fov=30, GUI=False)
         # build
         self.scene.build()
 
@@ -215,13 +215,13 @@ class FrankaManipEnv:
         #self.move_ee_pos(-0.23,'z')
         #self.move_ee_pos(-0.20,'z')
         #self.move_ee_pos(-0.05,'z')
-        self.move_ee_pos(-0.35,'z')
+        self.move_ee_pos(-0.40,'z')
         self.gripper_close()
 
         for i in range(10):
             self.step_genesis_env()
 
-        self.move_ee_pos(0.35,'z')
+        self.move_ee_pos(0.40,'z')
         #self.move_ee_pos(0.05,'z')
         #self.move_ee_pos(0.43,'z')
 
@@ -229,13 +229,13 @@ class FrankaManipEnv:
         #self.move_ee_pos(-0.23,'z')
         #self.move_ee_pos(-0.20,'z')
         #self.move_ee_pos(-0.05,'z')
-        self.move_ee_pos(-0.35,'z')
+        self.move_ee_pos(-0.40,'z')
         self.gripper_open()
         for i in range(100):
             self.step_genesis_env()
         #for i in range(12):
         #    self.move_ee_pos(0.03,'z',quick=True)
-        self.move_ee_pos(0.35,'z')
+        self.move_ee_pos(0.40,'z')
 
 
     def execute_llm_plan(self,llm_plan):
