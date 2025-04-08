@@ -148,7 +148,7 @@ def genesis_reward_func(prompts, completions, answer, **kwargs) -> list[float]:
         rewards.append(reward)
         print(
             "-" * 20,
-            f"Question:\n{prompt}",
+            #f"Question:\n{prompt}",
             f"\nAnswer:\n{completion}",
             f"\nReward:\n{reward}",
         )
