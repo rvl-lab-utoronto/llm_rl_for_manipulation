@@ -61,19 +61,19 @@ class FrankaManipEnv:
         self.franka = self.scene.add_entity(gs.morphs.MJCF(file="xml/franka_emika_panda/panda.xml"),)
         motors_dof = np.arange(7)
         fingers_dof = np.arange(7, 9)
-
+        box_size = 0.08
         
         # adds 4 cubes of different colours
-        self.red_cube = self.scene.add_entity(gs.morphs.Box(size=(0.04, 0.04, 0.04),pos=(0.25,0.25,0.02),),
+        self.red_cube = self.scene.add_entity(gs.morphs.Box(size=(box_size, box_size, box_size),pos=(0.25,0.25,0.02),),
                                           surface=gs.surfaces.Default(color=(0.8, 0.2, 0.2, 1.0)))
         
-        self.blue_cube = self.scene.add_entity(gs.morphs.Box(size=(0.04, 0.04, 0.04),pos=(-0.25,0.25,0.02),),
+        self.blue_cube = self.scene.add_entity(gs.morphs.Box(size=(box_size, box_size, box_size),pos=(-0.25,0.25,0.02),),
                                           surface=gs.surfaces.Default(color=(0.2,0.2,0.8, 1.0)))
         
-        self.yellow_cube = self.scene.add_entity(gs.morphs.Box(size=(0.04, 0.04, 0.04),pos=(0.25,0.5,0.02),),
+        self.yellow_cube = self.scene.add_entity(gs.morphs.Box(size=(box_size, box_size, box_size),pos=(0.25,0.5,0.02),),
                                           surface=gs.surfaces.Default(color=(0.8,0.8,0.0 ,1.0)))
         
-        self.green_cube = self.scene.add_entity(gs.morphs.Box(size=(0.04, 0.04, 0.04),pos=(-0.25,0.5,0.02),),
+        self.green_cube = self.scene.add_entity(gs.morphs.Box(size=(box_size, box_size, box_size),pos=(-0.25,0.5,0.02),),
                                           surface=gs.surfaces.Default(color=(0.2, 0.8, 0.2, 1.0)))
         # camera shit
         if self.render_video:
