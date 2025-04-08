@@ -206,7 +206,7 @@ class FrankaManipEnv:
     def pick_block(self):
         self.gripper_open() # should move total of -0.37
         for i in range(12):
-            self.move_ee_pos(-0.03,'z',quick=True)
+            self.move_ee_pos(-0.03,'z',quick=False)
         self.move_ee_pos(-0.01,'z')
         self.gripper_close()
         for i in range(100):
@@ -219,7 +219,7 @@ class FrankaManipEnv:
     def place_block(self):
 
         for i in range(12):
-            self.move_ee_pos(-0.03,'z',quick=True)
+            self.move_ee_pos(-0.03,'z',quick=False)
         self.move_ee_pos(-0.01,'z')
         self.gripper_open()
         for i in range(100):
