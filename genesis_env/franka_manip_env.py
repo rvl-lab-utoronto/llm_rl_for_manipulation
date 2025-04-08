@@ -173,9 +173,9 @@ class FrankaManipEnv:
         #     self.franka.control_dofs_position(waypoint)
         #     self.scene.step()
 
-        
-
-        self.franka.control_dofs_position(qpos[:-2], self.dofs_idx[:-2])
+        motors_dof = np.arange(7)
+        self.franka.control_dofs_position(qpos[:-2], motors_dof)
+        #  self.franka.control_dofs_position(qpos[:-2], self.dofs_idx[:-2])
         for i in range(100):
             self.step_genesis_env()
 
@@ -201,23 +201,23 @@ class FrankaManipEnv:
             self.cam.render()
     def pick_block(self):
         self.gripper_open()
-        self.move_ee_pos(-0.43,'z')
-        self.move_ee_pos(-0.05,'z')
+        self.move_ee_pos(-0.20,'z')
+        self.move_ee_pos(-0.10,'z')
         self.gripper_close()
         for i in range(10):
             self.step_genesis_env()
-        self.move_ee_pos(0.05,'z')
-        self.move_ee_pos(0.43,'z')
+        self.move_ee_pos(0.10,'z')
+        self.move_ee_pos(0.20,'z')
 
     def place_block(self):
 
-        self.move_ee_pos(-0.43,'z')
-        self.move_ee_pos(-0.05,'z')
+        self.move_ee_pos(-0.20,'z')
+        self.move_ee_pos(-0.10,'z')
         self.gripper_open()
         for i in range(10):
             self.step_genesis_env()
-        self.move_ee_pos(0.05,'z')
-        self.move_ee_pos(0.43,'z')
+        self.move_ee_pos(0.10,'z')
+        self.move_ee_pos(0.20,'z')
 
 
     def execute_llm_plan(self,llm_plan):
