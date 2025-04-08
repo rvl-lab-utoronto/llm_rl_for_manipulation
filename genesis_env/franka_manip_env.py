@@ -77,7 +77,7 @@ class FrankaManipEnv:
                                           surface=gs.surfaces.Default(color=(0.2, 0.8, 0.2, 1.0)))
         # camera shit
         if self.render_video:
-            self.cam = self.scene.add_camera(res=(640, 480), pos = (-1,1.5,1), lookat=(0,0,0), fov=30, GUI=False)
+            self.cam = self.scene.add_camera(res=(640, 480), pos = (-1,1.5,1), lookat=(0.25,0.25,0), fov=30, GUI=False)
         # build
         self.scene.build()
 
@@ -212,7 +212,7 @@ class FrankaManipEnv:
     
     def pick_block(self):
         self.gripper_open()
-        self.move_ee_pos(-0.23,'z')
+        self.move_ee_pos(-0.27,'z')
         self.move_ee_pos(-0.10,'z')
         #self.move_ee_pos(-0.05,'z')
         #self.move_ee_pos(-0.37,'z')
