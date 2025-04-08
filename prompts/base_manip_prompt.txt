@@ -21,29 +21,25 @@ Where the action primitives are listed one by one, each on its own line, in betw
 *** Action Primitives ***
 move_x(param): This moves the position of the end-effector by param cm from its current position in the x-axis.
 move_y(param): This moves the position of the end-effector by param cm from its current position in the y-axis. 
-move_z(param): This moves the position of the end-effector by param cm from its current position in the z-axis. 
-gripper_open(): This opens the gripper.
-gripper_close(): This closes the gripper. 
+pick_block(): This picks up the block currently under it if there is one.
+place_block(): This places the block the arm is currently holding under it, if there is one. 
 
 *** Observation ***
 Here is the initial position of each block and the end effector:
-Red Cube: 0.25,0.25,0.02
-Blue Cube: -0.25,0.25,0.02
-Yellow Cube: 0.25,0.5,0.02
-Green Cube: -0.25,0.5,0.02
-End Effector: 0, 0.25, 0.5
-Note - the arm itself is at 0,0,0. Assume that the x-axis determines left and right, the y-axis top and bottom, and the z-axis up and down. 
+Red Cube: 0.25,0.25
+Blue Cube: -0.25,0.25
+Yellow Cube: 0.25,0.5
+Green Cube: -0.25,0.5
+End Effector: 0, 0.25
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom. 
 
 *** Example ***
 Here is an example task, reasoning chain, and output plan. 
 Task: Move the block in the bottom-left to the middle of the red and yellow cubes.
-Reasoning: First, I need to determine which block is in the bottom-left. I can see from the observations that the blue cube is the furthest to the left and closest to me, which means it is in the bottom-left. Next, I need to determine where to put it. I can see that red and yellow cubes are at (0.25,0.25,0.02) and (0.25,0.5,0.02) respectively, which means I need to put the blue cube at the point at the middle between the cubes, which is at (0.25,0.375,0.02). Now, the first thing I need to do is navigate the end effector to the blue cube and pick it up. The end effector is currently at (0, 0.25, 1) so to move it to the blue cube at (-0.25,0.25,0.02) I need to move it in the x and z directions with the move_x and move_z commands. First, I should do move_x(-0.25) and then move_z(-0.48). Then, I can grasp the cube with gripper_close(), and move it to the new location at (0.25,0.375,0.02). To do this, first I should move the end effector a bit above the table so it does not hit the ground. I can do this with move_z(0.5). To move the end effector above where I want to place the cube, I can do move_x(0.5), then move_y(0.125). Then, I should bring the end effector closer to the ground with move_z(-0.5), and finally I can ungrasp the cube with gripper_open() and I will be done. I am ready to output the plan.
+Reasoning: First, I need to determine which block is in the bottom-left. I can see from the observations that the blue cube is the furthest to the left and closest to me, which means it is in the bottom-left. Next, I need to determine where to put it. I can see that red and yellow cubes are at (0.25,0.25 and (0.25,0.5) respectively, which means I need to put the blue cube at the point at the middle between the cubes, which is at (0.25,0.375). Now, the first thing I need to do is navigate the end effector to the blue cube and pick it up. The end effector is currently at (0, 0.25) so to move it to the blue cube at (-0.25,0.25 I need to move it in the x direction with the move_x command. First, I should do move_x(-0.25). Then, I pick up the block with pick_block(). Next, I should move it to the new location at (0.25,0.375). To move the end effector above where I want to place the cube, I can do move_x(0.5), then move_y(0.125). Then, I should place the block with place_block() and I will be done. I am ready to output the plan.
 Plan:
 move_x(-0.25)
-move_z(-0.48)
-gripper_close()
-move_z(0.5)
+pick_block()
 move_x(0.5)
 move_y(0.125)
-move_z(-0.5)
-gripper_open()
+place_block()

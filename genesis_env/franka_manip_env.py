@@ -197,6 +197,15 @@ class FrankaManipEnv:
         self.scene.step()
         if self.render_video:
             self.cam.render()
+    def pick_block(self):
+        self.gripper_open()
+        self.move_ee_pos(-0.48,'z')
+        self.gripper_close()
+        self.move_ee_pos(0.48,'z')
+    def place_block(self):
+        self.move_ee_pos(-0.48,'z')
+        self.gripper_open()
+        self.move_ee_pos(0.48,'z')
 
     def execute_llm_plan(self,llm_plan):
         """
@@ -222,10 +231,10 @@ class FrankaManipEnv:
                     self.move_ee_pos(float(line[line.find("(")+1:line.find(")")]),line[5])
                 except:
                     print('Illegal arugment to move made.')
-            elif 'gripper_open' in line:
-                self.gripper_open()
-            elif 'gripper_close' in line:
-                self.gripper_close()
+            elif 'pick_block' in line:
+                self.pick_block()
+            elif 'place_block' in line:
+                self.place_block()
             else:
                 if self.verbose:
                     print('Illegal Command Found (and the fucking verifier didnt CATCH IT). Skipping line.')
@@ -260,24 +269,37 @@ class FrankaManipEnv:
     def get_scene_completion_reward(self):
         """
         Four cubes, returns reward proportional to percentage 
-        out of 1 of cubes in right place, times the env. reward
+        out of 1 of cubes in right place from cubes not initially in right place, 
+        times the env. reward
         scaling parameter
         """
         reward = 0
         #print(self.red_cube.get_pos().cpu().numpy())
         #print(np.array(self.red_cube_goal))
-        if np.linalg.norm(self.red_cube.get_pos().cpu().numpy() - self.red_cube_goal) < self.completion_tolerance:
-            reward += 0.25
-        if np.linalg.norm(self.blue_cube.get_pos().cpu().numpy() - self.blue_cube_goal) < self.completion_tolerance:
-            reward += 0.25
-        if np.linalg.norm(self.yellow_cube.get_pos().cpu().numpy() - self.yellow_cube_goal) < self.completion_tolerance:
-            reward += 0.25
-        if np.linalg.norm(self.green_cube.get_pos().cpu().numpy() - self.green_cube_goal) < self.completion_tolerance:
-            reward += 0.25
+        default_red = (0.25,0.25,0.02)
+        default_blue = (-0.25,0.25,0.02)
+        default_yellow = (0.25,0.5,0.02)
+        default_green = (-0.25,0.5,0.02)
+        cubes_needed_moving = 0
+        if np.linalg.norm(default_red - self.red_cube_goal) > self.completion_tolerance:
+            cubes_needed_moving += 1
+            if np.linalg.norm(self.red_cube.get_pos().cpu().numpy() - self.red_cube_goal) < self.completion_tolerance:
+                reward += 1
+        if np.linalg.norm(default_blue - self.blue_cube_goal) > self.completion_tolerance:
+            cubes_needed_moving += 1
+            if np.linalg.norm(self.blue_cube.get_pos().cpu().numpy() - self.blue_cube_goal) < self.completion_tolerance:
+                reward += 1
+        if np.linalg.norm(default_yellow - self.yellow_cube_goal) > self.completion_tolerance:
+            cubes_needed_moving += 1
+            if np.linalg.norm(self.yellow_cube.get_pos().cpu().numpy() - self.yellow_cube_goal) < self.completion_tolerance:
+                reward += 1
+        if np.linalg.norm(default_green - self.green_cube_goal) > self.completion_tolerance:
+            cubes_needed_moving += 1
+            if np.linalg.norm(self.green_cube.get_pos().cpu().numpy() - self.green_cube_goal) < self.completion_tolerance:
+                reward += 1
 
         
-        
-        return reward * self.reward_scale
+        return (reward/cubes_needed_moving) * self.reward_scale
 
     def reset(self,goal_location):
         """
