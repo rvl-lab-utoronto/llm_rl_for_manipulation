@@ -61,7 +61,7 @@ class FrankaManipEnv:
         self.franka = self.scene.add_entity(gs.morphs.MJCF(file="xml/franka_emika_panda/panda.xml"),)
         motors_dof = np.arange(7)
         fingers_dof = np.arange(7, 9)
-        box_size = 0.06
+        box_size = 0.04
         
         # adds 4 cubes of different colours
         self.red_cube = self.scene.add_entity(gs.morphs.Box(size=(box_size, box_size, box_size),pos=(0.25,0.25,0.02),),
@@ -177,10 +177,10 @@ class FrankaManipEnv:
         self.franka.control_dofs_position(qpos[:-2], motors_dof)
         #  self.franka.control_dofs_position(qpos[:-2], self.dofs_idx[:-2])
         if quick:
-            for i in range(50):
+            for i in range(25):
                 self.step_genesis_env()
         else:
-            for i in range(200):
+            for i in range(100):
                 self.step_genesis_env()
 
     def gripper_open(self):
@@ -340,7 +340,7 @@ class FrankaManipEnv:
             )
 
         self.franka.control_dofs_position(qpos)
-        for i in range(250):
+        for i in range(500):
             self.step_genesis_env()
         self.gripper_open()
         if self.render_video:
