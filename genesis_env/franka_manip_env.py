@@ -197,7 +197,7 @@ class FrankaManipEnv:
         if self.verbose:
             print("CLOSING GRIPPER!")
         fingers_dof = np.arange(7, 9)
-        self.franka.control_dofs_force(np.array([-35.0, -35.0]), fingers_dof)
+        self.franka.control_dofs_force(np.array([-0.5, -0.5]), fingers_dof)
         for i in range(50):
             self.step_genesis_env()
 
