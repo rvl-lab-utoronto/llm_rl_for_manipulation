@@ -61,7 +61,7 @@ class FrankaManipEnv:
         self.franka = self.scene.add_entity(gs.morphs.MJCF(file="xml/franka_emika_panda/panda.xml"),)
         motors_dof = np.arange(7)
         fingers_dof = np.arange(7, 9)
-        box_size = 0.08
+        box_size = 0.06
         
         # adds 4 cubes of different colours
         self.red_cube = self.scene.add_entity(gs.morphs.Box(size=(box_size, box_size, box_size),pos=(0.25,0.25,0.02),),
