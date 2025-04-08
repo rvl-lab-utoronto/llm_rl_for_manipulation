@@ -144,7 +144,7 @@ class FrankaManipEnv:
         # check if it has been initalized with a goal yet
         self.goal_initialized = False
 
-    def move_ee_pos(self,distance,dimension):
+    def move_ee_pos(self,distance,dimension,quick=False):
         displacement = np.zeros(3)
         if dimension == 'x':
             displacement[0] = distance
@@ -176,8 +176,12 @@ class FrankaManipEnv:
         motors_dof = np.arange(7)
         self.franka.control_dofs_position(qpos[:-2], motors_dof)
         #  self.franka.control_dofs_position(qpos[:-2], self.dofs_idx[:-2])
-        for i in range(100):
-            self.step_genesis_env()
+        if quick:
+            for i in range(20):
+                self.step_genesis_env()
+        else:
+            for i in range(100):
+                self.step_genesis_env()
 
     def gripper_open(self):
         fingers_dof = np.arange(7, 9)
@@ -200,24 +204,29 @@ class FrankaManipEnv:
         if self.render_video:
             self.cam.render()
     def pick_block(self):
-        self.gripper_open()
-        self.move_ee_pos(-0.25,'z')
-        self.move_ee_pos(-0.12,'z')
+        self.gripper_open() # should move total of -0.37
+        for i in range(12):
+            self.move_ee_pos(-0.03,'z',quick=True)
+        self.move_ee_pos(-0.01,'z')
         self.gripper_close()
         for i in range(100):
             self.step_genesis_env()
-        self.move_ee_pos(0.12,'z')
-        self.move_ee_pos(0.25,'z')
+        self.move_ee_pos(0.01,'z')
+        for i in range(12):
+            self.move_ee_pos(0.03,'z',quick=True)
+        
 
     def place_block(self):
 
-        self.move_ee_pos(-0.25,'z')
-        self.move_ee_pos(-0.12,'z')
+        for i in range(12):
+            self.move_ee_pos(-0.03,'z',quick=True)
+        self.move_ee_pos(-0.01,'z')
         self.gripper_open()
         for i in range(100):
             self.step_genesis_env()
-        self.move_ee_pos(0.12,'z')
-        self.move_ee_pos(0.25,'z')
+        self.move_ee_pos(0.01,'z')
+        for i in range(12):
+            self.move_ee_pos(0.03,'z',quick=True)
 
 
     def execute_llm_plan(self,llm_plan):
