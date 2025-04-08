@@ -1,6 +1,6 @@
 from franka_manip_env import FrankaManipEnv
 
-env = FrankaManipEnv(render_video=False,show_viewer=True,verbose=True) # change however you want
+env = FrankaManipEnv(render_video=False,show_viewer=True,verbose=True, use_gpu=True) # change however you want
 goal_dict = {'red_cube_goal':[.25,.25,0.02],
              'blue_cube_goal':[-.25,.25,0.02],
              'yellow_cube_goal':[.25,.5,0.02],

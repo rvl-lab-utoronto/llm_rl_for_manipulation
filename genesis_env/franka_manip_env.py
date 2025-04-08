@@ -164,26 +164,28 @@ class FrankaManipEnv:
         )
         
         # Option to use path planning instead
-        path = self.franka.plan_path(
-            qpos_goal     = qpos,
-            num_waypoints = 200, # 2s duration
-        )
-        # execute the planned path
-        for waypoint in path:
-            self.franka.control_dofs_position(waypoint)
-            self.scene.step()
+        # path = self.franka.plan_path(
+        #     qpos_goal     = qpos,
+        #     num_waypoints = 200, # 2s duration
+        # )
+        # # execute the planned path
+        # for waypoint in path:
+        #     self.franka.control_dofs_position(waypoint)
+        #     self.scene.step()
 
         
 
-        # self.franka.control_dofs_position(qpos[:-2], self.dofs_idx[:-2])
+        self.franka.control_dofs_position(qpos[:-2], self.dofs_idx[:-2])
         for i in range(100):
             self.step_genesis_env()
 
     def gripper_open(self):
         fingers_dof = np.arange(7, 9)
         self.franka.control_dofs_force(np.array([0.5, 0.5]), fingers_dof)
-        for i in range(100):
+        
+        for i in range(20):
             self.step_genesis_env()
+        
 
     def gripper_close(self):
         if self.verbose:
@@ -191,7 +193,7 @@ class FrankaManipEnv:
         fingers_dof = np.arange(7, 9)
         self.franka.control_dofs_force(np.array([-4.0, -4.0]), fingers_dof)
         for i in range(100):
-            self.step_genesis_env()
+            self.scene.step()
 
     def step_genesis_env(self):
         self.scene.step()
@@ -201,11 +203,17 @@ class FrankaManipEnv:
         self.gripper_open()
         self.move_ee_pos(-0.48,'z')
         self.gripper_close()
+        for i in range(100):
+            self.step_genesis_env()
         self.move_ee_pos(0.48,'z')
     def place_block(self):
         self.move_ee_pos(-0.48,'z')
         self.gripper_open()
-        self.move_ee_pos(0.48,'z')
+        for i in range(100):
+            self.step_genesis_env()
+        self.move_ee_pos(0.05,'z')
+        self.move_ee_pos(0.43,'z')
+
 
     def execute_llm_plan(self,llm_plan):
         """
@@ -276,10 +284,10 @@ class FrankaManipEnv:
         reward = 0
         #print(self.red_cube.get_pos().cpu().numpy())
         #print(np.array(self.red_cube_goal))
-        default_red = (0.25,0.25,0.02)
-        default_blue = (-0.25,0.25,0.02)
-        default_yellow = (0.25,0.5,0.02)
-        default_green = (-0.25,0.5,0.02)
+        default_red = np.array([0.25,0.25,0.02])
+        default_blue = np.array([-0.25,0.25,0.02])
+        default_yellow = np.array([0.25,0.5,0.02])
+        default_green = np.array([-0.25,0.5,0.02])
         cubes_needed_moving = 0
         if np.linalg.norm(default_red - self.red_cube_goal) > self.completion_tolerance:
             cubes_needed_moving += 1
