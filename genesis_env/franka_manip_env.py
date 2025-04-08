@@ -17,7 +17,8 @@ class FrankaManipEnv:
                  tolerance = 0.1,
                  reward_scale = 2.0,
                  verbose = False,
-                 use_gpu = False):
+                 use_gpu = False,
+                 ee_offset = 0.0):
         self.render_video = render_video
         if use_gpu:
             gs.init(backend=gs.gpu)
@@ -26,7 +27,7 @@ class FrankaManipEnv:
         self.device = torch.device(device)
         self.verbose = verbose
         self.gripper_closed = False
-
+        self.ee_offset = ee_offset
         ########################## create a scene ##########################
         self.scene = gs.Scene(
             viewer_options=gs.options.ViewerOptions(
@@ -77,7 +78,7 @@ class FrankaManipEnv:
                                           surface=gs.surfaces.Default(color=(0.2, 0.8, 0.2, 1.0)))
         # camera shit
         if self.render_video:
-            self.cam = self.scene.add_camera(res=(640, 480), pos = (-1,1.5,1), lookat=(0.25,0.25,0), fov=30, GUI=False)
+            self.cam = self.scene.add_camera(res=(640, 480), pos = (0.25,0.75,0.5), lookat=(0.25,0.25,0), fov=30, GUI=False)
         # build
         self.scene.build()
 
