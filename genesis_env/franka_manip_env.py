@@ -180,7 +180,7 @@ class FrankaManipEnv:
             for i in range(25):
                 self.step_genesis_env()
         else:
-            for i in range(100):
+            for i in range(500):
                 self.step_genesis_env()
 
     def gripper_open(self):
@@ -340,7 +340,7 @@ class FrankaManipEnv:
             )
 
         self.franka.control_dofs_position(qpos)
-        for i in range(500):
+        for i in range(200):
             self.step_genesis_env()
         self.gripper_open()
         if self.render_video:
