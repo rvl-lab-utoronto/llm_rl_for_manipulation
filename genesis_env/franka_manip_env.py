@@ -155,7 +155,7 @@ class FrankaManipEnv:
 
         end_effector = self.franka.get_link('hand')
         target_eef_pos = end_effector.get_pos().cpu().numpy() + displacement 
-        target_eef_pos[2] = max(0.13, target_eef_pos[2])
+        target_eef_pos[2] = max(0.02, target_eef_pos[2])
         qpos, error = self.franka.inverse_kinematics(
             link=end_effector,
             pos=target_eef_pos,
@@ -177,10 +177,10 @@ class FrankaManipEnv:
         self.franka.control_dofs_position(qpos[:-2], motors_dof)
         #  self.franka.control_dofs_position(qpos[:-2], self.dofs_idx[:-2])
         if quick:
-            for i in range(20):
+            for i in range(50):
                 self.step_genesis_env()
         else:
-            for i in range(100):
+            for i in range(200):
                 self.step_genesis_env()
 
     def gripper_open(self):
@@ -205,26 +205,22 @@ class FrankaManipEnv:
             self.cam.render()
     def pick_block(self):
         self.gripper_open() # should move total of -0.37
-        for i in range(12):
-            self.move_ee_pos(-0.03,'z',quick=False)
-        self.move_ee_pos(-0.01,'z')
+        for i in range(15):
+            self.move_ee_pos(-0.03,'z',quick=True)
         self.gripper_close()
         for i in range(100):
             self.step_genesis_env()
-        self.move_ee_pos(0.01,'z')
-        for i in range(12):
+        for i in range(15):
             self.move_ee_pos(0.03,'z',quick=True)
         
 
     def place_block(self):
 
         for i in range(12):
-            self.move_ee_pos(-0.03,'z',quick=False)
-        self.move_ee_pos(-0.01,'z')
+            self.move_ee_pos(-0.03,'z',quick=True)
         self.gripper_open()
         for i in range(100):
             self.step_genesis_env()
-        self.move_ee_pos(0.01,'z')
         for i in range(12):
             self.move_ee_pos(0.03,'z',quick=True)
 
