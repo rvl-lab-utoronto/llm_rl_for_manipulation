@@ -57,7 +57,7 @@ def extract_xml_answer(text: str) -> str:
 
 
 # uncomment middle messages for 1-shot prompting
-def get_manipulation_questions(path = '../data/manipulation_tasks.xlsx'):
+def get_manipulation_questions(path = '../data/manipulation_tasks_easy.xlsx'):
     # makes the initial Dataset
     xls = ExcelFile(path)
     df = xls.parse(xls.sheet_names[0])
