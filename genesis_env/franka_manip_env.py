@@ -3,6 +3,7 @@
 # start and destination for now 
 
 # for later https://github.com/Genesis-Embodied-AI/Genesis/blob/main/examples/locomotion/go2_env.py
+import ast
 
 import torch
 import math
@@ -156,7 +157,7 @@ class FrankaManipEnv:
 
         end_effector = self.franka.get_link('hand')
         target_eef_pos = end_effector.get_pos().cpu().numpy() + displacement 
-        target_eef_pos[2] = max(0.13, target_eef_pos[2])
+        target_eef_pos[2] = max(0.11, target_eef_pos[2])
         qpos, error = self.franka.inverse_kinematics(
             link=end_effector,
             pos=target_eef_pos,
@@ -198,7 +199,7 @@ class FrankaManipEnv:
             print("CLOSING GRIPPER!")
         fingers_dof = np.arange(7, 9)
         self.franka.control_dofs_force(np.array([-0.5, -0.5]), fingers_dof)
-        for i in range(50):
+        for i in range(20):
             self.step_genesis_env()
 
     def step_genesis_env(self):

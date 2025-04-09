@@ -5,13 +5,22 @@ https://docs.unsloth.ai/basics/reasoning-grpo-and-rl
 """
 # Use `PatchFastRL` before all functions to patch GRPO and other RL algorithms!
 
+import ast
 import re
 import sys
-import sys
+
 sys.path.append('../')
 from datasets import Dataset, load_dataset
 from pandas import *
 from genesis_env import FrankaManipEnv
+from openai import OpenAI
+import numpy as np
+from dotenv import load_dotenv
+
+load_dotenv()
+
+
+client = OpenAI()
 
 max_seq_length = 4096  # Can increase for longer reasoning traces
 lora_rank = 64  # Larger rank = smarter, but slower
@@ -25,7 +34,7 @@ lora_rank = 64  # Larger rank = smarter, but slower
 # for data prep and all reward functions. You are free to create your own!
 
 # starts simulator 
-env = FrankaManipEnv(render_video=False)
+env = FrankaManipEnv(render_video=False, show_viewer=True)
 
 # Load and prep dataset
 with open("../prompts/base_manip_prompt.txt","r") as f:
@@ -147,5 +156,23 @@ def xmlcount_reward_func(completions, **kwargs) -> list[float]:
 
 dataset = get_manipulation_questions()
 for scenario in dataset:
-    print(scenario)
+    # print(len(dataset))
+    goal_dict = scenario['answer']
+    goal_dict = {
+        'red_cube_goal': np.array(ast.literal_eval(goal_dict['red_cube_goal'])),
+        'blue_cube_goal': np.array(ast.literal_eval(goal_dict['blue_cube_goal'])),
+        'green_cube_goal': np.array(ast.literal_eval(goal_dict['green_cube_goal'])),
+        'yellow_cube_goal': np.array(ast.literal_eval(goal_dict['yellow_cube_goal']))
+    }
+    env.reset(goal_location=goal_dict)
+    # print(scenario['prompt'])
+    completion = client.chat.completions.create(
+        model="gpt-4o",
+        messages=scenario['prompt']
+    )
+    answer = extract_xml_answer(completion.choices[0].message.content)
 
+    reward = env.execute_llm_plan(answer)
+    print('Correct Sequence Reward:', reward)
+    env.reset(goal_location=goal_dict)
+    print(answer)
