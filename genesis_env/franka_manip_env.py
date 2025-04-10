@@ -26,7 +26,7 @@ class FrankaManipEnv:
             gd_device = gs.gpu
         else:
             gd_device = gs.cpu
-        gs.init(backend=gd_device,logging_level='warming' if not verbose else None)
+        gs.init(backend=gd_device,logging_level='warning' if not verbose else None)
         self.device = torch.device(device)
         self.verbose = verbose
         self.gripper_closed = False
