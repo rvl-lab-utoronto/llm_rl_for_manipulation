@@ -16,15 +16,17 @@ class FrankaManipEnv:
                  render_video = False,
                  show_viewer = False,
                  tolerance = 0.1,
-                 reward_scale = 2.0,
+                 reward_scale = 1.0,
                  verbose = False,
                  use_gpu = False,
                  ee_offset = 0.0):
         self.render_video = render_video
+        gd_device = ''
         if use_gpu:
-            gs.init(backend=gs.gpu)
+            gd_device = gs.gpu
         else:
-            gs.init(backend=gs.cpu)
+            gd_device = gs.cpu
+        gs.init(backend=gd_device,logging_level='warming' if not verbose else None)
         self.device = torch.device(device)
         self.verbose = verbose
         self.gripper_closed = False

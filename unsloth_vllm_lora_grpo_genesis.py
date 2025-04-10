@@ -27,7 +27,7 @@ PatchFastRL("GRPO", FastLanguageModel)
 model_name = 'Qwen/Qwen2.5-7B-Instruct'
 
 max_seq_length = 4096  # Can increase for longer reasoning traces
-lora_rank = 64  # Larger rank = smarter, but slower
+lora_rank = 128  # Larger rank = smarter, but slower
 
 model, tokenizer = FastLanguageModel.from_pretrained(
     model_name=model_name,
@@ -199,24 +199,24 @@ def xmlcount_reward_func(completions, **kwargs) -> list[float]:
 
 training_args = GRPOConfig(
     use_vllm=True,  # use vLLM for fast inference!
-    learning_rate=5e-6,
+    learning_rate=1e-5,
     adam_beta1=0.9,
     adam_beta2=0.99,
     weight_decay=0.1,
-    warmup_ratio=0.1,
+    warmup_ratio=0.05,
     lr_scheduler_type="cosine",
     optim="adamw_8bit",
     logging_steps=1,
     bf16=is_bfloat16_supported(),
     fp16=not is_bfloat16_supported(),
     per_device_train_batch_size=1,
-    gradient_accumulation_steps=4,  # Increase to 4 for smoother training
+    gradient_accumulation_steps=16,  # Increase to 4 for smoother training
     num_generations=6,  # Decrease if out of memory
     max_prompt_length=256,
     max_completion_length=4096,
     num_train_epochs=1,  # Set to 1 for a full training run
-    max_steps=150,
-    save_steps=50,
+    max_steps=10000,
+    save_steps=500,
     max_grad_norm=0.1,
     report_to="wandb",  # Can use Weights & Biases
     output_dir="outputs",
@@ -239,7 +239,7 @@ trainer = GRPOTrainer(
     model=model,
     processing_class=tokenizer,
     reward_funcs=[
-        xmlcount_reward_func,
+        #xmlcount_reward_func,
         soft_format_reward_func,
         strict_format_reward_func,
         genesis_reward_func,
