@@ -215,7 +215,7 @@ training_args = GRPOConfig(
     max_prompt_length=256,
     max_completion_length=4096,
     num_train_epochs=1,  # Set to 1 for a full training run
-    max_steps=300,
+    max_steps=150,
     save_steps=50,
     max_grad_norm=0.1,
     report_to="wandb",  # Can use Weights & Biases
@@ -279,7 +279,7 @@ output = (
 
 # And now with the LoRA we just trained with GRPO - we first save the LoRA first!
 
-model.save_lora("grpo_saved_lora")
+model.save_lora("grpo_saved_lora_2")
 
 # Now we load the LoRA and test:
 
@@ -302,7 +302,7 @@ output = (
     model.fast_generate(
         text,
         sampling_params=sampling_params,
-        lora_request=model.load_lora("grpo_saved_lora"),
+        lora_request=model.load_lora("grpo_saved_lora_2"),
     )[0]
     .outputs[0]
     .text
