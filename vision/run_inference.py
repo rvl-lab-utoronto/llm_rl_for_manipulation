@@ -1,3 +1,4 @@
+# This code is adapted from the authors of Grounded SAM 2 and their file: grounded_sam2_hf_model_demo
 import sys
 
 PATH_TO_GROUNDED_SAM_2 = "./Grounded_SAM_2"
@@ -25,7 +26,7 @@ Hyper parameters
 parser = argparse.ArgumentParser()
 parser.add_argument('--grounding-model', default="IDEA-Research/grounding-dino-tiny")
 parser.add_argument("--text-prompt", default="car. tire.")
-parser.add_argument("--img-path", default=f"./test1.jpg")
+parser.add_argument("--img-path", default=f"./real.jpg")
 parser.add_argument("--sam2-checkpoint", default=f"{PATH_TO_GROUNDED_SAM_2}/checkpoints/sam2.1_hiera_large.pt")
 parser.add_argument("--sam2-model-config", default=f"configs/sam2.1/sam2.1_hiera_l.yaml")
 parser.add_argument("--output-dir", default=f"outputs/test_sam2.1")
@@ -34,7 +35,7 @@ parser.add_argument("--force-cpu", action="store_true")
 args = parser.parse_args()
 
 GROUNDING_MODEL = args.grounding_model
-TEXT_PROMPT = "red cube. yellow cube. green cube. blue cube." #args.text_prompt
+TEXT_PROMPT = "red plate. blue plate. pink cup. blue cup." #args.text_prompt
 IMG_PATH = args.img_path
 SAM2_CHECKPOINT = args.sam2_checkpoint
 SAM2_MODEL_CONFIG = args.sam2_model_config
@@ -88,6 +89,8 @@ results = processor.post_process_grounded_object_detection(
     target_sizes=[image.size[::-1]]
 )
 
+print(results)
+
 """
 Results is a list of dict with the following structure:
 [
@@ -104,7 +107,7 @@ Results is a list of dict with the following structure:
 
 # get the box prompt for SAM 2
 input_boxes = results[0]["boxes"].cpu().numpy()
-
+#input_boxes = input_boxes[[0,1,2,4]]
 masks, scores, logits = sam2_predictor.predict(
     point_coords=None,
     point_labels=None,
@@ -121,14 +124,15 @@ if masks.ndim == 4:
     masks = masks.squeeze(1)
 
 
-confidences = results[0]["scores"].cpu().numpy().tolist()
-class_names = results[0]["labels"]
+confidences = results[0]["scores"].cpu().numpy() #[[0,1,2,4]].tolist()
+class_names = np.array(results[0]["labels"]) #[[0,1,2,4]]
 class_ids = np.array(list(range(len(class_names))))
 
 labels = [
     f"{class_name} {confidence:.2f}"
     for class_name, confidence
     in zip(class_names, confidences)
+    #if len(class_name.split(' ')) < 3
 ]
 
 """
@@ -140,19 +144,24 @@ detections = sv.Detections(
     mask=masks.astype(bool),  # (n, h, w)
     class_id=class_ids
 )
+print(detections)
 
 """
 Note that if you want to use default color map,
 you can set color=ColorPalette.DEFAULT
 """
-box_annotator = sv.BoxAnnotator(color=ColorPalette.from_hex(CUSTOM_COLOR_MAP))
+print(CUSTOM_COLOR_MAP)
+#pallete = ['444']
+pallete = ['#2a41a3', '#a83232', '#c75a5a', '#5f91c9']
+#pallete = ['#e6194b', '#ffe119', '#0082c8', '#3cb44b', '#f58231', '#911eb4', '#46f0f0', '#f032e6', '#d2f53c', '#fabebe', '#008080', '#e6beff', '#aa6e28', '#fffac8', '#800000', '#aaffc3']
+box_annotator = sv.BoxAnnotator(color=ColorPalette.from_hex(pallete))
 annotated_frame = box_annotator.annotate(scene=img.copy(), detections=detections)
 
-label_annotator = sv.LabelAnnotator(color=ColorPalette.from_hex(CUSTOM_COLOR_MAP))
+label_annotator = sv.LabelAnnotator(color=ColorPalette.from_hex(pallete))
 annotated_frame = label_annotator.annotate(scene=annotated_frame, detections=detections, labels=labels)
 cv2.imwrite(os.path.join(OUTPUT_DIR, "groundingdino_annotated_image.jpg"), annotated_frame)
 
-mask_annotator = sv.MaskAnnotator(color=ColorPalette.from_hex(CUSTOM_COLOR_MAP))
+mask_annotator = sv.MaskAnnotator(color=ColorPalette.from_hex(pallete))
 annotated_frame = mask_annotator.annotate(scene=annotated_frame, detections=detections)
 cv2.imwrite(os.path.join(OUTPUT_DIR, "grounded_sam2_annotated_image_with_mask.jpg"), annotated_frame)
 
