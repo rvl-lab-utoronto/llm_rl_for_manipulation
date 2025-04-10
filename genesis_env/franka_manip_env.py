@@ -334,7 +334,7 @@ class FrankaManipEnv:
         
         return (reward/cubes_needed_moving) * self.reward_scale
 
-    def reset(self,goal_location):
+    def reset(self, goal_location, task_idx_str=""):
         """
         Goal location should be a dictionary
         """
@@ -379,7 +379,7 @@ class FrankaManipEnv:
         self.gripper_open()
         if self.render_video:
             if self.goal_initialized:
-                self.cam.stop_recording(save_to_filename='video' + str(time.time()) + '.mp4', fps=60)
+                self.cam.stop_recording(save_to_filename='video' + '_' + str(task_idx_str) + '_' + str(time.time()) + '.mp4', fps=60)
             self.cam.start_recording()
         
 
