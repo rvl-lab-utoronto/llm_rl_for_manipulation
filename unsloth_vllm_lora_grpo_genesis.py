@@ -35,7 +35,7 @@ model, tokenizer = FastLanguageModel.from_pretrained(
     load_in_4bit=True,  # False for LoRA 16bit
     fast_inference=True,  # Enable vLLM fast inference
     max_lora_rank=lora_rank,
-    gpu_memory_utilization=0.9,  # Reduce if out of memory
+    gpu_memory_utilization=0.85,  # Reduce if out of memory
 )
 
 model = FastLanguageModel.get_peft_model(
@@ -210,8 +210,8 @@ training_args = GRPOConfig(
     bf16=is_bfloat16_supported(),
     fp16=not is_bfloat16_supported(),
     per_device_train_batch_size=1,
-    gradient_accumulation_steps=1,  # Increase to 4 for smoother training
-    num_generations=6,  # Decrease if out of memory
+    gradient_accumulation_steps=2,  # Increase to 4 for smoother training
+    num_generations=4,  # Decrease if out of memory
     max_prompt_length=256,
     max_completion_length=4096,
     num_train_epochs=1,  # Set to 1 for a full training run
