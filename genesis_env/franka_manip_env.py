@@ -67,9 +67,12 @@ class FrankaManipEnv:
         fingers_dof = np.arange(7, 9)
         box_size = 0.04
         
+
+        #red_surface = gs.surfaces.Default(color=(0.8, 0.2, 0.2, 1.0))
+        base_box = gs.morphs.Box(size=(box_size, box_size, box_size),pos=(0.25,0.25,0.02))
         # adds 4 cubes of different colours at arbitrary positions
-        self.red_cube = self.scene.add_entity(gs.morphs.Box(size=(box_size, box_size, box_size),pos=(0.25,0.25,0.02),),
-                                          surface=gs.surfaces.Default(color=(0.8, 0.2, 0.2, 1.0)))
+        self.red_cube = self.scene.add_entity(base_box)
+                                          #surface=red_surface)
         
         self.blue_cube = self.scene.add_entity(gs.morphs.Box(size=(box_size, box_size, box_size),pos=(-0.25,0.25,0.02),),
                                           surface=gs.surfaces.Default(color=(0.2,0.2,0.8, 1.0)))
