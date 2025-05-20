@@ -67,7 +67,7 @@ class FrankaManipEnv:
         fingers_dof = np.arange(7, 9)
         box_size = 0.04
         
-        # adds 4 cubes of different colours
+        # adds 4 cubes of different colours at arbitrary positions
         self.red_cube = self.scene.add_entity(gs.morphs.Box(size=(box_size, box_size, box_size),pos=(0.25,0.25,0.02),),
                                           surface=gs.surfaces.Default(color=(0.8, 0.2, 0.2, 1.0)))
         
@@ -96,24 +96,6 @@ class FrankaManipEnv:
         finger_multiplier = 1.0  # For the gripper
 
         # Base PD gains
-        # base_kp = np.array([2500, 2500, 2600, 3000, 2000, 2000, 2000, 100, 100])*0.5
-        # base_kv = np.array([450, 450, 350, 350, 200, 200, 200, 10, 10])
-
-        # # Apply different multipliers to different joint groups
-        # kp_values = np.array([
-        #     *list(base_kp[:4] * base_multiplier),
-        #     *list(base_kp[4:7] * wrist_multiplier),
-        #     *list(base_kp[7:] * finger_multiplier)
-        # ])
-
-        # kv_values = np.array([
-        #     *list(base_kv[:4] * base_multiplier),
-        #     *list(base_kv[4:7] * wrist_multiplier),
-        #     *list(base_kv[7:] * finger_multiplier)
-        # ])
-
-        # self.franka.set_dofs_kp(kp_values)
-        # self.franka.set_dofs_kv(kv_values)
 
         self.franka.set_dofs_kp(
             np.array([4500, 4500, 3500, 3500, 2000, 2000, 2000, 100, 100])*0.5,
@@ -308,57 +290,35 @@ class FrankaManipEnv:
         times the env. reward
         scaling parameter
         """
-        reward = 0
-        #print(self.red_cube.get_pos().cpu().numpy())
-        #print(np.array(self.red_cube_goal))
-        default_red = np.array([0.25,0.25,0.02])
-        default_blue = np.array([-0.25,0.25,0.02])
-        default_yellow = np.array([0.25,0.5,0.02])
-        default_green = np.array([-0.25,0.5,0.02])
-        cubes_needed_moving = 0
-        if np.linalg.norm(default_red - self.red_cube_goal) > self.completion_tolerance:
-            cubes_needed_moving += 1
-            if np.linalg.norm(self.red_cube.get_pos().cpu().numpy() - self.red_cube_goal) < self.completion_tolerance:
-                reward += 1
-        if np.linalg.norm(default_blue - self.blue_cube_goal) > self.completion_tolerance:
-            cubes_needed_moving += 1
-            if np.linalg.norm(self.blue_cube.get_pos().cpu().numpy() - self.blue_cube_goal) < self.completion_tolerance:
-                reward += 1
-        if np.linalg.norm(default_yellow - self.yellow_cube_goal) > self.completion_tolerance:
-            cubes_needed_moving += 1
-            if np.linalg.norm(self.yellow_cube.get_pos().cpu().numpy() - self.yellow_cube_goal) < self.completion_tolerance:
-                reward += 1
-        if np.linalg.norm(default_green - self.green_cube_goal) > self.completion_tolerance:
-            cubes_needed_moving += 1
-            if np.linalg.norm(self.green_cube.get_pos().cpu().numpy() - self.green_cube_goal) < self.completion_tolerance:
-                reward += 1
+        completed = True
+        
+        if not np.linalg.norm(self.red_cube.get_pos().cpu().numpy() - self.red_cube_goal) < self.completion_tolerance:
+            completed = False
+        
+        if np.linalg.norm(self.blue_cube.get_pos().cpu().numpy() - self.blue_cube_goal) < self.completion_tolerance:
+            completed = False
+        
+        if np.linalg.norm(self.yellow_cube.get_pos().cpu().numpy() - self.yellow_cube_goal) < self.completion_tolerance:
+            completed = False
+        
+        if np.linalg.norm(self.green_cube.get_pos().cpu().numpy() - self.green_cube_goal) < self.completion_tolerance:
+            completed = False
 
         
-        return (reward/cubes_needed_moving) * self.reward_scale
+        if completed: 
+            return 1 * self.reward_scale
+        else: 
+            return 0
 
-    def reset(self, goal_location, task_idx_str=""):
+    def reset(self, task_dictionary, task_idx_str=""):
         """
-        Goal location should be a dictionary
+       Task dictionary should be a dictionary with
+       goals and starts of all cubes
         """
+
+        # Resets scene information
         self.scene.reset()
         self.steps = 0
-        # self.franka.set_dofs_position(
-        #     self.start_dof_position,
-        #     self.dofs_idx
-        # )
-        # resets end effectuator to same place
-        end_effector = self.franka.get_link('hand')
-        target_eef_pos = np.array([0,0.25,0.5])
-
-        # Previously, we used an ik solver to reset joint positions
-        # now we harcode the reset position
-        # qpos, error = self.franka.inverse_kinematics(
-        #         link=end_effector,
-        #         pos=target_eef_pos,
-        #         quat=np.array([0, 1, 0, 0]),
-        #         return_error=True,
-        #     )
-        # print("joint_positons", qpos)
 
         # Reset joints to the following positions:
         qpos = np.array([ 1.1125, -1.0921,  0.3125, -2.6978,  0.2768,  1.6241,  2.0305,  0.0087, 0.0249])
@@ -379,16 +339,35 @@ class FrankaManipEnv:
         for i in range(100):
             self.step_genesis_env()
         self.gripper_open()
+
+        # gets start positions of the cubes
+        global_cube_quat = np.array([0, 1, 0, 0])
+        self.blue_cube_start = task_dictionary['blue_cube_start']
+        self.red_cube_start = task_dictionary['red_cube_start']
+        self.green_cube_start = task_dictionary['green_cube_start']
+        self.yellow_cube_start = task_dictionary['yellow_cube_start']
+
+        # sets each to start
+        self.blue_cube.set_pos(self.blue_cube_start)
+        self.red_cube.set_pos(self.red_cube_start)
+        self.green_cube.set_pos(self.green_cube_start)
+        self.yellow_cube.set_pos(self.yellow_cube_start)
+        self.blue_cube.set_quat(global_cube_quat)
+        self.red_cube.set_quat(global_cube_quat)
+        self.green_cube.set_quat(global_cube_quat)
+        self.yellow_cube.set_quat(global_cube_quat)
+
+        # video rendering start
         if self.render_video:
             if self.goal_initialized:
                 self.cam.stop_recording(save_to_filename='video' + '_' + str(task_idx_str) + '_' + str(time.time()) + '.mp4', fps=60)
             self.cam.start_recording()
         
-
-        self.blue_cube_goal = goal_location['blue_cube_goal']
-        self.red_cube_goal = goal_location['red_cube_goal']
-        self.green_cube_goal = goal_location['green_cube_goal']
-        self.yellow_cube_goal = goal_location['yellow_cube_goal']
+        # sets each cube's goal position
+        self.blue_cube_goal = task_dictionary['blue_cube_goal']
+        self.red_cube_goal = task_dictionary['red_cube_goal']
+        self.green_cube_goal = task_dictionary['green_cube_goal']
+        self.yellow_cube_goal = task_dictionary['yellow_cube_goal']
 
         self.goal_initialized = True
         return self.get_observation(), {}
@@ -396,8 +375,19 @@ class FrankaManipEnv:
     
 
     def get_observation(self):
-        # TODO implement. Or not? I shouldn't actually have to implement this 
-        pass
+        # Note - this should get run AFTER a reset (obviously)
+        return_str = '' 
+        return_str += '*** Observation *** \n'
+        return_str +=  'Here is the initial position of each block and the end effector: \n'
+        return_str += 'Red Cube: ' + self.red_cube.get_pos().cpu().numpy()[0:2] + '\n'
+        return_str += 'Green Cube: ' + self.green_cube.get_pos().cpu().numpy()[0:2] + '\n'
+        return_str += 'Blue Cube: ' + self.blue_cube.get_pos().cpu().numpy()[0:2] + '\n'
+        return_str += 'Yellow Cube: ' + self.yellow_cube.get_pos().cpu().numpy()[0:2] + '\n'
+        end_effector = self.franka.get_link('hand')
+        eef_pos = end_effector.get_pos().cpu().numpy()
+        return_str += 'End Effector: ' + eef_pos[0:2] + '\n'
+        return_str += 'Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom.'
+        return return_str
     def close(self):
         pass
 

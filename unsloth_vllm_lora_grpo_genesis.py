@@ -91,13 +91,25 @@ def get_manipulation_questions(path = 'data/manipulation_tasks_easy.xlsx'):
     xls = ExcelFile(path)
     df = xls.parse(xls.sheet_names[0])
     questions = df['Text Question'].to_list()
+    # gets starts
+    rcs = df['red_cube_start'].to_list()
+    bcs = df['blue_cube_start'].to_list()
+    ycs = df['yellow_cube_start'].to_list()
+    gcs = df['green_cube_start'].to_list()
+    # gets goals
     rcg = df['red_cube_goal'].to_list()
     bcg = df['blue_cube_goal'].to_list()
     ycg = df['yellow_cube_goal'].to_list()
     gcg = df['green_cube_goal'].to_list()
     answers = []
     for i in range(len(rcg)):
-        answers.append({'red_cube_goal':eval(rcg[i]),
+        answers.append({ # starts
+                        'red_cube_start':eval(rcs[i]),
+                        'blue_cube_start':eval(bcs[i]),
+                        'yellow_cube_start':eval(ycs[i]),
+                        'green_cubestart':eval(gcs[i]),
+                        # goals
+                        'red_cube_goal':eval(rcg[i]),
                         'blue_cube_goal':eval(bcg[i]),
                         'yellow_cube_goal':eval(ycg[i]),
                         'green_cube_goal':eval(gcg[i])})
@@ -141,7 +153,7 @@ def genesis_reward_func(prompts, completions, answer, **kwargs) -> list[float]:
     """
     rewards = []
     for prompt,completion,goal in zip(prompts,completions,answer):
-        env.reset(goal_location=goal)
+        env.reset(task_dictionary=goal)
         llm_plan = find_between(completion[0]["content"],'<answer>','</answer>')
         #print(llm_plan)
         reward = env.execute_llm_plan(llm_plan)
