@@ -91,6 +91,7 @@ def get_manipulation_questions(path = 'data/manipulation_tasks_easy.xlsx'):
     xls = ExcelFile(path)
     df = xls.parse(xls.sheet_names[0])
     questions = df['Text Question'].to_list()
+    observations = df['observations'].to_list()
     # gets starts
     rcs = df['red_cube_start'].to_list()
     bcs = df['blue_cube_start'].to_list()
@@ -113,13 +114,16 @@ def get_manipulation_questions(path = 'data/manipulation_tasks_easy.xlsx'):
                         'blue_cube_goal':eval(bcg[i]),
                         'yellow_cube_goal':eval(ycg[i]),
                         'green_cube_goal':eval(gcg[i])})
-    data = Dataset.from_dict({'question':questions,'answer':answers})
+    data = Dataset.from_dict({'question':questions,
+                              'answer':answers,
+                              'observations': observations
+                              })
 
     # does some other fucky thing idk
     data = data.map(
         lambda x: {  # type: ignore
             "prompt": [
-                {"role": "system", "content": SYSTEM_PROMPT},
+                {"role": "system", "content": SYSTEM_PROMPT + x['observations']},
                 {"role": "user", "content": x["question"]},
             ],
             "answer":(x["answer"]),

@@ -1,9 +1,9 @@
 import numpy as np
 import genesis as gs
 import os
-os.environ['PYOPENGL_PLATFORM'] = 'osmesa'
+#os.environ['PYOPENGL_PLATFORM'] = 'osmesa'
 ########################## init ##########################
-gs.init(backend=gs.cpu)
+gs.init(backend=gs.gpu)
 
 ########################## create a scene ##########################
 scene = gs.Scene(
@@ -52,3 +52,5 @@ franka.set_dofs_force_range(
     np.array([-87, -87, -87, -87, -12, -12, -12, -100, -100]),
     np.array([ 87,  87,  87,  87,  12,  12,  12,  100,  100]),
 )
+for i in range(1000):
+    scene.step()
