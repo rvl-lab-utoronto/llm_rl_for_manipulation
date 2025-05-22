@@ -97,10 +97,10 @@ def gen_locations(grid):
     locations = np.random.choice(np.arange(grid_locations.shape[0]), size=4, replace=False)
     
     starting_location_dict = {
-        'red_cube_start' : (*grid_locations[locations[0]], 0.02),
-        'blue_cube_start' : (*grid_locations[locations[1]], 0.02),
-        'yellow_cube_start' : (*grid_locations[locations[2]], 0.02),
-        'green_cube_start' : (*grid_locations[locations[3]], 0.02)
+        'red_cube_start' : (*np.round(grid_locations[locations[0]],2), 0.02),
+        'blue_cube_start' : (*np.round(grid_locations[locations[1]],2), 0.02),
+        'yellow_cube_start' : (*np.round(grid_locations[locations[2]],2), 0.02),
+        'green_cube_start' : (*np.round(grid_locations[locations[3]],2), 0.02)
     }
     
     
@@ -244,7 +244,7 @@ def create_task(template_filename):
     for j in range(len(COLOURS)):
         
         if j ==block_for_task:
-            new_dict[f"{COLOURS[block_for_task]}_cube_goal"] = (*goal_location, 0.02)
+            new_dict[f"{COLOURS[block_for_task]}_cube_goal"] = (*np.round(goal_location, 2), 0.02)
         else:
             new_dict[f"{COLOURS[j]}_cube_goal"] = new_dict[f"{COLOURS[j]}_cube_start"]
     return new_dict
