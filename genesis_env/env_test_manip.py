@@ -12,7 +12,7 @@ red_dict = {
             'red_cube_goal':[0,0.375,0.02],
              'blue_cube_goal':[-.25,.25,0.02],
              'yellow_cube_goal':[.25,.5,0.02],
-             'green_cube_goal':[0,.5,0.02]}
+             'green_cube_goal':[-0.25,0.5,0.02]}
 
 green_dict = {
             'red_cube_start':[0.25,0.25,0.02],
