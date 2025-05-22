@@ -69,10 +69,10 @@ class FrankaManipEnv:
         
 
         #red_surface = gs.surfaces.Default(color=(0.8, 0.2, 0.2, 1.0))
-        base_box = gs.morphs.Box(size=(box_size, box_size, box_size),pos=(0.25,0.25,0.02))
+        #base_box = gs.morphs.Box(size=(box_size, box_size, box_size),pos=(0.25,0.25,0.02))
         # adds 4 cubes of different colours at arbitrary positions
-        self.red_cube = self.scene.add_entity(base_box)
-                                          #surface=red_surface)
+        self.red_cube = self.scene.add_entity(gs.morphs.Box(size=(box_size, box_size, box_size),pos=(0.25,0.25,0.02),),
+                                          surface=gs.surfaces.Default(color=(0.8, 0.2, 0.2, 1.0)))
         
         self.blue_cube = self.scene.add_entity(gs.morphs.Box(size=(box_size, box_size, box_size),pos=(-0.25,0.25,0.02),),
                                           surface=gs.surfaces.Default(color=(0.2,0.2,0.8, 1.0)))
@@ -298,13 +298,13 @@ class FrankaManipEnv:
         if not np.linalg.norm(self.red_cube.get_pos().cpu().numpy() - self.red_cube_goal) < self.completion_tolerance:
             completed = False
         
-        if np.linalg.norm(self.blue_cube.get_pos().cpu().numpy() - self.blue_cube_goal) < self.completion_tolerance:
+        if not np.linalg.norm(self.blue_cube.get_pos().cpu().numpy() - self.blue_cube_goal) < self.completion_tolerance:
             completed = False
         
-        if np.linalg.norm(self.yellow_cube.get_pos().cpu().numpy() - self.yellow_cube_goal) < self.completion_tolerance:
+        if not np.linalg.norm(self.yellow_cube.get_pos().cpu().numpy() - self.yellow_cube_goal) < self.completion_tolerance:
             completed = False
         
-        if np.linalg.norm(self.green_cube.get_pos().cpu().numpy() - self.green_cube_goal) < self.completion_tolerance:
+        if not np.linalg.norm(self.green_cube.get_pos().cpu().numpy() - self.green_cube_goal) < self.completion_tolerance:
             completed = False
 
         
@@ -382,13 +382,13 @@ class FrankaManipEnv:
         return_str = '' 
         return_str += '*** Observation *** \n'
         return_str +=  'Here is the initial position of each block and the end effector: \n'
-        return_str += 'Red Cube: ' + self.red_cube.get_pos().cpu().numpy()[0:2] + '\n'
-        return_str += 'Green Cube: ' + self.green_cube.get_pos().cpu().numpy()[0:2] + '\n'
-        return_str += 'Blue Cube: ' + self.blue_cube.get_pos().cpu().numpy()[0:2] + '\n'
-        return_str += 'Yellow Cube: ' + self.yellow_cube.get_pos().cpu().numpy()[0:2] + '\n'
+        return_str += 'Red Cube: ' + str(self.red_cube.get_pos().cpu().numpy()[0:2]) + '\n'
+        return_str += 'Green Cube: ' + str(self.green_cube.get_pos().cpu().numpy()[0:2]) + '\n'
+        return_str += 'Blue Cube: ' + str(self.blue_cube.get_pos().cpu().numpy()[0:2]) + '\n'
+        return_str += 'Yellow Cube: ' + str(self.yellow_cube.get_pos().cpu().numpy()[0:2]) + '\n'
         end_effector = self.franka.get_link('hand')
         eef_pos = end_effector.get_pos().cpu().numpy()
-        return_str += 'End Effector: ' + eef_pos[0:2] + '\n'
+        return_str += 'End Effector: ' + str(np.round(eef_pos[0:2],3)) + '\n'
         return_str += 'Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom.'
         return return_str
     def close(self):
