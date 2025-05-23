@@ -16,6 +16,7 @@ from datasets import Dataset, load_dataset
 from trl import GRPOConfig, GRPOTrainer
 from vllm import SamplingParams
 from pandas import *
+import pandas as pd
 from genesis_env import FrankaManipEnv
 
 
@@ -88,8 +89,9 @@ def extract_xml_answer(text: str) -> str:
 # uncomment middle messages for 1-shot prompting
 def get_manipulation_questions(path = 'data/task_dataset.xlsx'):
     # makes the initial Dataset
-    xls = ExcelFile(path)
-    df = xls.parse(xls.sheet_names[0])
+    #xls = ExcelFile(path)
+    #df = xls.parse(xls.sheet_names[0])
+    df = pd.read_csv(path)
     questions = df['Text Question'].to_list()
     observations = df['observations'].to_list()
     # gets starts
