@@ -1,6 +1,6 @@
 {   "location_grid": {
         "x": [-0.3, 0.3],
-        "y": [0.1, 0.5],
+        "y": [0.25, 0.55],
         "step": 0.1
     },
     "description_p": {
@@ -18,24 +18,22 @@
       "scarlet",
       "ruby",
       "used to signal 'hot'",
-      "blood-colored",
+      "blood-coloured",
       "associated with war",
       "like a fireball",
-      "love-colored",
+      "love-coloured",
       "like a rose",
       "screams danger",
       "matches stop signs",
-      "the color of Mars"
+      "the colour of Mars"
     ],
     "yellow": [
       "gold",
       "lemon",
       "mustard",
       "like the sun",
-      "butter-colored",
-      "like a cowards belly",
-      "associated with brightness",
-      "banana-colored",
+      "butter-coloured",
+      "banana-coloured",
       "sunflower-hued",
       "the color of warning signs"
     ],
@@ -44,9 +42,7 @@
       "jade",
       "lime",
       "mint",
-      "the nature-colored ball",
-      "frog-colored",
-      "the colour of envy",
+      "frog-coloured",
       "the eco-friendly one",
       "the color of money",
       "the colour that signifies 'go'"
@@ -56,11 +52,11 @@
       "cobalt",
       "sapphire",
       "ocean ball",
-      "sky-colored",
+      "sky-coloured",
       "the colour of the US democratic party",
       "the sad one",
       "the royal one",
-      "iceberg-colored",
-      "the police-colored one"
+      "iceberg-coloured",
+      "the police-coloured one"
     ]
   }
