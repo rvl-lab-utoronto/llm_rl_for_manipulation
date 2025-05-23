@@ -87,7 +87,7 @@ def extract_xml_answer(text: str) -> str:
 
 
 # uncomment middle messages for 1-shot prompting
-def get_manipulation_questions(path = 'data/task_dataset.xlsx'):
+def get_manipulation_questions(path = 'data/task_dataset.csv'):
     # makes the initial Dataset
     #xls = ExcelFile(path)
     #df = xls.parse(xls.sheet_names[0])
@@ -232,7 +232,7 @@ training_args = GRPOConfig(
     max_prompt_length=256,
     max_completion_length=4096,
     num_train_epochs=1,  # Set to 1 for a full training run
-    max_steps=10000,
+    max_steps=25000,
     save_steps=500,
     max_grad_norm=0.1,
     report_to="wandb",  # Can use Weights & Biases
