@@ -110,7 +110,7 @@ def get_manipulation_questions(path = 'data/task_dataset.csv'):
                         'red_cube_start':eval(rcs[i]),
                         'blue_cube_start':eval(bcs[i]),
                         'yellow_cube_start':eval(ycs[i]),
-                        'green_cubestart':eval(gcs[i]),
+                        'green_cube_start':eval(gcs[i]),
                         # goals
                         'red_cube_goal':eval(rcg[i]),
                         'blue_cube_goal':eval(bcg[i]),
