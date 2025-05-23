@@ -93,7 +93,7 @@ def get_manipulation_questions(path = 'data/task_dataset.csv'):
     #df = xls.parse(xls.sheet_names[0])
     df = pd.read_csv(path)
     questions = df['Text Question'].to_list()
-    observations = df['observations'].to_list()
+    observations = df['observation'].to_list()
     # gets starts
     rcs = df['red_cube_start'].to_list()
     bcs = df['blue_cube_start'].to_list()
