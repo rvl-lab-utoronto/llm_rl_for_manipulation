@@ -137,7 +137,7 @@ def create_task(template_filename):
         
         new_loc = np.random.choice(leftover_locs.shape[0])
         
-        goal_location = leftover_locs[new_loc]
+        goal_location = np.round(leftover_locs[new_loc], 2)
         
         
     elif cat == 1:
@@ -153,7 +153,7 @@ def create_task(template_filename):
         while np.isin(relative_block_loc + rel_pos, locations).any():
             rel_pos = np.random.randint(-4, 4, size=(2,))
         
-        goal_location = relative_block_loc + rel_pos
+        goal_location = np.round(relative_block_loc + rel_pos, 2)
         
         
     elif cat == 2:
@@ -178,10 +178,10 @@ def create_task(template_filename):
         if tries >= 500:
             new_loc = np.random.choice(leftover_locs.shape[0])
         
-            goal_location = leftover_locs[new_loc]
+            goal_location = np.round(leftover_locs[new_loc], 2)
             cat == 0
         else:
-            goal_location = (middle_block_locs[0] + middle_block_locs[1])/2
+            goal_location =np.round((middle_block_locs[0] + middle_block_locs[1])/2, 2)
     
     else:
         raise ValueError("Invalid task type")
