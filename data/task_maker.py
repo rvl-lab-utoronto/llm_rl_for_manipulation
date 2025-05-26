@@ -148,12 +148,12 @@ def create_task(template_filename):
         
         relative_block_loc = locations[relative_to_block]
         
-        rel_pos = np.random.randint(-4, 4, size=(2,))
+        new_loc = np.random.choice(leftover_locs.shape[0])
+        new_loc = np.round(leftover_locs[new_loc], 2)
+        rel_pos = np.round(new_loc - relative_block_loc, 2)
         
-        while np.isin(relative_block_loc + rel_pos, locations).any():
-            rel_pos = np.random.randint(-4, 4, size=(2,))
         
-        goal_location = np.round(relative_block_loc + rel_pos, 2)
+        goal_location = np.round(new_loc, 2)
         
         
     elif cat == 2:
