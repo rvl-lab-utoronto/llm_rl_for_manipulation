@@ -59,7 +59,7 @@ def get_location_description(block_for_task, locations):
     lowest = np.min(locations[:, 1])
     
     
-    other_locs =  np.concatenate((locations[:block_for_task], locations[block_for_task+1:]), axis=0)
+    other_locs =  np.round(np.concatenate((locations[:block_for_task], locations[block_for_task+1:]), axis=0), 2)
     
     if x == leftmost and x < np.min(other_locs[:,0]):
         target_description = f"leftmost"
@@ -77,8 +77,8 @@ def get_location_description(block_for_task, locations):
         
         other_block = np.random.choice([i for i in range(4) if i != block_for_task])
         
-        relative_x = x - locations[other_block][0]
-        relative_y = y - locations[other_block][1]
+        relative_x = np.round(x - locations[other_block][0], 2)
+        relative_y = np.round(y - locations[other_block][1], 2)
         
         relative_name = COLOURS[other_block]
         
