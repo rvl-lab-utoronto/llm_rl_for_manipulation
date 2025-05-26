@@ -28,7 +28,7 @@ PatchFastRL("GRPO", FastLanguageModel)
 model_name = 'Qwen/Qwen2.5-7B-Instruct'
 
 max_seq_length = 4096  # Can increase for longer reasoning traces
-lora_rank = 128  # Larger rank = smarter, but slower
+lora_rank = 64  # Larger rank = smarter, but slower
 
 model, tokenizer = FastLanguageModel.from_pretrained(
     model_name=model_name,
@@ -228,11 +228,11 @@ training_args = GRPOConfig(
     fp16=not is_bfloat16_supported(),
     per_device_train_batch_size=1,
     gradient_accumulation_steps=1,  # Increase to 4 for smoother training
-    num_generations=8,  # Decrease if out of memory
+    num_generations=16,  # Decrease if out of memory
     max_prompt_length=256,
     max_completion_length=4096,
     num_train_epochs=1,  # Set to 1 for a full training run
-    max_steps=25000,
+    max_steps=10000,
     save_steps=500,
     max_grad_norm=0.1,
     report_to="wandb",  # Can use Weights & Biases
