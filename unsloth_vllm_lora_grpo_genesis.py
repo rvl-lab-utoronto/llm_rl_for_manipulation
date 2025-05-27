@@ -36,7 +36,7 @@ model, tokenizer = FastLanguageModel.from_pretrained(
     load_in_4bit=True,  # False for LoRA 16bit
     fast_inference=True,  # Enable vLLM fast inference
     max_lora_rank=lora_rank,
-    gpu_memory_utilization=0.85,  # Reduce if out of memory
+    gpu_memory_utilization=0.75,  # Reduce if out of memory
 )
 
 model = FastLanguageModel.get_peft_model(
