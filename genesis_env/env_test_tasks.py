@@ -30,19 +30,19 @@ for index, row in data.iterrows():
     num_tasks += 1
     for trial in range(NUM_TRIALS):
         # makes reset dictionary, resets environment
-        reset_dict = {'red_cube_start':row['red_cube_start'],
-                        'blue_cube_start': row['blue_cube_start'],
-                        'yellow_cube_start': row['yellow_cube_start'],
-                        'green_cube_start': row['green_cube_start'],
+        reset_dict = {'red_cube_start':eval(row['red_cube_start']),
+                        'blue_cube_start': eval(row['blue_cube_start']),
+                        'yellow_cube_start': eval(row['yellow_cube_start']),
+                        'green_cube_start': eval(row['green_cube_start']),
 
-                        'red_cube_goal':row['red_cube_goal'],
-                        'blue_cube_goal':row['blue_cube_goal'],
-                        'yellow_cube_goal':row['yellow_cube_goal'],
-                        'green_cube_goal':row['green_cube_goal']}
+                        'red_cube_goal':eval(row['red_cube_goal']),
+                        'blue_cube_goal':eval(row['blue_cube_goal']),
+                        'yellow_cube_goal':eval(row['yellow_cube_goal']),
+                        'green_cube_goal':eval(row['green_cube_goal'])}
         env.reset(task_dictionary=reset_dict)
 
         # gets colour of goal cube 
-        goal_block_idx = row['block_for_task']
+        goal_block_idx = int(row['block_for_task'])
         goal_block_colour = ''
         if goal_block_idx == 0:
             goal_block_colour = 'red'
@@ -53,8 +53,8 @@ for index, row in data.iterrows():
         elif goal_block_idx == 3:
             goal_block_colour = 'green'
         # assigns start and end locations based on that colour
-        goal_block_start = row[goal_block_colour + '_cube_start']
-        goal_block_end = row[goal_block_colour + '_cube_goal']
+        goal_block_start = eval(row[goal_block_colour + '_cube_start'])
+        goal_block_end = eval(row[goal_block_colour + '_cube_goal'])
 
         ### next section constructs the llm plan
         llm_plan = ''
