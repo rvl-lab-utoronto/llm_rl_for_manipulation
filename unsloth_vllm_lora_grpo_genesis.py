@@ -28,7 +28,7 @@ PatchFastRL("GRPO", FastLanguageModel)
 model_name = 'Qwen/Qwen2.5-7B-Instruct'
 
 max_seq_length = 4096  # Can increase for longer reasoning traces
-lora_rank = 32  # Larger rank = smarter, but slower
+lora_rank = 128  # Larger rank = smarter, but slower
 
 model, tokenizer = FastLanguageModel.from_pretrained(
     model_name=model_name,

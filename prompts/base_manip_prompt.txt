@@ -23,13 +23,3 @@ move_x(param): This moves the position of the end-effector by param cm from its 
 move_y(param): This moves the position of the end-effector by param cm from its current position in the y-axis. 
 pick_block(): This picks up the block currently under it if there is one.
 place_block(): This places the block the arm is currently holding under it, if there is one. 
-
-*** Observation ***
-Here is the initial position of each block and the end effector:
-Red Cube: 0.25,0.25
-Blue Cube: -0.25,0.25
-Yellow Cube: 0.25,0.5
-Green Cube: -0.25,0.5
-End Effector: 0, 0.25
-Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom. 
-
