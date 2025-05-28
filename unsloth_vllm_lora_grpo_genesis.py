@@ -67,7 +67,8 @@ model = FastLanguageModel.get_peft_model(
 env = FrankaManipEnv(render_video=False)
 
 # Load and prep dataset
-with open("prompts/base_manip_prompt.txt","r") as f:
+#with open("prompts/base_manip_prompt.txt","r") as f:
+with open("prompts/explicit_spatial_reasoning_example.txt","r") as f:
     SYSTEM_PROMPT = f.read()
 
 XML_COT_FORMAT = """\

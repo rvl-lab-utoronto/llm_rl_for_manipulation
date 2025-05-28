@@ -25,14 +25,23 @@ pick_block(): This picks up the block currently under it if there is one.
 place_block(): This places the block the arm is currently holding under it, if there is one. 
 
 *** Example ***
-Here is an example task, reasoning chain, and output plan. 
-Task: Move the block in the bottom-left to the middle of the red and yellow cubes.
-<reasoning>First, I need to determine which block is in the bottom-left. I can see from the observations that the blue cube is the furthest to the left and lowest down, which means it is in the bottom-left. Next, I need to determine where to put it. I can see that red and yellow cubes are at (0.25,0.25) and (0.25,0.5) respectively, which means I need to put the blue cube at the point at the middle between the cubes, which is at (0.25,0.375). Now, the first thing I need to do is navigate the end effector to the blue cube and pick it up. The end effector is currently at (0, 0.25) so to move it to the blue cube at (-0.25,0.25) I need to move it in the negative x direction with the move_x command. Hence, I should do move_x(-0.25). After that, the gripper is over the block so I should pick up the block with pick_block(). Next, I should move it to the new location at (0.25,0.375). The end effector is at (-0.25, 0.25), To move the end effector above where I want to place the cube, I must move positively in the x-direction and then positively in the y-direction. So first I can do move_x(0.5), then move_y(0.125). Then, the gripper will be at (0.25, 0.375) and when I place the block with place_block() and I will be done. I am ready to output the plan.</reasoning>
+Here is an example observation, task, reasoning chain, and output plan. 
+Observation: \nRed Cube: (0.3, 0.25)\nGreen Cube: (-0.15, 0.25)\nBlue Cube: (-0.15, 0.55)\nYellow Cube: (-0.3, 0.25)\nEnd Effector: (0, 0.25)\nNote - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom.
+Task: 'Take the block that is coloured crimson and place it 0.15 horizontally and 0.15 vertically relative to the block that is (0.0, -0.3) from the block the colour of the ocean.'
+<reasoning> First, I need to identify which blocks the task is refering to. Crimson is a synonym for red, and the colour of the ocean is blue, so I know the task is asking me to pick the red block and place it somewhere relative to the blue block.  The next thing I should do is identify where I want to place the red block. I know the final location is 0.15 horizonally and 0.15 vertically from the block (0.0,-0.3) relative to the position of the blue block. The blue block is located at (-0.15, 0.55), so the block it is referring to must be at (-0.15,0.25). The goal location is 0.15 horizonally and 0.15 vertically from this block, so it must be at (0.0, 0.4). This is my final goal location.  I am almost ready to construct the plan. I should first move the end effector to the red block, then pick the block, then move to (0.0,0.4), and finally place it. The end effector starts at (0,0.25), so to move it to the red block at (0.3,0.25) I need to move 0.3 in the x axis. Then, to move it to the goal location at (0.0,0.4), I should move it -0.3 in the x axis, and 0.15 in the y-axis. I am ready to give the plan.  </reasoning>
 <answer>
-move_x(-0.25)
+move_x(0.3)
 pick_block()
-move_x(0.5)
-move_y(0.125)
+move_x(-0.3)
+move_y(0.15)
 place_block()
 </answer>
+
+*** Mathematics Primer*** 
+Here is a gentle reminder about basic arithmatic. Recall that
+0.2 + 0.1 = 0.3
+0.3 - 0.25 = 0.05
+0.25 + 0.25 = 0.5
+0.4 - 0.15 = 0.25
+0.5 + 0.125 = 0.625
 

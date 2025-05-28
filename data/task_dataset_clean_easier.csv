@@ -1,0 +1,2009 @@
+,Unnamed: 0,red_cube_start,blue_cube_start,yellow_cube_start,green_cube_start,Text Question,block_for_task,cat,other_blocks,red_cube_goal,blue_cube_goal,yellow_cube_goal,green_cube_goal,observation
+1,1,"(0.15, 0.4, 0.02)","(-0.3, 0.55, 0.02)","(0.3, 0.55, 0.02)","(0.0, 0.25, 0.02)",Take the block that is coloured associated with war and place it at [-0.15  0.55],0,0,,"(-0.15, 0.55, 0.02)","(-0.3, 0.55, 0.02)","(0.3, 0.55, 0.02)","(0.0, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.4)
+Green Cube: (0.0, 0.25)
+Blue Cube: (-0.3, 0.55)
+Yellow Cube: (0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+2,2,"(-0.15, 0.55, 0.02)","(0.0, 0.55, 0.02)","(0.3, 0.25, 0.02)","(-0.3, 0.4, 0.02)","Take the block that is (0.15, 0.0) from the red block and place it at [0.15 0.25]",1,0,,"(-0.15, 0.55, 0.02)","(0.15, 0.25, 0.02)","(0.3, 0.25, 0.02)","(-0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.55)
+Green Cube: (-0.3, 0.4)
+Blue Cube: (0.0, 0.55)
+Yellow Cube: (0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+4,4,"(-0.15, 0.25, 0.02)","(0.0, 0.55, 0.02)","(-0.3, 0.25, 0.02)","(-0.15, 0.55, 0.02)",Take the block that is coloured the colour of Mars and place it at [-0.15  0.4 ],0,0,,"(-0.15, 0.4, 0.02)","(0.0, 0.55, 0.02)","(-0.3, 0.25, 0.02)","(-0.15, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.25)
+Green Cube: (-0.15, 0.55)
+Blue Cube: (0.0, 0.55)
+Yellow Cube: (-0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+5,5,"(0.0, 0.25, 0.02)","(-0.3, 0.4, 0.02)","(-0.15, 0.25, 0.02)","(-0.3, 0.25, 0.02)",Take the block that is coloured sky-coloured and place it at [0.15 0.4 ],1,0,,"(0.0, 0.25, 0.02)","(0.15, 0.4, 0.02)","(-0.15, 0.25, 0.02)","(-0.3, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.25)
+Green Cube: (-0.3, 0.25)
+Blue Cube: (-0.3, 0.4)
+Yellow Cube: (-0.15, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+6,6,"(0.0, 0.4, 0.02)","(0.3, 0.25, 0.02)","(-0.15, 0.55, 0.02)","(-0.15, 0.4, 0.02)",Take the block that is coloured navy and place it at [0.15 0.55],1,0,,"(0.0, 0.4, 0.02)","(0.15, 0.55, 0.02)","(-0.15, 0.55, 0.02)","(-0.15, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.4)
+Green Cube: (-0.15, 0.4)
+Blue Cube: (0.3, 0.25)
+Yellow Cube: (-0.15, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+8,8,"(0.15, 0.4, 0.02)","(-0.15, 0.55, 0.02)","(0.15, 0.55, 0.02)","(-0.15, 0.25, 0.02)","Take the block that is coloured the police-coloured one and place it between the blocks that are coloured green and (0.0, -0.15) from the yellow block",1,2,[3 0],"(0.15, 0.4, 0.02)","(0.3, 0.25, 0.02)","(0.15, 0.55, 0.02)","(-0.15, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.4)
+Green Cube: (-0.15, 0.25)
+Blue Cube: (-0.15, 0.55)
+Yellow Cube: (0.15, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+9,9,"(-0.3, 0.25, 0.02)","(0.15, 0.25, 0.02)","(0.3, 0.25, 0.02)","(-0.15, 0.55, 0.02)",Take the block that is coloured associated with war and place it between the blocks that are highest and coloured sapphire,0,2,[3 1],"(-0.0, 0.4, 0.02)","(0.15, 0.25, 0.02)","(0.3, 0.25, 0.02)","(-0.15, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.25)
+Green Cube: (-0.15, 0.55)
+Blue Cube: (0.15, 0.25)
+Yellow Cube: (0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+11,11,"(-0.15, 0.4, 0.02)","(0.15, 0.55, 0.02)","(0.15, 0.4, 0.02)","(0.15, 0.25, 0.02)",Take the block that is leftmost and place it at [0.3 0.4],0,0,,"(0.3, 0.4, 0.02)","(0.15, 0.55, 0.02)","(0.15, 0.4, 0.02)","(0.15, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.4)
+Green Cube: (0.15, 0.25)
+Blue Cube: (0.15, 0.55)
+Yellow Cube: (0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+13,13,"(0.3, 0.25, 0.02)","(-0.15, 0.55, 0.02)","(-0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)","Take the block that is coloured the color of warning signs and place it 0.0 horizontally and -0.15 vertically relative to the block that is (0.0, 0.3) from the yellow block",2,1,1,"(0.3, 0.25, 0.02)","(-0.15, 0.55, 0.02)","(-0.15, 0.4, 0.02)","(-0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.25)
+Green Cube: (-0.3, 0.55)
+Blue Cube: (-0.15, 0.55)
+Yellow Cube: (-0.15, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+16,16,"(-0.15, 0.4, 0.02)","(0.0, 0.55, 0.02)","(0.0, 0.25, 0.02)","(0.15, 0.4, 0.02)",Take the block that is coloured green and place it at [0.3  0.55],3,0,,"(-0.15, 0.4, 0.02)","(0.0, 0.55, 0.02)","(0.0, 0.25, 0.02)","(0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.4)
+Green Cube: (0.15, 0.4)
+Blue Cube: (0.0, 0.55)
+Yellow Cube: (0.0, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+17,17,"(-0.3, 0.25, 0.02)","(0.3, 0.25, 0.02)","(0.0, 0.55, 0.02)","(0.3, 0.55, 0.02)",Take the block that is coloured yellow and place it between the blocks that are coloured green and leftmost,2,2,[3 0],"(-0.3, 0.25, 0.02)","(0.3, 0.25, 0.02)","(0.0, 0.4, 0.02)","(0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.25)
+Green Cube: (0.3, 0.55)
+Blue Cube: (0.3, 0.25)
+Yellow Cube: (0.0, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+20,20,"(0.15, 0.4, 0.02)","(-0.15, 0.4, 0.02)","(0.3, 0.25, 0.02)","(-0.3, 0.25, 0.02)","Take the block that is (-0.15, 0.15) from the yellow block and place it at [0.15 0.55]",0,0,,"(0.15, 0.55, 0.02)","(-0.15, 0.4, 0.02)","(0.3, 0.25, 0.02)","(-0.3, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.4)
+Green Cube: (-0.3, 0.25)
+Blue Cube: (-0.15, 0.4)
+Yellow Cube: (0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+22,22,"(0.3, 0.4, 0.02)","(-0.3, 0.55, 0.02)","(-0.3, 0.4, 0.02)","(0.15, 0.4, 0.02)",Take the block that is coloured screams danger and place it 0.6 horizontally and 0.0 vertically relative to the block that is coloured cobalt,0,1,1,"(0.3, 0.55, 0.02)","(-0.3, 0.55, 0.02)","(-0.3, 0.4, 0.02)","(0.15, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.4)
+Green Cube: (0.15, 0.4)
+Blue Cube: (-0.3, 0.55)
+Yellow Cube: (-0.3, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+23,23,"(-0.3, 0.55, 0.02)","(-0.15, 0.4, 0.02)","(0.3, 0.25, 0.02)","(-0.3, 0.4, 0.02)",Take the block that is coloured yellow and place it between the blocks that are coloured red and coloured the royal one,2,2,[0 1],"(-0.3, 0.55, 0.02)","(-0.15, 0.4, 0.02)","(-0.3, 0.25, 0.02)","(-0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.55)
+Green Cube: (-0.3, 0.4)
+Blue Cube: (-0.15, 0.4)
+Yellow Cube: (0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+24,24,"(-0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)","(-0.15, 0.55, 0.02)","(0.0, 0.55, 0.02)",Take the block that is rightmost and place it between the blocks that are coloured the color of warning signs and coloured blue,3,2,[2 1],"(-0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)","(-0.15, 0.55, 0.02)","(0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.25)
+Green Cube: (0.0, 0.55)
+Blue Cube: (-0.3, 0.55)
+Yellow Cube: (-0.15, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+25,25,"(0.0, 0.4, 0.02)","(0.0, 0.55, 0.02)","(-0.3, 0.4, 0.02)","(-0.15, 0.4, 0.02)","Take the block that is (0.3, 0.0) from the yellow block and place it at [0.3 0.4]",0,0,,"(0.3, 0.4, 0.02)","(0.0, 0.55, 0.02)","(-0.3, 0.4, 0.02)","(-0.15, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.4)
+Green Cube: (-0.15, 0.4)
+Blue Cube: (0.0, 0.55)
+Yellow Cube: (-0.3, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+29,29,"(0.15, 0.4, 0.02)","(-0.3, 0.4, 0.02)","(0.0, 0.4, 0.02)","(0.15, 0.25, 0.02)",Take the block that is coloured blue and place it between the blocks that are coloured red and coloured banana-coloured,1,2,[0 2],"(0.15, 0.4, 0.02)","(-0.15, 0.4, 0.02)","(0.0, 0.4, 0.02)","(0.15, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.4)
+Green Cube: (0.15, 0.25)
+Blue Cube: (-0.3, 0.4)
+Yellow Cube: (0.0, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+30,30,"(0.15, 0.25, 0.02)","(0.3, 0.55, 0.02)","(-0.3, 0.25, 0.02)","(0.15, 0.55, 0.02)",Take the block that is coloured green and place it -0.3 horizontally and -0.15 vertically relative to the block that is rightmost,3,1,1,"(0.15, 0.25, 0.02)","(0.3, 0.55, 0.02)","(-0.3, 0.25, 0.02)","(0.0, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.25)
+Green Cube: (0.15, 0.55)
+Blue Cube: (0.3, 0.55)
+Yellow Cube: (-0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+31,31,"(-0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)","(0.3, 0.25, 0.02)","(0.0, 0.25, 0.02)","Take the block that is (-0.45, 0.0) from the yellow block and place it at [0.   0.55]",0,0,,"(0.0, 0.55, 0.02)","(-0.3, 0.55, 0.02)","(0.3, 0.25, 0.02)","(0.0, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.25)
+Green Cube: (0.0, 0.25)
+Blue Cube: (-0.3, 0.55)
+Yellow Cube: (0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+33,33,"(0.0, 0.25, 0.02)","(-0.3, 0.25, 0.02)","(0.0, 0.4, 0.02)","(0.15, 0.55, 0.02)","Take the block that is (-0.15, -0.15) from the green block and place it 0.3 horizontally and 0.15 vertically relative to the block that is (0.0, -0.15) from the yellow block",2,1,0,"(0.0, 0.25, 0.02)","(-0.3, 0.25, 0.02)","(0.3, 0.4, 0.02)","(0.15, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.25)
+Green Cube: (0.15, 0.55)
+Blue Cube: (-0.3, 0.25)
+Yellow Cube: (0.0, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+34,34,"(-0.15, 0.4, 0.02)","(-0.3, 0.25, 0.02)","(-0.15, 0.25, 0.02)","(0.0, 0.25, 0.02)",Take the block that is leftmost and place it at [0.3  0.25],1,0,,"(-0.15, 0.4, 0.02)","(0.3, 0.25, 0.02)","(-0.15, 0.25, 0.02)","(0.0, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.4)
+Green Cube: (0.0, 0.25)
+Blue Cube: (-0.3, 0.25)
+Yellow Cube: (-0.15, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+35,35,"(-0.15, 0.55, 0.02)","(0.0, 0.4, 0.02)","(0.0, 0.25, 0.02)","(-0.3, 0.55, 0.02)",Take the block that is coloured iceberg-coloured and place it at [0.15 0.55],1,0,,"(-0.15, 0.55, 0.02)","(0.15, 0.55, 0.02)","(0.0, 0.25, 0.02)","(-0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.55)
+Green Cube: (-0.3, 0.55)
+Blue Cube: (0.0, 0.4)
+Yellow Cube: (0.0, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+36,36,"(0.0, 0.55, 0.02)","(0.3, 0.55, 0.02)","(-0.15, 0.25, 0.02)","(0.0, 0.25, 0.02)",Take the block that is leftmost and place it at [0.15 0.55],2,0,,"(0.0, 0.55, 0.02)","(0.3, 0.55, 0.02)","(0.15, 0.55, 0.02)","(0.0, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.55)
+Green Cube: (0.0, 0.25)
+Blue Cube: (0.3, 0.55)
+Yellow Cube: (-0.15, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+37,37,"(0.0, 0.4, 0.02)","(0.15, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(-0.3, 0.4, 0.02)",Take the block that is coloured yellow and place it 0.15 horizontally and -0.15 vertically relative to the block that is coloured green,2,1,3,"(0.0, 0.4, 0.02)","(0.15, 0.25, 0.02)","(-0.15, 0.25, 0.02)","(-0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.4)
+Green Cube: (-0.3, 0.4)
+Blue Cube: (0.15, 0.25)
+Yellow Cube: (-0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+39,39,"(-0.3, 0.25, 0.02)","(0.15, 0.4, 0.02)","(0.0, 0.25, 0.02)","(-0.3, 0.4, 0.02)",Take the block that is coloured green and place it between the blocks that are coloured red and coloured blue,3,2,[0 1],"(-0.3, 0.25, 0.02)","(0.15, 0.4, 0.02)","(0.0, 0.25, 0.02)","(0.0, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.25)
+Green Cube: (-0.3, 0.4)
+Blue Cube: (0.15, 0.4)
+Yellow Cube: (0.0, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+41,41,"(0.15, 0.4, 0.02)","(0.0, 0.25, 0.02)","(-0.15, 0.25, 0.02)","(0.0, 0.4, 0.02)",Take the block that is coloured red and place it 0.0 horizontally and 0.3 vertically relative to the block that is coloured blue,0,1,1,"(0.0, 0.55, 0.02)","(0.0, 0.25, 0.02)","(-0.15, 0.25, 0.02)","(0.0, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.4)
+Green Cube: (0.0, 0.4)
+Blue Cube: (0.0, 0.25)
+Yellow Cube: (-0.15, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+43,43,"(0.15, 0.25, 0.02)","(-0.3, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(-0.15, 0.55, 0.02)",Take the block that is coloured red and place it at [0.3 0.4],0,0,,"(0.3, 0.4, 0.02)","(-0.3, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(-0.15, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.25)
+Green Cube: (-0.15, 0.55)
+Blue Cube: (-0.3, 0.25)
+Yellow Cube: (-0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+45,45,"(0.0, 0.55, 0.02)","(0.0, 0.25, 0.02)","(0.0, 0.4, 0.02)","(-0.3, 0.4, 0.02)",Take the block that is highest and place it -0.3 horizontally and 0.0 vertically relative to the block that is lowest,0,1,1,"(-0.3, 0.25, 0.02)","(0.0, 0.25, 0.02)","(0.0, 0.4, 0.02)","(-0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.55)
+Green Cube: (-0.3, 0.4)
+Blue Cube: (0.0, 0.25)
+Yellow Cube: (0.0, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+48,48,"(0.15, 0.4, 0.02)","(0.0, 0.4, 0.02)","(-0.3, 0.55, 0.02)","(-0.3, 0.4, 0.02)",Take the block that is coloured sapphire and place it 0.45 horizontally and 0.0 vertically relative to the block that is highest,1,1,2,"(0.15, 0.4, 0.02)","(0.15, 0.55, 0.02)","(-0.3, 0.55, 0.02)","(-0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.4)
+Green Cube: (-0.3, 0.4)
+Blue Cube: (0.0, 0.4)
+Yellow Cube: (-0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+49,49,"(0.0, 0.55, 0.02)","(-0.15, 0.25, 0.02)","(-0.15, 0.55, 0.02)","(0.3, 0.25, 0.02)",Take the block that is coloured sky-coloured and place it at [0.15 0.55],1,0,,"(0.0, 0.55, 0.02)","(0.15, 0.55, 0.02)","(-0.15, 0.55, 0.02)","(0.3, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.55)
+Green Cube: (0.3, 0.25)
+Blue Cube: (-0.15, 0.25)
+Yellow Cube: (-0.15, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+50,50,"(-0.15, 0.25, 0.02)","(0.3, 0.25, 0.02)","(0.0, 0.4, 0.02)","(-0.15, 0.55, 0.02)",Take the block that is rightmost and place it at [0.3  0.55],1,0,,"(-0.15, 0.25, 0.02)","(0.3, 0.55, 0.02)","(0.0, 0.4, 0.02)","(-0.15, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.25)
+Green Cube: (-0.15, 0.55)
+Blue Cube: (0.3, 0.25)
+Yellow Cube: (0.0, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+51,51,"(-0.15, 0.25, 0.02)","(0.0, 0.4, 0.02)","(0.15, 0.25, 0.02)","(-0.3, 0.25, 0.02)",Take the block that is coloured the sad one and place it at [-0.3  0.4],1,0,,"(-0.15, 0.25, 0.02)","(-0.3, 0.4, 0.02)","(0.15, 0.25, 0.02)","(-0.3, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.25)
+Green Cube: (-0.3, 0.25)
+Blue Cube: (0.0, 0.4)
+Yellow Cube: (0.15, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+52,52,"(0.0, 0.4, 0.02)","(-0.3, 0.25, 0.02)","(0.3, 0.55, 0.02)","(0.0, 0.55, 0.02)",Take the block that is coloured the sad one and place it at [0.15 0.25],1,0,,"(0.0, 0.4, 0.02)","(0.15, 0.25, 0.02)","(0.3, 0.55, 0.02)","(0.0, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.4)
+Green Cube: (0.0, 0.55)
+Blue Cube: (-0.3, 0.25)
+Yellow Cube: (0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+55,55,"(-0.15, 0.25, 0.02)","(0.3, 0.4, 0.02)","(0.3, 0.55, 0.02)","(-0.15, 0.55, 0.02)","Take the block that is lowest and place it between the blocks that are (0.45, 0.3) from the red block and (-0.45, 0.0) from the yellow block",0,2,[2 3],"(0.08, 0.55, 0.02)","(0.3, 0.4, 0.02)","(0.3, 0.55, 0.02)","(-0.15, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.25)
+Green Cube: (-0.15, 0.55)
+Blue Cube: (0.3, 0.4)
+Yellow Cube: (0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+56,56,"(0.0, 0.55, 0.02)","(0.0, 0.4, 0.02)","(-0.3, 0.55, 0.02)","(-0.15, 0.4, 0.02)",Take the block that is coloured blue and place it -0.15 horizontally and -0.15 vertically relative to the block that is coloured green,1,1,3,"(0.0, 0.55, 0.02)","(-0.3, 0.25, 0.02)","(-0.3, 0.55, 0.02)","(-0.15, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.55)
+Green Cube: (-0.15, 0.4)
+Blue Cube: (0.0, 0.4)
+Yellow Cube: (-0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+58,58,"(0.0, 0.55, 0.02)","(0.3, 0.55, 0.02)","(0.15, 0.55, 0.02)","(-0.15, 0.4, 0.02)",Take the block that is coloured red and place it -0.15 horizontally and 0.15 vertically relative to the block that is leftmost,0,1,3,"(-0.3, 0.55, 0.02)","(0.3, 0.55, 0.02)","(0.15, 0.55, 0.02)","(-0.15, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.55)
+Green Cube: (-0.15, 0.4)
+Blue Cube: (0.3, 0.55)
+Yellow Cube: (0.15, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+60,60,"(0.0, 0.55, 0.02)","(0.0, 0.4, 0.02)","(-0.3, 0.4, 0.02)","(-0.15, 0.25, 0.02)",Take the block that is coloured blue and place it at [-0.3   0.55],1,0,,"(0.0, 0.55, 0.02)","(-0.3, 0.55, 0.02)","(-0.3, 0.4, 0.02)","(-0.15, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.55)
+Green Cube: (-0.15, 0.25)
+Blue Cube: (0.0, 0.4)
+Yellow Cube: (-0.3, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+62,62,"(0.3, 0.25, 0.02)","(-0.3, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(0.0, 0.25, 0.02)","Take the block that is coloured red and place it between the blocks that are (-0.3, 0.0) from the red block and highest",0,2,[3 2],"(0.3, 0.4, 0.02)","(-0.3, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(0.0, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.25)
+Green Cube: (0.0, 0.25)
+Blue Cube: (-0.3, 0.25)
+Yellow Cube: (-0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+64,64,"(-0.15, 0.25, 0.02)","(-0.3, 0.4, 0.02)","(0.0, 0.4, 0.02)","(0.3, 0.4, 0.02)",Take the block that is coloured iceberg-coloured and place it at [-0.3   0.55],1,0,,"(-0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)","(0.0, 0.4, 0.02)","(0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.25)
+Green Cube: (0.3, 0.4)
+Blue Cube: (-0.3, 0.4)
+Yellow Cube: (0.0, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+65,65,"(0.0, 0.4, 0.02)","(0.15, 0.55, 0.02)","(-0.15, 0.4, 0.02)","(0.3, 0.4, 0.02)",Take the block that is coloured ocean ball and place it at [-0.15  0.25],1,0,,"(0.0, 0.4, 0.02)","(-0.15, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.4)
+Green Cube: (0.3, 0.4)
+Blue Cube: (0.15, 0.55)
+Yellow Cube: (-0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+67,67,"(-0.3, 0.25, 0.02)","(0.3, 0.4, 0.02)","(0.15, 0.4, 0.02)","(-0.15, 0.4, 0.02)",Take the block that is coloured love-coloured and place it -0.15 horizontally and 0.15 vertically relative to the block that is coloured frog-coloured,0,1,3,"(-0.3, 0.55, 0.02)","(0.3, 0.4, 0.02)","(0.15, 0.4, 0.02)","(-0.15, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.25)
+Green Cube: (-0.15, 0.4)
+Blue Cube: (0.3, 0.4)
+Yellow Cube: (0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+69,69,"(-0.3, 0.4, 0.02)","(-0.15, 0.55, 0.02)","(0.0, 0.4, 0.02)","(0.3, 0.25, 0.02)",Take the block that is coloured red and place it between the blocks that are coloured sapphire and coloured mustard,0,2,[1 2],"(0.3, 0.4, 0.02)","(-0.15, 0.55, 0.02)","(0.0, 0.4, 0.02)","(0.3, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.4)
+Green Cube: (0.3, 0.25)
+Blue Cube: (-0.15, 0.55)
+Yellow Cube: (0.0, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+71,71,"(0.3, 0.25, 0.02)","(-0.3, 0.55, 0.02)","(-0.15, 0.4, 0.02)","(0.0, 0.4, 0.02)","Take the block that is coloured green and place it between the blocks that are coloured the colour of Mars and (0.15, -0.15) from the blue block",3,2,[0 2],"(0.3, 0.25, 0.02)","(-0.3, 0.55, 0.02)","(-0.15, 0.4, 0.02)","(0.08, 0.32, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.25)
+Green Cube: (0.0, 0.4)
+Blue Cube: (-0.3, 0.55)
+Yellow Cube: (-0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+72,72,"(0.3, 0.55, 0.02)","(-0.15, 0.25, 0.02)","(0.3, 0.4, 0.02)","(0.0, 0.55, 0.02)",Take the block that is coloured mustard and place it 0.0 horizontally and -0.15 vertically relative to the block that is coloured green,2,1,3,"(0.3, 0.55, 0.02)","(-0.15, 0.25, 0.02)","(0.0, 0.4, 0.02)","(0.0, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.55)
+Green Cube: (0.0, 0.55)
+Blue Cube: (-0.15, 0.25)
+Yellow Cube: (0.3, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+75,75,"(0.0, 0.55, 0.02)","(0.3, 0.4, 0.02)","(0.15, 0.25, 0.02)","(0.3, 0.25, 0.02)",Take the block that is coloured associated with war and place it -0.15 horizontally and 0.15 vertically relative to the block that is coloured lime,0,1,3,"(0.15, 0.4, 0.02)","(0.3, 0.4, 0.02)","(0.15, 0.25, 0.02)","(0.3, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.55)
+Green Cube: (0.3, 0.25)
+Blue Cube: (0.3, 0.4)
+Yellow Cube: (0.15, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+79,79,"(0.3, 0.4, 0.02)","(-0.3, 0.4, 0.02)","(-0.3, 0.25, 0.02)","(0.0, 0.55, 0.02)",Take the block that is coloured yellow and place it at [0.15 0.25],2,0,,"(0.3, 0.4, 0.02)","(-0.3, 0.4, 0.02)","(0.15, 0.25, 0.02)","(0.0, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.4)
+Green Cube: (0.0, 0.55)
+Blue Cube: (-0.3, 0.4)
+Yellow Cube: (-0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+81,81,"(-0.3, 0.55, 0.02)","(0.3, 0.25, 0.02)","(-0.3, 0.25, 0.02)","(0.15, 0.55, 0.02)","Take the block that is (-0.6, 0.0) from the blue block and place it between the blocks that are coloured frog-coloured and coloured red",2,2,[3 0],"(-0.3, 0.55, 0.02)","(0.3, 0.25, 0.02)","(-0.08, 0.55, 0.02)","(0.15, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.55)
+Green Cube: (0.15, 0.55)
+Blue Cube: (0.3, 0.25)
+Yellow Cube: (-0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+85,85,"(0.0, 0.4, 0.02)","(0.15, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(-0.3, 0.25, 0.02)",Take the block that is coloured red and place it between the blocks that are leftmost and coloured blue,0,2,[3 1],"(-0.15, 0.55, 0.02)","(0.15, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(-0.3, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.4)
+Green Cube: (-0.3, 0.25)
+Blue Cube: (0.15, 0.25)
+Yellow Cube: (-0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+87,87,"(-0.15, 0.55, 0.02)","(0.15, 0.4, 0.02)","(0.0, 0.25, 0.02)","(0.3, 0.25, 0.02)","Take the block that is (0.3, -0.15) from the red block and place it between the blocks that are coloured blood-coloured and coloured green",1,2,[0 3],"(-0.15, 0.55, 0.02)","(-0.3, 0.4, 0.02)","(0.0, 0.25, 0.02)","(0.3, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.55)
+Green Cube: (0.3, 0.25)
+Blue Cube: (0.15, 0.4)
+Yellow Cube: (0.0, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+91,91,"(-0.3, 0.25, 0.02)","(-0.3, 0.55, 0.02)","(-0.15, 0.25, 0.02)","(-0.15, 0.55, 0.02)","Take the block that is (-0.15, -0.3) from the green block and place it between the blocks that are (0.15, -0.3) from the blue block and coloured blue",0,2,[2 1],"(0.15, 0.4, 0.02)","(-0.3, 0.55, 0.02)","(-0.15, 0.25, 0.02)","(-0.15, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.25)
+Green Cube: (-0.15, 0.55)
+Blue Cube: (-0.3, 0.55)
+Yellow Cube: (-0.15, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+92,92,"(0.0, 0.55, 0.02)","(-0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)","(0.3, 0.4, 0.02)",Take the block that is coloured love-coloured and place it at [0.3  0.55],0,0,,"(0.3, 0.55, 0.02)","(-0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)","(0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.55)
+Green Cube: (0.3, 0.4)
+Blue Cube: (-0.15, 0.25)
+Yellow Cube: (-0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+94,94,"(0.15, 0.25, 0.02)","(0.3, 0.4, 0.02)","(0.0, 0.25, 0.02)","(0.0, 0.4, 0.02)",Take the block that is coloured mint and place it at [-0.3  0.4],3,0,,"(0.15, 0.25, 0.02)","(0.3, 0.4, 0.02)","(0.0, 0.25, 0.02)","(-0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.25)
+Green Cube: (0.0, 0.4)
+Blue Cube: (0.3, 0.4)
+Yellow Cube: (0.0, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+97,97,"(0.0, 0.4, 0.02)","(-0.3, 0.4, 0.02)","(0.0, 0.55, 0.02)","(0.3, 0.25, 0.02)",Take the block that is coloured the sad one and place it between the blocks that are coloured red and coloured green,1,2,[0 3],"(0.0, 0.4, 0.02)","(0.15, 0.25, 0.02)","(0.0, 0.55, 0.02)","(0.3, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.4)
+Green Cube: (0.3, 0.25)
+Blue Cube: (-0.3, 0.4)
+Yellow Cube: (0.0, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+98,98,"(0.3, 0.4, 0.02)","(0.3, 0.25, 0.02)","(0.0, 0.25, 0.02)","(-0.15, 0.4, 0.02)",Take the block that is coloured cobalt and place it -0.15 horizontally and -0.15 vertically relative to the block that is leftmost,1,1,3,"(0.3, 0.4, 0.02)","(-0.3, 0.25, 0.02)","(0.0, 0.25, 0.02)","(-0.15, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.4)
+Green Cube: (-0.15, 0.4)
+Blue Cube: (0.3, 0.25)
+Yellow Cube: (0.0, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+99,99,"(0.0, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(-0.3, 0.55, 0.02)","(-0.3, 0.25, 0.02)",Take the block that is coloured green and place it between the blocks that are coloured blue and rightmost,3,2,[1 0],"(0.0, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(-0.3, 0.55, 0.02)","(-0.15, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.25)
+Green Cube: (-0.3, 0.25)
+Blue Cube: (-0.15, 0.4)
+Yellow Cube: (-0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+100,100,"(-0.3, 0.55, 0.02)","(0.15, 0.25, 0.02)","(0.0, 0.55, 0.02)","(0.3, 0.25, 0.02)",Take the block that is coloured ocean ball and place it 0.45 horizontally and 0.0 vertically relative to the block that is leftmost,1,1,0,"(-0.3, 0.55, 0.02)","(0.15, 0.55, 0.02)","(0.0, 0.55, 0.02)","(0.3, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.55)
+Green Cube: (0.3, 0.25)
+Blue Cube: (0.15, 0.25)
+Yellow Cube: (0.0, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+103,103,"(-0.15, 0.4, 0.02)","(-0.15, 0.55, 0.02)","(0.3, 0.55, 0.02)","(-0.15, 0.25, 0.02)",Take the block that is coloured green and place it 0.3 horizontally and -0.15 vertically relative to the block that is coloured red,3,1,0,"(-0.15, 0.4, 0.02)","(-0.15, 0.55, 0.02)","(0.3, 0.55, 0.02)","(0.15, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.4)
+Green Cube: (-0.15, 0.25)
+Blue Cube: (-0.15, 0.55)
+Yellow Cube: (0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+104,104,"(-0.3, 0.4, 0.02)","(0.15, 0.4, 0.02)","(0.3, 0.55, 0.02)","(-0.15, 0.4, 0.02)","Take the block that is coloured yellow and place it 0.0 horizontally and 0.15 vertically relative to the block that is (0.3, 0.0) from the green block",2,1,1,"(-0.3, 0.4, 0.02)","(0.15, 0.4, 0.02)","(0.15, 0.55, 0.02)","(-0.15, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.4)
+Green Cube: (-0.15, 0.4)
+Blue Cube: (0.15, 0.4)
+Yellow Cube: (0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+105,105,"(-0.3, 0.25, 0.02)","(0.15, 0.4, 0.02)","(0.3, 0.25, 0.02)","(0.0, 0.4, 0.02)",Take the block that is coloured blue and place it at [-0.15  0.55],1,0,,"(-0.3, 0.25, 0.02)","(-0.15, 0.55, 0.02)","(0.3, 0.25, 0.02)","(0.0, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.25)
+Green Cube: (0.0, 0.4)
+Blue Cube: (0.15, 0.4)
+Yellow Cube: (0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+107,107,"(-0.3, 0.25, 0.02)","(0.0, 0.25, 0.02)","(0.15, 0.55, 0.02)","(-0.15, 0.4, 0.02)",Take the block that is leftmost and place it 0.45 horizontally and -0.15 vertically relative to the block that is coloured the eco-friendly one,0,1,3,"(0.3, 0.25, 0.02)","(0.0, 0.25, 0.02)","(0.15, 0.55, 0.02)","(-0.15, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.25)
+Green Cube: (-0.15, 0.4)
+Blue Cube: (0.0, 0.25)
+Yellow Cube: (0.15, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+109,109,"(0.3, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(-0.15, 0.55, 0.02)","(0.15, 0.25, 0.02)",Take the block that is rightmost and place it at [0.15 0.4 ],0,0,,"(0.15, 0.4, 0.02)","(-0.15, 0.4, 0.02)","(-0.15, 0.55, 0.02)","(0.15, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.25)
+Green Cube: (0.15, 0.25)
+Blue Cube: (-0.15, 0.4)
+Yellow Cube: (-0.15, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+110,110,"(0.15, 0.55, 0.02)","(0.0, 0.4, 0.02)","(-0.15, 0.25, 0.02)","(0.3, 0.4, 0.02)",Take the block that is coloured the color of money and place it between the blocks that are highest and leftmost,3,2,[0 2],"(0.15, 0.55, 0.02)","(0.0, 0.4, 0.02)","(-0.15, 0.25, 0.02)","(0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.55)
+Green Cube: (0.3, 0.4)
+Blue Cube: (0.0, 0.4)
+Yellow Cube: (-0.15, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+111,111,"(0.0, 0.25, 0.02)","(0.15, 0.4, 0.02)","(-0.3, 0.55, 0.02)","(-0.15, 0.25, 0.02)","Take the block that is (-0.3, -0.15) from the blue block and place it at [0.3 0.4]",3,0,,"(0.0, 0.25, 0.02)","(0.15, 0.4, 0.02)","(-0.3, 0.55, 0.02)","(0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.25)
+Green Cube: (-0.15, 0.25)
+Blue Cube: (0.15, 0.4)
+Yellow Cube: (-0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+114,114,"(-0.3, 0.4, 0.02)","(0.3, 0.55, 0.02)","(0.15, 0.4, 0.02)","(-0.15, 0.25, 0.02)",Take the block that is coloured screams danger and place it at [-0.3   0.25],0,0,,"(-0.3, 0.25, 0.02)","(0.3, 0.55, 0.02)","(0.15, 0.4, 0.02)","(-0.15, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.4)
+Green Cube: (-0.15, 0.25)
+Blue Cube: (0.3, 0.55)
+Yellow Cube: (0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+119,119,"(0.0, 0.25, 0.02)","(0.15, 0.4, 0.02)","(-0.15, 0.25, 0.02)","(0.0, 0.4, 0.02)",Take the block that is coloured mustard and place it -0.3 horizontally and 0.0 vertically relative to the block that is coloured matches stop signs,2,1,0,"(0.0, 0.25, 0.02)","(0.15, 0.4, 0.02)","(-0.3, 0.25, 0.02)","(0.0, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.25)
+Green Cube: (0.0, 0.4)
+Blue Cube: (0.15, 0.4)
+Yellow Cube: (-0.15, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+120,120,"(0.15, 0.4, 0.02)","(0.15, 0.55, 0.02)","(-0.15, 0.4, 0.02)","(-0.3, 0.4, 0.02)",Take the block that is coloured green and place it 0.15 horizontally and -0.15 vertically relative to the block that is highest,3,1,1,"(0.15, 0.4, 0.02)","(0.15, 0.55, 0.02)","(-0.15, 0.4, 0.02)","(0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.4)
+Green Cube: (-0.3, 0.4)
+Blue Cube: (0.15, 0.55)
+Yellow Cube: (-0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+124,124,"(0.3, 0.55, 0.02)","(0.0, 0.55, 0.02)","(0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)",Take the block that is coloured the police-coloured one and place it at [0.3 0.4],1,0,,"(0.3, 0.55, 0.02)","(0.3, 0.4, 0.02)","(0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.55)
+Green Cube: (-0.3, 0.55)
+Blue Cube: (0.0, 0.55)
+Yellow Cube: (0.15, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+125,125,"(-0.15, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(-0.3, 0.25, 0.02)","(0.3, 0.55, 0.02)","Take the block that is coloured red and place it between the blocks that are (0.15, 0.15) from the yellow block and coloured green",0,2,[1 3],"(0.08, 0.48, 0.02)","(-0.15, 0.4, 0.02)","(-0.3, 0.25, 0.02)","(0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.25)
+Green Cube: (0.3, 0.55)
+Blue Cube: (-0.15, 0.4)
+Yellow Cube: (-0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+126,126,"(0.0, 0.55, 0.02)","(-0.3, 0.4, 0.02)","(0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)",Take the block that is coloured blue and place it at [-0.3   0.25],1,0,,"(0.0, 0.55, 0.02)","(-0.3, 0.25, 0.02)","(0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.55)
+Green Cube: (-0.3, 0.55)
+Blue Cube: (-0.3, 0.4)
+Yellow Cube: (0.15, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+129,129,"(-0.3, 0.55, 0.02)","(0.3, 0.25, 0.02)","(0.15, 0.4, 0.02)","(0.0, 0.4, 0.02)",Take the block that is coloured green and place it at [-0.3   0.25],3,0,,"(-0.3, 0.55, 0.02)","(0.3, 0.25, 0.02)","(0.15, 0.4, 0.02)","(-0.3, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.55)
+Green Cube: (0.0, 0.4)
+Blue Cube: (0.3, 0.25)
+Yellow Cube: (0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+130,130,"(0.3, 0.25, 0.02)","(-0.15, 0.55, 0.02)","(-0.3, 0.25, 0.02)","(-0.15, 0.25, 0.02)","Take the block that is coloured crimson and place it 0.15 horizontally and 0.15 vertically relative to the block that is (0.0, -0.3) from the blue block",0,1,3,"(0.0, 0.4, 0.02)","(-0.15, 0.55, 0.02)","(-0.3, 0.25, 0.02)","(-0.15, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.25)
+Green Cube: (-0.15, 0.25)
+Blue Cube: (-0.15, 0.55)
+Yellow Cube: (-0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+133,133,"(-0.3, 0.25, 0.02)","(-0.3, 0.55, 0.02)","(0.0, 0.4, 0.02)","(0.15, 0.55, 0.02)",Take the block that is coloured like the sun and place it at [0.   0.25],2,0,,"(-0.3, 0.25, 0.02)","(-0.3, 0.55, 0.02)","(0.0, 0.25, 0.02)","(0.15, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.25)
+Green Cube: (0.15, 0.55)
+Blue Cube: (-0.3, 0.55)
+Yellow Cube: (0.0, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+135,135,"(0.3, 0.25, 0.02)","(-0.3, 0.25, 0.02)","(-0.15, 0.55, 0.02)","(-0.15, 0.25, 0.02)",Take the block that is leftmost and place it at [0.3 0.4],1,0,,"(0.3, 0.25, 0.02)","(0.3, 0.4, 0.02)","(-0.15, 0.55, 0.02)","(-0.15, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.25)
+Green Cube: (-0.15, 0.25)
+Blue Cube: (-0.3, 0.25)
+Yellow Cube: (-0.15, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+138,138,"(0.0, 0.4, 0.02)","(0.3, 0.25, 0.02)","(0.15, 0.4, 0.02)","(0.3, 0.55, 0.02)",Take the block that is highest and place it at [-0.15  0.55],3,0,,"(0.0, 0.4, 0.02)","(0.3, 0.25, 0.02)","(0.15, 0.4, 0.02)","(-0.15, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.4)
+Green Cube: (0.3, 0.55)
+Blue Cube: (0.3, 0.25)
+Yellow Cube: (0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+140,140,"(-0.3, 0.25, 0.02)","(0.15, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(0.0, 0.55, 0.02)",Take the block that is coloured blue and place it at [-0.15  0.25],1,0,,"(-0.3, 0.25, 0.02)","(-0.15, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(0.0, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.25)
+Green Cube: (0.0, 0.55)
+Blue Cube: (0.15, 0.25)
+Yellow Cube: (-0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+142,142,"(0.15, 0.55, 0.02)","(0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)","(-0.3, 0.4, 0.02)",Take the block that is coloured green and place it -0.3 horizontally and -0.3 vertically relative to the block that is coloured like a fireball,3,1,0,"(0.15, 0.55, 0.02)","(0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)","(-0.15, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.55)
+Green Cube: (-0.3, 0.4)
+Blue Cube: (0.15, 0.25)
+Yellow Cube: (-0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+143,143,"(-0.15, 0.55, 0.02)","(0.3, 0.55, 0.02)","(0.3, 0.4, 0.02)","(-0.15, 0.4, 0.02)",Take the block that is coloured sunflower-hued and place it at [0.15 0.4 ],2,0,,"(-0.15, 0.55, 0.02)","(0.3, 0.55, 0.02)","(0.15, 0.4, 0.02)","(-0.15, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.55)
+Green Cube: (-0.15, 0.4)
+Blue Cube: (0.3, 0.55)
+Yellow Cube: (0.3, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+144,144,"(-0.15, 0.25, 0.02)","(-0.3, 0.25, 0.02)","(0.0, 0.4, 0.02)","(0.0, 0.25, 0.02)","Take the block that is (0.15, 0.0) from the blue block and place it 0.0 horizontally and 0.15 vertically relative to the block that is coloured butter-coloured",0,1,2,"(0.0, 0.55, 0.02)","(-0.3, 0.25, 0.02)","(0.0, 0.4, 0.02)","(0.0, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.25)
+Green Cube: (0.0, 0.25)
+Blue Cube: (-0.3, 0.25)
+Yellow Cube: (0.0, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+148,148,"(-0.3, 0.4, 0.02)","(-0.15, 0.4, 0.02)","(0.3, 0.25, 0.02)","(0.15, 0.55, 0.02)",Take the block that is coloured yellow and place it at [0.3  0.55],2,0,,"(-0.3, 0.4, 0.02)","(-0.15, 0.4, 0.02)","(0.3, 0.55, 0.02)","(0.15, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.4)
+Green Cube: (0.15, 0.55)
+Blue Cube: (-0.15, 0.4)
+Yellow Cube: (0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+150,150,"(0.3, 0.25, 0.02)","(0.0, 0.55, 0.02)","(0.15, 0.4, 0.02)","(-0.15, 0.25, 0.02)",Take the block that is coloured mustard and place it -0.45 horizontally and 0.15 vertically relative to the block that is rightmost,2,1,0,"(0.3, 0.25, 0.02)","(0.0, 0.55, 0.02)","(-0.15, 0.4, 0.02)","(-0.15, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.25)
+Green Cube: (-0.15, 0.25)
+Blue Cube: (0.0, 0.55)
+Yellow Cube: (0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+153,153,"(0.3, 0.25, 0.02)","(0.0, 0.4, 0.02)","(-0.3, 0.55, 0.02)","(0.15, 0.55, 0.02)",Take the block that is coloured navy and place it between the blocks that are coloured frog-coloured and coloured gold,1,2,[3 2],"(0.3, 0.25, 0.02)","(-0.08, 0.55, 0.02)","(-0.3, 0.55, 0.02)","(0.15, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.25)
+Green Cube: (0.15, 0.55)
+Blue Cube: (0.0, 0.4)
+Yellow Cube: (-0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+154,154,"(0.15, 0.55, 0.02)","(0.3, 0.25, 0.02)","(-0.15, 0.55, 0.02)","(-0.15, 0.25, 0.02)",Take the block that is coloured lime and place it 0.15 horizontally and -0.3 vertically relative to the block that is coloured yellow,3,1,2,"(0.15, 0.55, 0.02)","(0.3, 0.25, 0.02)","(-0.15, 0.55, 0.02)","(0.0, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.55)
+Green Cube: (-0.15, 0.25)
+Blue Cube: (0.3, 0.25)
+Yellow Cube: (-0.15, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+155,155,"(0.0, 0.25, 0.02)","(0.15, 0.4, 0.02)","(-0.15, 0.55, 0.02)","(0.15, 0.25, 0.02)",Take the block that is coloured blue and place it at [-0.3   0.55],1,0,,"(0.0, 0.25, 0.02)","(-0.3, 0.55, 0.02)","(-0.15, 0.55, 0.02)","(0.15, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.25)
+Green Cube: (0.15, 0.25)
+Blue Cube: (0.15, 0.4)
+Yellow Cube: (-0.15, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+160,160,"(-0.3, 0.55, 0.02)","(0.0, 0.4, 0.02)","(0.3, 0.25, 0.02)","(0.15, 0.4, 0.02)",Take the block that is coloured yellow and place it between the blocks that are coloured the royal one and coloured lime,2,2,[1 3],"(-0.3, 0.55, 0.02)","(0.0, 0.4, 0.02)","(-0.3, 0.25, 0.02)","(0.15, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.55)
+Green Cube: (0.15, 0.4)
+Blue Cube: (0.0, 0.4)
+Yellow Cube: (0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+162,162,"(-0.3, 0.55, 0.02)","(0.0, 0.4, 0.02)","(0.0, 0.55, 0.02)","(0.3, 0.25, 0.02)",Take the block that is coloured blue and place it at [-0.3  0.4],1,0,,"(-0.3, 0.55, 0.02)","(-0.3, 0.4, 0.02)","(0.0, 0.55, 0.02)","(0.3, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.55)
+Green Cube: (0.3, 0.25)
+Blue Cube: (0.0, 0.4)
+Yellow Cube: (0.0, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+163,163,"(-0.15, 0.55, 0.02)","(0.0, 0.55, 0.02)","(-0.3, 0.4, 0.02)","(0.3, 0.55, 0.02)",Take the block that is leftmost and place it 0.3 horizontally and -0.3 vertically relative to the block that is coloured sapphire,2,1,1,"(-0.15, 0.55, 0.02)","(0.0, 0.55, 0.02)","(0.3, 0.25, 0.02)","(0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.55)
+Green Cube: (0.3, 0.55)
+Blue Cube: (0.0, 0.55)
+Yellow Cube: (-0.3, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+166,166,"(0.3, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(-0.15, 0.25, 0.02)","(-0.3, 0.4, 0.02)",Take the block that is coloured blue and place it at [0.3 0.4],1,0,,"(0.3, 0.25, 0.02)","(0.3, 0.4, 0.02)","(-0.15, 0.25, 0.02)","(-0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.25)
+Green Cube: (-0.3, 0.4)
+Blue Cube: (-0.15, 0.4)
+Yellow Cube: (-0.15, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+168,168,"(0.0, 0.25, 0.02)","(-0.15, 0.25, 0.02)","(-0.3, 0.25, 0.02)","(0.15, 0.4, 0.02)",Take the block that is coloured sapphire and place it between the blocks that are coloured the color of warning signs and rightmost,1,2,[2 3],"(0.0, 0.25, 0.02)","(-0.3, 0.4, 0.02)","(-0.3, 0.25, 0.02)","(0.15, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.25)
+Green Cube: (0.15, 0.4)
+Blue Cube: (-0.15, 0.25)
+Yellow Cube: (-0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+171,171,"(0.3, 0.55, 0.02)","(-0.15, 0.55, 0.02)","(-0.3, 0.55, 0.02)","(-0.15, 0.4, 0.02)",Take the block that is lowest and place it at [0.   0.25],3,0,,"(0.3, 0.55, 0.02)","(-0.15, 0.55, 0.02)","(-0.3, 0.55, 0.02)","(0.0, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.55)
+Green Cube: (-0.15, 0.4)
+Blue Cube: (-0.15, 0.55)
+Yellow Cube: (-0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+179,179,"(0.3, 0.55, 0.02)","(0.0, 0.25, 0.02)","(0.15, 0.4, 0.02)","(0.0, 0.55, 0.02)",Take the block that is coloured blue and place it between the blocks that are coloured red and coloured mustard,1,2,[0 2],"(0.3, 0.55, 0.02)","(-0.15, 0.4, 0.02)","(0.15, 0.4, 0.02)","(0.0, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.55)
+Green Cube: (0.0, 0.55)
+Blue Cube: (0.0, 0.25)
+Yellow Cube: (0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+182,182,"(0.0, 0.4, 0.02)","(-0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)","(-0.15, 0.4, 0.02)",Take the block that is coloured red and place it 0.45 horizontally and 0.0 vertically relative to the block that is coloured yellow,0,1,2,"(0.15, 0.55, 0.02)","(-0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)","(-0.15, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.4)
+Green Cube: (-0.15, 0.4)
+Blue Cube: (-0.15, 0.25)
+Yellow Cube: (-0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+185,185,"(-0.15, 0.55, 0.02)","(0.3, 0.25, 0.02)","(-0.3, 0.25, 0.02)","(-0.3, 0.4, 0.02)",Take the block that is coloured sapphire and place it 0.3 horizontally and 0.3 vertically relative to the block that is coloured yellow,1,1,2,"(-0.15, 0.55, 0.02)","(0.0, 0.55, 0.02)","(-0.3, 0.25, 0.02)","(-0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.55)
+Green Cube: (-0.3, 0.4)
+Blue Cube: (0.3, 0.25)
+Yellow Cube: (-0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+190,190,"(0.3, 0.4, 0.02)","(-0.3, 0.4, 0.02)","(-0.15, 0.55, 0.02)","(-0.15, 0.25, 0.02)",Take the block that is rightmost and place it at [0.3  0.55],0,0,,"(0.3, 0.55, 0.02)","(-0.3, 0.4, 0.02)","(-0.15, 0.55, 0.02)","(-0.15, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.4)
+Green Cube: (-0.15, 0.25)
+Blue Cube: (-0.3, 0.4)
+Yellow Cube: (-0.15, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+191,191,"(0.3, 0.55, 0.02)","(0.15, 0.25, 0.02)","(0.0, 0.4, 0.02)","(-0.15, 0.4, 0.02)",Take the block that is coloured blue and place it at [-0.3   0.25],1,0,,"(0.3, 0.55, 0.02)","(-0.3, 0.25, 0.02)","(0.0, 0.4, 0.02)","(-0.15, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.55)
+Green Cube: (-0.15, 0.4)
+Blue Cube: (0.15, 0.25)
+Yellow Cube: (0.0, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+192,192,"(0.15, 0.4, 0.02)","(-0.3, 0.25, 0.02)","(0.15, 0.25, 0.02)","(0.15, 0.55, 0.02)",Take the block that is coloured love-coloured and place it -0.15 horizontally and 0.3 vertically relative to the block that is coloured yellow,0,1,2,"(0.0, 0.55, 0.02)","(-0.3, 0.25, 0.02)","(0.15, 0.25, 0.02)","(0.15, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.4)
+Green Cube: (0.15, 0.55)
+Blue Cube: (-0.3, 0.25)
+Yellow Cube: (0.15, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+193,193,"(0.3, 0.4, 0.02)","(0.0, 0.4, 0.02)","(-0.3, 0.4, 0.02)","(-0.3, 0.25, 0.02)",Take the block that is coloured the sad one and place it -0.45 horizontally and 0.15 vertically relative to the block that is coloured red,1,1,0,"(0.3, 0.4, 0.02)","(-0.15, 0.55, 0.02)","(-0.3, 0.4, 0.02)","(-0.3, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.4)
+Green Cube: (-0.3, 0.25)
+Blue Cube: (0.0, 0.4)
+Yellow Cube: (-0.3, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+195,195,"(-0.15, 0.25, 0.02)","(0.3, 0.25, 0.02)","(0.0, 0.4, 0.02)","(-0.3, 0.55, 0.02)",Take the block that is coloured blood-coloured and place it at [0.   0.55],0,0,,"(0.0, 0.55, 0.02)","(0.3, 0.25, 0.02)","(0.0, 0.4, 0.02)","(-0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.25)
+Green Cube: (-0.3, 0.55)
+Blue Cube: (0.3, 0.25)
+Yellow Cube: (0.0, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+196,196,"(0.15, 0.4, 0.02)","(0.3, 0.55, 0.02)","(0.0, 0.55, 0.02)","(-0.3, 0.25, 0.02)","Take the block that is (-0.15, 0.15) from the red block and place it between the blocks that are coloured the eco-friendly one and coloured blood-coloured",2,2,[3 0],"(0.15, 0.4, 0.02)","(0.3, 0.55, 0.02)","(-0.08, 0.32, 0.02)","(-0.3, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.4)
+Green Cube: (-0.3, 0.25)
+Blue Cube: (0.3, 0.55)
+Yellow Cube: (0.0, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+197,197,"(0.3, 0.55, 0.02)","(0.15, 0.25, 0.02)","(0.0, 0.4, 0.02)","(0.0, 0.25, 0.02)",Take the block that is coloured yellow and place it -0.3 horizontally and 0.0 vertically relative to the block that is coloured green,2,1,3,"(0.3, 0.55, 0.02)","(0.15, 0.25, 0.02)","(-0.3, 0.25, 0.02)","(0.0, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.55)
+Green Cube: (0.0, 0.25)
+Blue Cube: (0.15, 0.25)
+Yellow Cube: (0.0, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+198,198,"(-0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)","(-0.3, 0.4, 0.02)","(0.0, 0.55, 0.02)",Take the block that is coloured green and place it between the blocks that are coloured blue and coloured yellow,3,2,[1 2],"(-0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)","(-0.3, 0.4, 0.02)","(0.3, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.25)
+Green Cube: (0.0, 0.55)
+Blue Cube: (-0.3, 0.55)
+Yellow Cube: (-0.3, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+203,203,"(0.3, 0.55, 0.02)","(-0.3, 0.4, 0.02)","(0.3, 0.4, 0.02)","(0.15, 0.55, 0.02)",Take the block that is coloured green and place it -0.15 horizontally and -0.15 vertically relative to the block that is coloured love-coloured,3,1,0,"(0.3, 0.55, 0.02)","(-0.3, 0.4, 0.02)","(0.3, 0.4, 0.02)","(0.15, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.55)
+Green Cube: (0.15, 0.55)
+Blue Cube: (-0.3, 0.4)
+Yellow Cube: (0.3, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+204,204,"(0.3, 0.4, 0.02)","(0.0, 0.25, 0.02)","(0.0, 0.4, 0.02)","(0.3, 0.55, 0.02)",Take the block that is coloured lemon and place it between the blocks that are coloured green and coloured ocean ball,2,2,[3 1],"(0.3, 0.4, 0.02)","(0.0, 0.25, 0.02)","(0.15, 0.55, 0.02)","(0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.4)
+Green Cube: (0.3, 0.55)
+Blue Cube: (0.0, 0.25)
+Yellow Cube: (0.0, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+207,207,"(0.15, 0.4, 0.02)","(0.15, 0.25, 0.02)","(0.3, 0.25, 0.02)","(0.15, 0.55, 0.02)",Take the block that is coloured associated with war and place it between the blocks that are leftmost and coloured blue,0,2,[3 1],"(-0.3, 0.25, 0.02)","(0.15, 0.25, 0.02)","(0.3, 0.25, 0.02)","(0.15, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.4)
+Green Cube: (0.15, 0.55)
+Blue Cube: (0.15, 0.25)
+Yellow Cube: (0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+208,208,"(0.0, 0.4, 0.02)","(0.15, 0.4, 0.02)","(0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)",Take the block that is coloured blue and place it -0.45 horizontally and 0.15 vertically relative to the block that is coloured yellow,1,1,2,"(0.0, 0.4, 0.02)","(-0.3, 0.4, 0.02)","(0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.4)
+Green Cube: (-0.3, 0.55)
+Blue Cube: (0.15, 0.4)
+Yellow Cube: (0.15, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+209,209,"(0.0, 0.25, 0.02)","(-0.15, 0.55, 0.02)","(0.15, 0.25, 0.02)","(-0.3, 0.25, 0.02)",Take the block that is coloured green and place it -0.15 horizontally and 0.0 vertically relative to the block that is highest,3,1,1,"(0.0, 0.25, 0.02)","(-0.15, 0.55, 0.02)","(0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.25)
+Green Cube: (-0.3, 0.25)
+Blue Cube: (-0.15, 0.55)
+Yellow Cube: (0.15, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+214,214,"(0.15, 0.4, 0.02)","(-0.3, 0.4, 0.02)","(-0.15, 0.55, 0.02)","(-0.3, 0.55, 0.02)","Take the block that is rightmost and place it between the blocks that are (-0.3, 0.15) from the red block and coloured jade",0,2,[2 3],"(0.3, 0.55, 0.02)","(-0.3, 0.4, 0.02)","(-0.15, 0.55, 0.02)","(-0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.4)
+Green Cube: (-0.3, 0.55)
+Blue Cube: (-0.3, 0.4)
+Yellow Cube: (-0.15, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+218,218,"(-0.15, 0.4, 0.02)","(-0.15, 0.25, 0.02)","(-0.3, 0.4, 0.02)","(0.0, 0.25, 0.02)",Take the block that is coloured yellow and place it between the blocks that are coloured red and coloured the eco-friendly one,2,2,[0 3],"(-0.15, 0.4, 0.02)","(-0.15, 0.25, 0.02)","(0.15, 0.4, 0.02)","(0.0, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.4)
+Green Cube: (0.0, 0.25)
+Blue Cube: (-0.15, 0.25)
+Yellow Cube: (-0.3, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+226,226,"(0.3, 0.25, 0.02)","(0.3, 0.4, 0.02)","(0.15, 0.55, 0.02)","(-0.15, 0.4, 0.02)",Take the block that is coloured red and place it 0.0 horizontally and -0.3 vertically relative to the block that is coloured banana-coloured,0,1,2,"(0.15, 0.25, 0.02)","(0.3, 0.4, 0.02)","(0.15, 0.55, 0.02)","(-0.15, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.25)
+Green Cube: (-0.15, 0.4)
+Blue Cube: (0.3, 0.4)
+Yellow Cube: (0.15, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+227,227,"(-0.3, 0.55, 0.02)","(0.0, 0.4, 0.02)","(0.15, 0.25, 0.02)","(0.15, 0.55, 0.02)",Take the block that is lowest and place it at [-0.15  0.25],2,0,,"(-0.3, 0.55, 0.02)","(0.0, 0.4, 0.02)","(-0.15, 0.25, 0.02)","(0.15, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.55)
+Green Cube: (0.15, 0.55)
+Blue Cube: (0.0, 0.4)
+Yellow Cube: (0.15, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+229,229,"(0.15, 0.4, 0.02)","(-0.15, 0.25, 0.02)","(0.0, 0.4, 0.02)","(-0.15, 0.55, 0.02)",Take the block that is coloured butter-coloured and place it between the blocks that are coloured the sad one and coloured green,2,2,[1 3],"(0.15, 0.4, 0.02)","(-0.15, 0.25, 0.02)","(0.3, 0.4, 0.02)","(-0.15, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.4)
+Green Cube: (-0.15, 0.55)
+Blue Cube: (-0.15, 0.25)
+Yellow Cube: (0.0, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+230,230,"(-0.15, 0.25, 0.02)","(0.3, 0.25, 0.02)","(0.3, 0.55, 0.02)","(0.0, 0.25, 0.02)",Take the block that is coloured yellow and place it at [-0.15  0.4 ],2,0,,"(-0.15, 0.25, 0.02)","(0.3, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(0.0, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.25)
+Green Cube: (0.0, 0.25)
+Blue Cube: (0.3, 0.25)
+Yellow Cube: (0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+231,231,"(0.0, 0.4, 0.02)","(0.15, 0.4, 0.02)","(-0.3, 0.55, 0.02)","(0.0, 0.25, 0.02)",Take the block that is coloured red and place it at [-0.15  0.4 ],0,0,,"(-0.15, 0.4, 0.02)","(0.15, 0.4, 0.02)","(-0.3, 0.55, 0.02)","(0.0, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.4)
+Green Cube: (0.0, 0.25)
+Blue Cube: (0.15, 0.4)
+Yellow Cube: (-0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+233,233,"(0.15, 0.25, 0.02)","(-0.15, 0.55, 0.02)","(0.3, 0.25, 0.02)","(0.15, 0.55, 0.02)",Take the block that is coloured blue and place it at [0.3 0.4],1,0,,"(0.15, 0.25, 0.02)","(0.3, 0.4, 0.02)","(0.3, 0.25, 0.02)","(0.15, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.25)
+Green Cube: (0.15, 0.55)
+Blue Cube: (-0.15, 0.55)
+Yellow Cube: (0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+235,235,"(-0.15, 0.25, 0.02)","(0.15, 0.55, 0.02)","(-0.15, 0.55, 0.02)","(-0.3, 0.55, 0.02)",Take the block that is coloured yellow and place it at [0.3 0.4],2,0,,"(-0.15, 0.25, 0.02)","(0.15, 0.55, 0.02)","(0.3, 0.4, 0.02)","(-0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.25)
+Green Cube: (-0.3, 0.55)
+Blue Cube: (0.15, 0.55)
+Yellow Cube: (-0.15, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+237,237,"(-0.3, 0.4, 0.02)","(0.3, 0.4, 0.02)","(0.0, 0.4, 0.02)","(-0.15, 0.55, 0.02)",Take the block that is coloured cobalt and place it at [-0.3   0.55],1,0,,"(-0.3, 0.4, 0.02)","(-0.3, 0.55, 0.02)","(0.0, 0.4, 0.02)","(-0.15, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.4)
+Green Cube: (-0.15, 0.55)
+Blue Cube: (0.3, 0.4)
+Yellow Cube: (0.0, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+238,238,"(0.3, 0.55, 0.02)","(0.15, 0.55, 0.02)","(0.0, 0.25, 0.02)","(0.0, 0.4, 0.02)","Take the block that is (-0.3, -0.15) from the red block and place it at [0.15 0.4 ]",3,0,,"(0.3, 0.55, 0.02)","(0.15, 0.55, 0.02)","(0.0, 0.25, 0.02)","(0.15, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.55)
+Green Cube: (0.0, 0.4)
+Blue Cube: (0.15, 0.55)
+Yellow Cube: (0.0, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+240,240,"(-0.3, 0.25, 0.02)","(-0.15, 0.25, 0.02)","(-0.15, 0.55, 0.02)","(0.0, 0.55, 0.02)",Take the block that is rightmost and place it at [0.  0.4],3,0,,"(-0.3, 0.25, 0.02)","(-0.15, 0.25, 0.02)","(-0.15, 0.55, 0.02)","(0.0, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.25)
+Green Cube: (0.0, 0.55)
+Blue Cube: (-0.15, 0.25)
+Yellow Cube: (-0.15, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+245,245,"(0.0, 0.4, 0.02)","(-0.15, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(0.3, 0.25, 0.02)","Take the block that is (-0.15, -0.15) from the red block and place it between the blocks that are (0.15, 0.15) from the blue block and coloured green",1,2,[0 3],"(0.0, 0.4, 0.02)","(0.15, 0.4, 0.02)","(-0.15, 0.4, 0.02)","(0.3, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.4)
+Green Cube: (0.3, 0.25)
+Blue Cube: (-0.15, 0.25)
+Yellow Cube: (-0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+248,248,"(0.0, 0.25, 0.02)","(-0.15, 0.25, 0.02)","(0.0, 0.55, 0.02)","(0.15, 0.4, 0.02)",Take the block that is highest and place it at [0.  0.4],2,0,,"(0.0, 0.25, 0.02)","(-0.15, 0.25, 0.02)","(0.0, 0.4, 0.02)","(0.15, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.25)
+Green Cube: (0.15, 0.4)
+Blue Cube: (-0.15, 0.25)
+Yellow Cube: (0.0, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+249,249,"(0.15, 0.4, 0.02)","(-0.3, 0.4, 0.02)","(-0.3, 0.25, 0.02)","(-0.3, 0.55, 0.02)",Take the block that is coloured yellow and place it between the blocks that are rightmost and coloured blue,2,2,[0 1],"(0.15, 0.4, 0.02)","(-0.3, 0.4, 0.02)","(-0.08, 0.4, 0.02)","(-0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.4)
+Green Cube: (-0.3, 0.55)
+Blue Cube: (-0.3, 0.4)
+Yellow Cube: (-0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+253,253,"(-0.15, 0.55, 0.02)","(-0.3, 0.4, 0.02)","(0.3, 0.55, 0.02)","(0.0, 0.25, 0.02)",Take the block that is coloured red and place it 0.45 horizontally and 0.15 vertically relative to the block that is coloured the colour of the US democratic party,0,1,1,"(0.15, 0.55, 0.02)","(-0.3, 0.4, 0.02)","(0.3, 0.55, 0.02)","(0.0, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.55)
+Green Cube: (0.0, 0.25)
+Blue Cube: (-0.3, 0.4)
+Yellow Cube: (0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+259,259,"(0.3, 0.4, 0.02)","(0.15, 0.55, 0.02)","(-0.15, 0.25, 0.02)","(0.3, 0.25, 0.02)","Take the block that is (0.45, 0.15) from the yellow block and place it at [0.3  0.55]",0,0,,"(0.3, 0.55, 0.02)","(0.15, 0.55, 0.02)","(-0.15, 0.25, 0.02)","(0.3, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.4)
+Green Cube: (0.3, 0.25)
+Blue Cube: (0.15, 0.55)
+Yellow Cube: (-0.15, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+261,261,"(-0.15, 0.55, 0.02)","(-0.3, 0.4, 0.02)","(-0.3, 0.55, 0.02)","(0.15, 0.25, 0.02)",Take the block that is coloured green and place it 0.45 horizontally and -0.3 vertically relative to the block that is coloured red,3,1,0,"(-0.15, 0.55, 0.02)","(-0.3, 0.4, 0.02)","(-0.3, 0.55, 0.02)","(0.3, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.55)
+Green Cube: (0.15, 0.25)
+Blue Cube: (-0.3, 0.4)
+Yellow Cube: (-0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+262,262,"(-0.15, 0.25, 0.02)","(0.15, 0.55, 0.02)","(0.0, 0.55, 0.02)","(-0.3, 0.55, 0.02)","Take the block that is (0.15, 0.3) from the red block and place it 0.45 horizontally and -0.3 vertically relative to the block that is leftmost",2,1,3,"(-0.15, 0.25, 0.02)","(0.15, 0.55, 0.02)","(0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.25)
+Green Cube: (-0.3, 0.55)
+Blue Cube: (0.15, 0.55)
+Yellow Cube: (0.0, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+263,263,"(-0.3, 0.4, 0.02)","(-0.15, 0.4, 0.02)","(0.0, 0.4, 0.02)","(0.3, 0.25, 0.02)","Take the block that is coloured red and place it between the blocks that are (-0.45, 0.15) from the green block and rightmost",0,2,[1 3],"(-0.15, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(0.0, 0.4, 0.02)","(0.3, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.4)
+Green Cube: (0.3, 0.25)
+Blue Cube: (-0.15, 0.4)
+Yellow Cube: (0.0, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+265,265,"(0.0, 0.25, 0.02)","(0.0, 0.4, 0.02)","(0.15, 0.55, 0.02)","(-0.3, 0.4, 0.02)","Take the block that is (-0.15, -0.15) from the yellow block and place it at [0.   0.55]",1,0,,"(0.0, 0.25, 0.02)","(0.0, 0.55, 0.02)","(0.15, 0.55, 0.02)","(-0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.25)
+Green Cube: (-0.3, 0.4)
+Blue Cube: (0.0, 0.4)
+Yellow Cube: (0.15, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+266,266,"(0.0, 0.55, 0.02)","(0.3, 0.25, 0.02)","(0.3, 0.4, 0.02)","(0.0, 0.4, 0.02)",Take the block that is coloured banana-coloured and place it 0.15 horizontally and -0.3 vertically relative to the block that is coloured like a rose,2,1,0,"(0.0, 0.55, 0.02)","(0.3, 0.25, 0.02)","(0.15, 0.25, 0.02)","(0.0, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.55)
+Green Cube: (0.0, 0.4)
+Blue Cube: (0.3, 0.25)
+Yellow Cube: (0.3, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+267,267,"(0.0, 0.4, 0.02)","(-0.15, 0.25, 0.02)","(-0.3, 0.25, 0.02)","(-0.3, 0.55, 0.02)",Take the block that is rightmost and place it 0.6 horizontally and 0.3 vertically relative to the block that is coloured yellow,0,1,2,"(0.3, 0.55, 0.02)","(-0.15, 0.25, 0.02)","(-0.3, 0.25, 0.02)","(-0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.4)
+Green Cube: (-0.3, 0.55)
+Blue Cube: (-0.15, 0.25)
+Yellow Cube: (-0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+269,269,"(-0.3, 0.4, 0.02)","(0.0, 0.25, 0.02)","(0.15, 0.4, 0.02)","(-0.15, 0.25, 0.02)",Take the block that is coloured the color of warning signs and place it at [0.3  0.25],2,0,,"(-0.3, 0.4, 0.02)","(0.0, 0.25, 0.02)","(0.3, 0.25, 0.02)","(-0.15, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.4)
+Green Cube: (-0.15, 0.25)
+Blue Cube: (0.0, 0.25)
+Yellow Cube: (0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+272,272,"(-0.15, 0.55, 0.02)","(0.0, 0.25, 0.02)","(0.15, 0.4, 0.02)","(0.15, 0.25, 0.02)",Take the block that is coloured like the sun and place it at [-0.3   0.55],2,0,,"(-0.15, 0.55, 0.02)","(0.0, 0.25, 0.02)","(-0.3, 0.55, 0.02)","(0.15, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.55)
+Green Cube: (0.15, 0.25)
+Blue Cube: (0.0, 0.25)
+Yellow Cube: (0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+276,276,"(0.3, 0.25, 0.02)","(0.0, 0.25, 0.02)","(-0.3, 0.4, 0.02)","(-0.15, 0.4, 0.02)","Take the block that is coloured screams danger and place it between the blocks that are coloured yellow and (-0.3, 0.0) from the red block",0,2,[2 1],"(-0.3, 0.25, 0.02)","(0.0, 0.25, 0.02)","(-0.3, 0.4, 0.02)","(-0.15, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.25)
+Green Cube: (-0.15, 0.4)
+Blue Cube: (0.0, 0.25)
+Yellow Cube: (-0.3, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+280,280,"(-0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)","(0.15, 0.55, 0.02)","(0.3, 0.55, 0.02)",Take the block that is coloured red and place it at [-0.3  0.4],0,0,,"(-0.3, 0.4, 0.02)","(-0.3, 0.55, 0.02)","(0.15, 0.55, 0.02)","(0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.25)
+Green Cube: (0.3, 0.55)
+Blue Cube: (-0.3, 0.55)
+Yellow Cube: (0.15, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+281,281,"(0.3, 0.55, 0.02)","(0.3, 0.4, 0.02)","(0.0, 0.25, 0.02)","(0.15, 0.25, 0.02)",Take the block that is coloured jade and place it at [0.   0.55],3,0,,"(0.3, 0.55, 0.02)","(0.3, 0.4, 0.02)","(0.0, 0.25, 0.02)","(0.0, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.55)
+Green Cube: (0.15, 0.25)
+Blue Cube: (0.3, 0.4)
+Yellow Cube: (0.0, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+282,282,"(0.15, 0.25, 0.02)","(0.15, 0.55, 0.02)","(0.15, 0.4, 0.02)","(0.3, 0.55, 0.02)",Take the block that is coloured love-coloured and place it between the blocks that are coloured yellow and leftmost,0,2,[2 1],"(-0.15, 0.55, 0.02)","(0.15, 0.55, 0.02)","(0.15, 0.4, 0.02)","(0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.25)
+Green Cube: (0.3, 0.55)
+Blue Cube: (0.15, 0.55)
+Yellow Cube: (0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+286,286,"(0.15, 0.25, 0.02)","(0.3, 0.55, 0.02)","(-0.15, 0.25, 0.02)","(-0.3, 0.4, 0.02)",Take the block that is coloured yellow and place it at [0.15 0.4 ],2,0,,"(0.15, 0.25, 0.02)","(0.3, 0.55, 0.02)","(0.15, 0.4, 0.02)","(-0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.25)
+Green Cube: (-0.3, 0.4)
+Blue Cube: (0.3, 0.55)
+Yellow Cube: (-0.15, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+288,288,"(0.15, 0.25, 0.02)","(-0.15, 0.55, 0.02)","(0.3, 0.4, 0.02)","(-0.3, 0.25, 0.02)",Take the block that is highest and place it at [0.  0.4],1,0,,"(0.15, 0.25, 0.02)","(0.0, 0.4, 0.02)","(0.3, 0.4, 0.02)","(-0.3, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.25)
+Green Cube: (-0.3, 0.25)
+Blue Cube: (-0.15, 0.55)
+Yellow Cube: (0.3, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+289,289,"(-0.3, 0.55, 0.02)","(-0.15, 0.55, 0.02)","(0.3, 0.25, 0.02)","(-0.3, 0.4, 0.02)",Take the block that is rightmost and place it at [0.3 0.4],2,0,,"(-0.3, 0.55, 0.02)","(-0.15, 0.55, 0.02)","(0.3, 0.4, 0.02)","(-0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.55)
+Green Cube: (-0.3, 0.4)
+Blue Cube: (-0.15, 0.55)
+Yellow Cube: (0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+290,290,"(0.3, 0.25, 0.02)","(-0.15, 0.55, 0.02)","(0.15, 0.4, 0.02)","(0.15, 0.25, 0.02)",Take the block that is coloured banana-coloured and place it 0.0 horizontally and 0.3 vertically relative to the block that is coloured green,2,1,3,"(0.3, 0.25, 0.02)","(-0.15, 0.55, 0.02)","(0.15, 0.55, 0.02)","(0.15, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.25)
+Green Cube: (0.15, 0.25)
+Blue Cube: (-0.15, 0.55)
+Yellow Cube: (0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+291,291,"(-0.15, 0.4, 0.02)","(0.0, 0.25, 0.02)","(0.3, 0.25, 0.02)","(0.15, 0.4, 0.02)",Take the block that is rightmost and place it between the blocks that are coloured blood-coloured and coloured the sad one,2,2,[0 1],"(-0.15, 0.4, 0.02)","(0.0, 0.25, 0.02)","(0.15, 0.55, 0.02)","(0.15, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.4)
+Green Cube: (0.15, 0.4)
+Blue Cube: (0.0, 0.25)
+Yellow Cube: (0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+292,292,"(-0.15, 0.25, 0.02)","(-0.3, 0.4, 0.02)","(-0.3, 0.55, 0.02)","(0.3, 0.25, 0.02)","Take the block that is (0.15, -0.3) from the yellow block and place it between the blocks that are coloured jade and highest",0,2,[3 2],"(0.0, 0.4, 0.02)","(-0.3, 0.4, 0.02)","(-0.3, 0.55, 0.02)","(0.3, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.25)
+Green Cube: (0.3, 0.25)
+Blue Cube: (-0.3, 0.4)
+Yellow Cube: (-0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+294,294,"(-0.15, 0.55, 0.02)","(0.15, 0.4, 0.02)","(0.0, 0.4, 0.02)","(0.0, 0.55, 0.02)",Take the block that is coloured yellow and place it at [-0.3   0.25],2,0,,"(-0.15, 0.55, 0.02)","(0.15, 0.4, 0.02)","(-0.3, 0.25, 0.02)","(0.0, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.55)
+Green Cube: (0.0, 0.55)
+Blue Cube: (0.15, 0.4)
+Yellow Cube: (0.0, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+295,295,"(0.0, 0.55, 0.02)","(-0.15, 0.4, 0.02)","(-0.3, 0.4, 0.02)","(0.3, 0.25, 0.02)","Take the block that is coloured frog-coloured and place it between the blocks that are (-0.45, 0.15) from the green block and coloured yellow",3,2,[1 2],"(0.0, 0.55, 0.02)","(-0.15, 0.4, 0.02)","(-0.3, 0.4, 0.02)","(0.15, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.55)
+Green Cube: (0.3, 0.25)
+Blue Cube: (-0.15, 0.4)
+Yellow Cube: (-0.3, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+296,296,"(0.0, 0.25, 0.02)","(-0.15, 0.25, 0.02)","(-0.15, 0.55, 0.02)","(0.3, 0.55, 0.02)",Take the block that is coloured yellow and place it between the blocks that are coloured the eco-friendly one and coloured red,2,2,[3 0],"(0.0, 0.25, 0.02)","(-0.15, 0.25, 0.02)","(0.15, 0.4, 0.02)","(0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.25)
+Green Cube: (0.3, 0.55)
+Blue Cube: (-0.15, 0.25)
+Yellow Cube: (-0.15, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+299,299,"(-0.15, 0.4, 0.02)","(0.0, 0.25, 0.02)","(0.0, 0.55, 0.02)","(-0.15, 0.25, 0.02)",Take the block that is highest and place it 0.45 horizontally and 0.15 vertically relative to the block that is coloured scarlet,2,1,0,"(-0.15, 0.4, 0.02)","(0.0, 0.25, 0.02)","(0.3, 0.55, 0.02)","(-0.15, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.4)
+Green Cube: (-0.15, 0.25)
+Blue Cube: (0.0, 0.25)
+Yellow Cube: (0.0, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+300,300,"(-0.3, 0.25, 0.02)","(-0.3, 0.4, 0.02)","(-0.15, 0.4, 0.02)","(0.0, 0.55, 0.02)",Take the block that is coloured mint and place it 0.3 horizontally and -0.15 vertically relative to the block that is coloured banana-coloured,3,1,2,"(-0.3, 0.25, 0.02)","(-0.3, 0.4, 0.02)","(-0.15, 0.4, 0.02)","(0.15, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.25)
+Green Cube: (0.0, 0.55)
+Blue Cube: (-0.3, 0.4)
+Yellow Cube: (-0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+304,304,"(0.15, 0.25, 0.02)","(0.15, 0.4, 0.02)","(-0.15, 0.25, 0.02)","(0.3, 0.4, 0.02)",Take the block that is coloured the colour of the US democratic party and place it at [0.3  0.55],1,0,,"(0.15, 0.25, 0.02)","(0.3, 0.55, 0.02)","(-0.15, 0.25, 0.02)","(0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.25)
+Green Cube: (0.3, 0.4)
+Blue Cube: (0.15, 0.4)
+Yellow Cube: (-0.15, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+309,309,"(-0.3, 0.55, 0.02)","(0.0, 0.4, 0.02)","(-0.3, 0.25, 0.02)","(-0.15, 0.55, 0.02)",Take the block that is coloured yellow and place it 0.3 horizontally and 0.0 vertically relative to the block that is rightmost,2,1,1,"(-0.3, 0.55, 0.02)","(0.0, 0.4, 0.02)","(0.3, 0.4, 0.02)","(-0.15, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.55)
+Green Cube: (-0.15, 0.55)
+Blue Cube: (0.0, 0.4)
+Yellow Cube: (-0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+313,313,"(0.3, 0.55, 0.02)","(0.3, 0.4, 0.02)","(-0.15, 0.25, 0.02)","(0.3, 0.25, 0.02)",Take the block that is coloured blue and place it at [-0.3  0.4],1,0,,"(0.3, 0.55, 0.02)","(-0.3, 0.4, 0.02)","(-0.15, 0.25, 0.02)","(0.3, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.55)
+Green Cube: (0.3, 0.25)
+Blue Cube: (0.3, 0.4)
+Yellow Cube: (-0.15, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+317,317,"(-0.3, 0.25, 0.02)","(0.0, 0.4, 0.02)","(0.15, 0.4, 0.02)","(-0.15, 0.25, 0.02)","Take the block that is (-0.3, -0.15) from the yellow block and place it at [-0.3  0.4]",3,0,,"(-0.3, 0.25, 0.02)","(0.0, 0.4, 0.02)","(0.15, 0.4, 0.02)","(-0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.25)
+Green Cube: (-0.15, 0.25)
+Blue Cube: (0.0, 0.4)
+Yellow Cube: (0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+318,318,"(-0.15, 0.4, 0.02)","(-0.15, 0.55, 0.02)","(0.3, 0.4, 0.02)","(-0.3, 0.4, 0.02)",Take the block that is leftmost and place it 0.45 horizontally and 0.15 vertically relative to the block that is coloured used to signal 'hot',3,1,0,"(-0.15, 0.4, 0.02)","(-0.15, 0.55, 0.02)","(0.3, 0.4, 0.02)","(0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.4)
+Green Cube: (-0.3, 0.4)
+Blue Cube: (-0.15, 0.55)
+Yellow Cube: (0.3, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+319,319,"(0.3, 0.25, 0.02)","(0.0, 0.4, 0.02)","(0.3, 0.4, 0.02)","(-0.15, 0.25, 0.02)",Take the block that is coloured red and place it between the blocks that are coloured gold and coloured jade,0,2,[2 3],"(0.0, 0.55, 0.02)","(0.0, 0.4, 0.02)","(0.3, 0.4, 0.02)","(-0.15, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.25)
+Green Cube: (-0.15, 0.25)
+Blue Cube: (0.0, 0.4)
+Yellow Cube: (0.3, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+321,321,"(0.0, 0.25, 0.02)","(0.3, 0.25, 0.02)","(0.0, 0.4, 0.02)","(0.15, 0.55, 0.02)",Take the block that is rightmost and place it at [-0.15  0.4 ],1,0,,"(0.0, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(0.0, 0.4, 0.02)","(0.15, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.25)
+Green Cube: (0.15, 0.55)
+Blue Cube: (0.3, 0.25)
+Yellow Cube: (0.0, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+322,322,"(-0.15, 0.25, 0.02)","(0.15, 0.4, 0.02)","(-0.3, 0.55, 0.02)","(0.3, 0.4, 0.02)",Take the block that is lowest and place it -0.3 horizontally and -0.15 vertically relative to the block that is coloured green,0,1,3,"(0.0, 0.25, 0.02)","(0.15, 0.4, 0.02)","(-0.3, 0.55, 0.02)","(0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.25)
+Green Cube: (0.3, 0.4)
+Blue Cube: (0.15, 0.4)
+Yellow Cube: (-0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+323,323,"(-0.15, 0.4, 0.02)","(0.0, 0.55, 0.02)","(0.15, 0.25, 0.02)","(0.3, 0.55, 0.02)","Take the block that is coloured yellow and place it between the blocks that are leftmost and (-0.3, 0.0) from the green block",2,2,[0 1],"(-0.15, 0.4, 0.02)","(0.0, 0.55, 0.02)","(-0.3, 0.4, 0.02)","(0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.4)
+Green Cube: (0.3, 0.55)
+Blue Cube: (0.0, 0.55)
+Yellow Cube: (0.15, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+327,327,"(0.3, 0.4, 0.02)","(0.15, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(-0.3, 0.25, 0.02)",Take the block that is coloured like the sun and place it at [0.3  0.25],2,0,,"(0.3, 0.4, 0.02)","(0.15, 0.25, 0.02)","(0.3, 0.25, 0.02)","(-0.3, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.4)
+Green Cube: (-0.3, 0.25)
+Blue Cube: (0.15, 0.25)
+Yellow Cube: (-0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+331,331,"(-0.15, 0.55, 0.02)","(0.0, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(0.0, 0.55, 0.02)","Take the block that is coloured green and place it 0.0 horizontally and -0.3 vertically relative to the block that is (-0.15, 0.3) from the blue block",3,1,0,"(-0.15, 0.55, 0.02)","(0.0, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(-0.15, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.55)
+Green Cube: (0.0, 0.55)
+Blue Cube: (0.0, 0.25)
+Yellow Cube: (-0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+333,333,"(-0.15, 0.4, 0.02)","(0.0, 0.55, 0.02)","(0.15, 0.55, 0.02)","(0.3, 0.25, 0.02)",Take the block that is coloured frog-coloured and place it at [-0.3  0.4],3,0,,"(-0.15, 0.4, 0.02)","(0.0, 0.55, 0.02)","(0.15, 0.55, 0.02)","(-0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.4)
+Green Cube: (0.3, 0.25)
+Blue Cube: (0.0, 0.55)
+Yellow Cube: (0.15, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+335,335,"(-0.15, 0.25, 0.02)","(0.3, 0.25, 0.02)","(0.0, 0.25, 0.02)","(0.15, 0.25, 0.02)",Take the block that is coloured the colour that signifies 'go' and place it at [0.15 0.55],3,0,,"(-0.15, 0.25, 0.02)","(0.3, 0.25, 0.02)","(0.0, 0.25, 0.02)","(0.15, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.25)
+Green Cube: (0.15, 0.25)
+Blue Cube: (0.3, 0.25)
+Yellow Cube: (0.0, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+341,341,"(0.3, 0.25, 0.02)","(-0.3, 0.25, 0.02)","(0.0, 0.4, 0.02)","(0.15, 0.4, 0.02)",Take the block that is coloured jade and place it at [0.3  0.55],3,0,,"(0.3, 0.25, 0.02)","(-0.3, 0.25, 0.02)","(0.0, 0.4, 0.02)","(0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.25)
+Green Cube: (0.15, 0.4)
+Blue Cube: (-0.3, 0.25)
+Yellow Cube: (0.0, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+343,343,"(0.0, 0.55, 0.02)","(-0.3, 0.25, 0.02)","(-0.15, 0.55, 0.02)","(-0.3, 0.4, 0.02)",Take the block that is coloured the colour of Mars and place it 0.45 horizontally and 0.15 vertically relative to the block that is coloured green,0,1,3,"(0.15, 0.55, 0.02)","(-0.3, 0.25, 0.02)","(-0.15, 0.55, 0.02)","(-0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.55)
+Green Cube: (-0.3, 0.4)
+Blue Cube: (-0.3, 0.25)
+Yellow Cube: (-0.15, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+344,344,"(-0.15, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(-0.3, 0.4, 0.02)","(0.3, 0.55, 0.02)",Take the block that is coloured blue and place it at [0.15 0.55],1,0,,"(-0.15, 0.25, 0.02)","(0.15, 0.55, 0.02)","(-0.3, 0.4, 0.02)","(0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.25)
+Green Cube: (0.3, 0.55)
+Blue Cube: (-0.15, 0.4)
+Yellow Cube: (-0.3, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+345,345,"(-0.3, 0.4, 0.02)","(-0.15, 0.4, 0.02)","(0.15, 0.55, 0.02)","(0.3, 0.4, 0.02)",Take the block that is coloured blue and place it between the blocks that are coloured like the sun and leftmost,1,2,[2 0],"(-0.3, 0.4, 0.02)","(-0.08, 0.48, 0.02)","(0.15, 0.55, 0.02)","(0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.4)
+Green Cube: (0.3, 0.4)
+Blue Cube: (-0.15, 0.4)
+Yellow Cube: (0.15, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+350,350,"(0.15, 0.4, 0.02)","(-0.3, 0.4, 0.02)","(-0.15, 0.55, 0.02)","(-0.3, 0.55, 0.02)",Take the block that is coloured red and place it at [0.15 0.25],0,0,,"(0.15, 0.25, 0.02)","(-0.3, 0.4, 0.02)","(-0.15, 0.55, 0.02)","(-0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.4)
+Green Cube: (-0.3, 0.55)
+Blue Cube: (-0.3, 0.4)
+Yellow Cube: (-0.15, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+351,351,"(-0.3, 0.4, 0.02)","(0.0, 0.55, 0.02)","(-0.15, 0.55, 0.02)","(0.15, 0.4, 0.02)",Take the block that is coloured red and place it at [0.15 0.25],0,0,,"(0.15, 0.25, 0.02)","(0.0, 0.55, 0.02)","(-0.15, 0.55, 0.02)","(0.15, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.4)
+Green Cube: (0.15, 0.4)
+Blue Cube: (0.0, 0.55)
+Yellow Cube: (-0.15, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+353,353,"(0.15, 0.25, 0.02)","(0.0, 0.4, 0.02)","(0.0, 0.55, 0.02)","(0.3, 0.25, 0.02)",Take the block that is rightmost and place it at [0.15 0.4 ],3,0,,"(0.15, 0.25, 0.02)","(0.0, 0.4, 0.02)","(0.0, 0.55, 0.02)","(0.15, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.25)
+Green Cube: (0.3, 0.25)
+Blue Cube: (0.0, 0.4)
+Yellow Cube: (0.0, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+354,354,"(0.0, 0.25, 0.02)","(-0.15, 0.25, 0.02)","(-0.15, 0.55, 0.02)","(0.3, 0.4, 0.02)",Take the block that is coloured sunflower-hued and place it at [0.15 0.55],2,0,,"(0.0, 0.25, 0.02)","(-0.15, 0.25, 0.02)","(0.15, 0.55, 0.02)","(0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.25)
+Green Cube: (0.3, 0.4)
+Blue Cube: (-0.15, 0.25)
+Yellow Cube: (-0.15, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+355,355,"(-0.3, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(-0.3, 0.55, 0.02)","(0.15, 0.25, 0.02)","Take the block that is (-0.45, 0.0) from the green block and place it between the blocks that are coloured blue and coloured like the sun",0,2,[1 2],"(0.3, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(-0.3, 0.55, 0.02)","(0.15, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.25)
+Green Cube: (0.15, 0.25)
+Blue Cube: (-0.15, 0.4)
+Yellow Cube: (-0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+359,359,"(0.15, 0.55, 0.02)","(-0.15, 0.4, 0.02)","(-0.3, 0.55, 0.02)","(-0.3, 0.25, 0.02)",Take the block that is coloured blue and place it at [0.3  0.55],1,0,,"(0.15, 0.55, 0.02)","(0.3, 0.55, 0.02)","(-0.3, 0.55, 0.02)","(-0.3, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.55)
+Green Cube: (-0.3, 0.25)
+Blue Cube: (-0.15, 0.4)
+Yellow Cube: (-0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+360,360,"(0.15, 0.25, 0.02)","(0.0, 0.25, 0.02)","(-0.3, 0.55, 0.02)","(0.0, 0.55, 0.02)",Take the block that is coloured crimson and place it -0.15 horizontally and 0.0 vertically relative to the block that is coloured the sad one,0,1,1,"(-0.15, 0.25, 0.02)","(0.0, 0.25, 0.02)","(-0.3, 0.55, 0.02)","(0.0, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.25)
+Green Cube: (0.0, 0.55)
+Blue Cube: (0.0, 0.25)
+Yellow Cube: (-0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+363,363,"(0.15, 0.4, 0.02)","(0.3, 0.4, 0.02)","(0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)","Take the block that is (0.45, -0.15) from the green block and place it between the blocks that are coloured the color of money and coloured yellow",0,2,[3 2],"(-0.08, 0.4, 0.02)","(0.3, 0.4, 0.02)","(0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.4)
+Green Cube: (-0.3, 0.55)
+Blue Cube: (0.3, 0.4)
+Yellow Cube: (0.15, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+364,364,"(-0.3, 0.25, 0.02)","(0.0, 0.55, 0.02)","(0.15, 0.55, 0.02)","(0.3, 0.4, 0.02)",Take the block that is coloured the royal one and place it at [-0.3   0.55],1,0,,"(-0.3, 0.25, 0.02)","(-0.3, 0.55, 0.02)","(0.15, 0.55, 0.02)","(0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.25)
+Green Cube: (0.3, 0.4)
+Blue Cube: (0.0, 0.55)
+Yellow Cube: (0.15, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+365,365,"(-0.15, 0.4, 0.02)","(-0.3, 0.25, 0.02)","(0.3, 0.55, 0.02)","(0.0, 0.55, 0.02)",Take the block that is coloured red and place it 0.3 horizontally and -0.3 vertically relative to the block that is coloured green,0,1,3,"(0.3, 0.25, 0.02)","(-0.3, 0.25, 0.02)","(0.3, 0.55, 0.02)","(0.0, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.4)
+Green Cube: (0.0, 0.55)
+Blue Cube: (-0.3, 0.25)
+Yellow Cube: (0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+366,366,"(-0.3, 0.4, 0.02)","(-0.3, 0.25, 0.02)","(0.15, 0.4, 0.02)","(-0.3, 0.55, 0.02)",Take the block that is coloured lemon and place it between the blocks that are coloured red and coloured green,2,2,[0 3],"(-0.3, 0.4, 0.02)","(-0.3, 0.25, 0.02)","(0.0, 0.4, 0.02)","(-0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.4)
+Green Cube: (-0.3, 0.55)
+Blue Cube: (-0.3, 0.25)
+Yellow Cube: (0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+367,367,"(0.3, 0.25, 0.02)","(-0.3, 0.55, 0.02)","(-0.3, 0.25, 0.02)","(0.15, 0.25, 0.02)",Take the block that is coloured red and place it at [-0.15  0.55],0,0,,"(-0.15, 0.55, 0.02)","(-0.3, 0.55, 0.02)","(-0.3, 0.25, 0.02)","(0.15, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.25)
+Green Cube: (0.15, 0.25)
+Blue Cube: (-0.3, 0.55)
+Yellow Cube: (-0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+368,368,"(0.3, 0.25, 0.02)","(-0.15, 0.55, 0.02)","(-0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)",Take the block that is coloured like the sun and place it -0.3 horizontally and 0.3 vertically relative to the block that is coloured like a fireball,2,1,0,"(0.3, 0.25, 0.02)","(-0.15, 0.55, 0.02)","(0.0, 0.55, 0.02)","(-0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.25)
+Green Cube: (-0.3, 0.55)
+Blue Cube: (-0.15, 0.55)
+Yellow Cube: (-0.15, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+369,369,"(0.3, 0.4, 0.02)","(-0.15, 0.25, 0.02)","(-0.3, 0.25, 0.02)","(-0.15, 0.4, 0.02)",Take the block that is rightmost and place it at [0.3  0.25],0,0,,"(0.3, 0.25, 0.02)","(-0.15, 0.25, 0.02)","(-0.3, 0.25, 0.02)","(-0.15, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.4)
+Green Cube: (-0.15, 0.4)
+Blue Cube: (-0.15, 0.25)
+Yellow Cube: (-0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+371,371,"(0.15, 0.4, 0.02)","(0.0, 0.25, 0.02)","(0.15, 0.25, 0.02)","(0.3, 0.4, 0.02)",Take the block that is coloured red and place it -0.3 horizontally and 0.0 vertically relative to the block that is coloured yellow,0,1,2,"(-0.15, 0.25, 0.02)","(0.0, 0.25, 0.02)","(0.15, 0.25, 0.02)","(0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.4)
+Green Cube: (0.3, 0.4)
+Blue Cube: (0.0, 0.25)
+Yellow Cube: (0.15, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+372,372,"(0.0, 0.4, 0.02)","(0.0, 0.55, 0.02)","(-0.15, 0.4, 0.02)","(-0.3, 0.4, 0.02)","Take the block that is highest and place it between the blocks that are (0.15, 0.0) from the yellow block and coloured yellow",1,2,[0 2],"(0.0, 0.4, 0.02)","(0.0, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(-0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.4)
+Green Cube: (-0.3, 0.4)
+Blue Cube: (0.0, 0.55)
+Yellow Cube: (-0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+373,373,"(-0.15, 0.25, 0.02)","(0.3, 0.25, 0.02)","(-0.3, 0.4, 0.02)","(-0.3, 0.25, 0.02)","Take the block that is (-0.6, 0.0) from the blue block and place it 0.0 horizontally and 0.3 vertically relative to the block that is coloured cobalt",3,1,1,"(-0.15, 0.25, 0.02)","(0.3, 0.25, 0.02)","(-0.3, 0.4, 0.02)","(0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.25)
+Green Cube: (-0.3, 0.25)
+Blue Cube: (0.3, 0.25)
+Yellow Cube: (-0.3, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+378,378,"(0.15, 0.55, 0.02)","(0.15, 0.4, 0.02)","(0.3, 0.55, 0.02)","(-0.3, 0.25, 0.02)",Take the block that is coloured navy and place it between the blocks that are coloured the color of money and coloured red,1,2,[3 0],"(0.15, 0.55, 0.02)","(-0.08, 0.4, 0.02)","(0.3, 0.55, 0.02)","(-0.3, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.55)
+Green Cube: (-0.3, 0.25)
+Blue Cube: (0.15, 0.4)
+Yellow Cube: (0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+379,379,"(0.3, 0.25, 0.02)","(-0.3, 0.55, 0.02)","(0.0, 0.4, 0.02)","(0.15, 0.25, 0.02)",Take the block that is rightmost and place it at [0.3  0.55],0,0,,"(0.3, 0.55, 0.02)","(-0.3, 0.55, 0.02)","(0.0, 0.4, 0.02)","(0.15, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.25)
+Green Cube: (0.15, 0.25)
+Blue Cube: (-0.3, 0.55)
+Yellow Cube: (0.0, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+382,382,"(-0.3, 0.25, 0.02)","(-0.15, 0.55, 0.02)","(-0.3, 0.55, 0.02)","(0.0, 0.55, 0.02)",Take the block that is coloured like a rose and place it 0.0 horizontally and -0.15 vertically relative to the block that is coloured butter-coloured,0,1,2,"(-0.3, 0.4, 0.02)","(-0.15, 0.55, 0.02)","(-0.3, 0.55, 0.02)","(0.0, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.25)
+Green Cube: (0.0, 0.55)
+Blue Cube: (-0.15, 0.55)
+Yellow Cube: (-0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+385,385,"(0.3, 0.55, 0.02)","(0.15, 0.55, 0.02)","(-0.3, 0.25, 0.02)","(0.0, 0.4, 0.02)",Take the block that is coloured the color of warning signs and place it at [-0.3   0.55],2,0,,"(0.3, 0.55, 0.02)","(0.15, 0.55, 0.02)","(-0.3, 0.55, 0.02)","(0.0, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.55)
+Green Cube: (0.0, 0.4)
+Blue Cube: (0.15, 0.55)
+Yellow Cube: (-0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+386,386,"(0.3, 0.25, 0.02)","(0.0, 0.25, 0.02)","(0.0, 0.4, 0.02)","(0.15, 0.55, 0.02)",Take the block that is coloured red and place it at [-0.3   0.25],0,0,,"(-0.3, 0.25, 0.02)","(0.0, 0.25, 0.02)","(0.0, 0.4, 0.02)","(0.15, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.25)
+Green Cube: (0.15, 0.55)
+Blue Cube: (0.0, 0.25)
+Yellow Cube: (0.0, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+387,387,"(-0.3, 0.25, 0.02)","(0.0, 0.25, 0.02)","(0.0, 0.4, 0.02)","(0.0, 0.55, 0.02)","Take the block that is (0.3, 0.15) from the red block and place it at [-0.15  0.4 ]",2,0,,"(-0.3, 0.25, 0.02)","(0.0, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(0.0, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.25)
+Green Cube: (0.0, 0.55)
+Blue Cube: (0.0, 0.25)
+Yellow Cube: (0.0, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+388,388,"(0.3, 0.25, 0.02)","(0.3, 0.4, 0.02)","(0.0, 0.4, 0.02)","(-0.3, 0.4, 0.02)",Take the block that is coloured yellow and place it at [-0.15  0.4 ],2,0,,"(0.3, 0.25, 0.02)","(0.3, 0.4, 0.02)","(-0.15, 0.4, 0.02)","(-0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.25)
+Green Cube: (-0.3, 0.4)
+Blue Cube: (0.3, 0.4)
+Yellow Cube: (0.0, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+391,391,"(0.0, 0.4, 0.02)","(0.3, 0.55, 0.02)","(-0.3, 0.55, 0.02)","(-0.15, 0.25, 0.02)",Take the block that is lowest and place it 0.45 horizontally and -0.3 vertically relative to the block that is coloured yellow,3,1,2,"(0.0, 0.4, 0.02)","(0.3, 0.55, 0.02)","(-0.3, 0.55, 0.02)","(0.15, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.4)
+Green Cube: (-0.15, 0.25)
+Blue Cube: (0.3, 0.55)
+Yellow Cube: (-0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+392,392,"(0.3, 0.4, 0.02)","(0.15, 0.25, 0.02)","(-0.3, 0.4, 0.02)","(-0.3, 0.55, 0.02)",Take the block that is coloured like the sun and place it at [-0.15  0.4 ],2,0,,"(0.3, 0.4, 0.02)","(0.15, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(-0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.4)
+Green Cube: (-0.3, 0.55)
+Blue Cube: (0.15, 0.25)
+Yellow Cube: (-0.3, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+393,393,"(0.15, 0.4, 0.02)","(-0.3, 0.55, 0.02)","(-0.3, 0.25, 0.02)","(0.3, 0.25, 0.02)","Take the block that is (0.0, -0.3) from the blue block and place it 0.0 horizontally and 0.15 vertically relative to the block that is coloured red",2,1,0,"(0.15, 0.4, 0.02)","(-0.3, 0.55, 0.02)","(0.15, 0.55, 0.02)","(0.3, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.4)
+Green Cube: (0.3, 0.25)
+Blue Cube: (-0.3, 0.55)
+Yellow Cube: (-0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+394,394,"(0.0, 0.4, 0.02)","(0.3, 0.25, 0.02)","(-0.3, 0.25, 0.02)","(0.3, 0.55, 0.02)",Take the block that is coloured gold and place it at [0.15 0.4 ],2,0,,"(0.0, 0.4, 0.02)","(0.3, 0.25, 0.02)","(0.15, 0.4, 0.02)","(0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.4)
+Green Cube: (0.3, 0.55)
+Blue Cube: (0.3, 0.25)
+Yellow Cube: (-0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+395,395,"(0.0, 0.4, 0.02)","(0.3, 0.55, 0.02)","(0.0, 0.55, 0.02)","(-0.15, 0.55, 0.02)",Take the block that is coloured emerald and place it at [-0.15  0.25],3,0,,"(0.0, 0.4, 0.02)","(0.3, 0.55, 0.02)","(0.0, 0.55, 0.02)","(-0.15, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.4)
+Green Cube: (-0.15, 0.55)
+Blue Cube: (0.3, 0.55)
+Yellow Cube: (0.0, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+398,398,"(-0.15, 0.55, 0.02)","(-0.3, 0.25, 0.02)","(-0.15, 0.25, 0.02)","(0.15, 0.55, 0.02)",Take the block that is coloured lemon and place it at [0.   0.55],2,0,,"(-0.15, 0.55, 0.02)","(-0.3, 0.25, 0.02)","(0.0, 0.55, 0.02)","(0.15, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.55)
+Green Cube: (0.15, 0.55)
+Blue Cube: (-0.3, 0.25)
+Yellow Cube: (-0.15, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+399,399,"(0.0, 0.25, 0.02)","(-0.15, 0.25, 0.02)","(0.0, 0.4, 0.02)","(-0.3, 0.25, 0.02)",Take the block that is highest and place it at [-0.15  0.55],2,0,,"(0.0, 0.25, 0.02)","(-0.15, 0.25, 0.02)","(-0.15, 0.55, 0.02)","(-0.3, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.25)
+Green Cube: (-0.3, 0.25)
+Blue Cube: (-0.15, 0.25)
+Yellow Cube: (0.0, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+400,400,"(-0.3, 0.55, 0.02)","(0.15, 0.25, 0.02)","(0.0, 0.4, 0.02)","(-0.3, 0.4, 0.02)",Take the block that is rightmost and place it 0.3 horizontally and -0.15 vertically relative to the block that is coloured the color of warning signs,1,1,2,"(-0.3, 0.55, 0.02)","(0.3, 0.25, 0.02)","(0.0, 0.4, 0.02)","(-0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.55)
+Green Cube: (-0.3, 0.4)
+Blue Cube: (0.15, 0.25)
+Yellow Cube: (0.0, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+404,404,"(0.0, 0.25, 0.02)","(-0.15, 0.25, 0.02)","(0.0, 0.4, 0.02)","(0.15, 0.55, 0.02)",Take the block that is coloured green and place it at [0.   0.55],3,0,,"(0.0, 0.25, 0.02)","(-0.15, 0.25, 0.02)","(0.0, 0.4, 0.02)","(0.0, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.25)
+Green Cube: (0.15, 0.55)
+Blue Cube: (-0.15, 0.25)
+Yellow Cube: (0.0, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+405,405,"(-0.3, 0.4, 0.02)","(0.0, 0.4, 0.02)","(0.0, 0.25, 0.02)","(0.15, 0.4, 0.02)",Take the block that is coloured love-coloured and place it at [-0.15  0.4 ],0,0,,"(-0.15, 0.4, 0.02)","(0.0, 0.4, 0.02)","(0.0, 0.25, 0.02)","(0.15, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.4)
+Green Cube: (0.15, 0.4)
+Blue Cube: (0.0, 0.4)
+Yellow Cube: (0.0, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+407,407,"(0.3, 0.4, 0.02)","(0.15, 0.4, 0.02)","(-0.3, 0.55, 0.02)","(0.3, 0.55, 0.02)",Take the block that is coloured blue and place it at [0.15 0.25],1,0,,"(0.3, 0.4, 0.02)","(0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)","(0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.4)
+Green Cube: (0.3, 0.55)
+Blue Cube: (0.15, 0.4)
+Yellow Cube: (-0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+408,408,"(0.0, 0.4, 0.02)","(-0.15, 0.4, 0.02)","(0.3, 0.25, 0.02)","(0.0, 0.55, 0.02)",Take the block that is rightmost and place it at [0.15 0.4 ],2,0,,"(0.0, 0.4, 0.02)","(-0.15, 0.4, 0.02)","(0.15, 0.4, 0.02)","(0.0, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.4)
+Green Cube: (0.0, 0.55)
+Blue Cube: (-0.15, 0.4)
+Yellow Cube: (0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+410,410,"(-0.3, 0.25, 0.02)","(0.3, 0.4, 0.02)","(0.15, 0.55, 0.02)","(0.0, 0.25, 0.02)",Take the block that is leftmost and place it at [0.15 0.4 ],0,0,,"(0.15, 0.4, 0.02)","(0.3, 0.4, 0.02)","(0.15, 0.55, 0.02)","(0.0, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.25)
+Green Cube: (0.0, 0.25)
+Blue Cube: (0.3, 0.4)
+Yellow Cube: (0.15, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+411,411,"(0.15, 0.4, 0.02)","(0.0, 0.4, 0.02)","(-0.15, 0.55, 0.02)","(0.3, 0.55, 0.02)",Take the block that is coloured used to signal 'hot' and place it -0.3 horizontally and 0.0 vertically relative to the block that is rightmost,0,1,3,"(0.0, 0.55, 0.02)","(0.0, 0.4, 0.02)","(-0.15, 0.55, 0.02)","(0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.4)
+Green Cube: (0.3, 0.55)
+Blue Cube: (0.0, 0.4)
+Yellow Cube: (-0.15, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+414,414,"(0.15, 0.55, 0.02)","(0.0, 0.4, 0.02)","(0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)","Take the block that is (-0.15, -0.15) from the red block and place it at [0.3  0.25]",1,0,,"(0.15, 0.55, 0.02)","(0.3, 0.25, 0.02)","(0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.55)
+Green Cube: (-0.3, 0.55)
+Blue Cube: (0.0, 0.4)
+Yellow Cube: (0.15, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+415,415,"(0.15, 0.4, 0.02)","(-0.3, 0.55, 0.02)","(0.0, 0.55, 0.02)","(0.0, 0.4, 0.02)",Take the block that is coloured lemon and place it -0.15 horizontally and -0.15 vertically relative to the block that is rightmost,2,1,0,"(0.15, 0.4, 0.02)","(-0.3, 0.55, 0.02)","(0.0, 0.25, 0.02)","(0.0, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.4)
+Green Cube: (0.0, 0.4)
+Blue Cube: (-0.3, 0.55)
+Yellow Cube: (0.0, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+418,418,"(0.0, 0.55, 0.02)","(-0.15, 0.55, 0.02)","(0.3, 0.4, 0.02)","(-0.3, 0.4, 0.02)",Take the block that is coloured like the sun and place it 0.0 horizontally and -0.15 vertically relative to the block that is coloured blue,2,1,1,"(0.0, 0.55, 0.02)","(-0.15, 0.55, 0.02)","(-0.15, 0.4, 0.02)","(-0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.55)
+Green Cube: (-0.3, 0.4)
+Blue Cube: (-0.15, 0.55)
+Yellow Cube: (0.3, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+419,419,"(0.3, 0.25, 0.02)","(-0.3, 0.55, 0.02)","(-0.15, 0.4, 0.02)","(-0.15, 0.25, 0.02)",Take the block that is coloured used to signal 'hot' and place it 0.45 horizontally and 0.0 vertically relative to the block that is leftmost,0,1,1,"(0.15, 0.55, 0.02)","(-0.3, 0.55, 0.02)","(-0.15, 0.4, 0.02)","(-0.15, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.25)
+Green Cube: (-0.15, 0.25)
+Blue Cube: (-0.3, 0.55)
+Yellow Cube: (-0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+420,420,"(-0.15, 0.55, 0.02)","(0.0, 0.4, 0.02)","(0.3, 0.55, 0.02)","(0.15, 0.4, 0.02)",Take the block that is leftmost and place it 0.0 horizontally and 0.15 vertically relative to the block that is coloured mint,0,1,3,"(0.15, 0.55, 0.02)","(0.0, 0.4, 0.02)","(0.3, 0.55, 0.02)","(0.15, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.55)
+Green Cube: (0.15, 0.4)
+Blue Cube: (0.0, 0.4)
+Yellow Cube: (0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+422,422,"(0.0, 0.25, 0.02)","(0.3, 0.25, 0.02)","(-0.3, 0.25, 0.02)","(-0.15, 0.55, 0.02)",Take the block that is coloured navy and place it at [-0.15  0.25],1,0,,"(0.0, 0.25, 0.02)","(-0.15, 0.25, 0.02)","(-0.3, 0.25, 0.02)","(-0.15, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.25)
+Green Cube: (-0.15, 0.55)
+Blue Cube: (0.3, 0.25)
+Yellow Cube: (-0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+425,425,"(-0.3, 0.25, 0.02)","(0.3, 0.55, 0.02)","(-0.15, 0.4, 0.02)","(0.0, 0.55, 0.02)",Take the block that is coloured frog-coloured and place it 0.0 horizontally and 0.3 vertically relative to the block that is leftmost,3,1,0,"(-0.3, 0.25, 0.02)","(0.3, 0.55, 0.02)","(-0.15, 0.4, 0.02)","(-0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.25)
+Green Cube: (0.0, 0.55)
+Blue Cube: (0.3, 0.55)
+Yellow Cube: (-0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+426,426,"(0.15, 0.55, 0.02)","(0.15, 0.4, 0.02)","(0.0, 0.25, 0.02)","(0.0, 0.55, 0.02)",Take the block that is coloured blue and place it at [-0.15  0.25],1,0,,"(0.15, 0.55, 0.02)","(-0.15, 0.25, 0.02)","(0.0, 0.25, 0.02)","(0.0, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.55)
+Green Cube: (0.0, 0.55)
+Blue Cube: (0.15, 0.4)
+Yellow Cube: (0.0, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+427,427,"(0.3, 0.25, 0.02)","(-0.3, 0.55, 0.02)","(0.3, 0.4, 0.02)","(-0.3, 0.4, 0.02)","Take the block that is lowest and place it -0.45 horizontally and 0.0 vertically relative to the block that is (0.6, 0.0) from the green block",0,1,2,"(-0.15, 0.4, 0.02)","(-0.3, 0.55, 0.02)","(0.3, 0.4, 0.02)","(-0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.25)
+Green Cube: (-0.3, 0.4)
+Blue Cube: (-0.3, 0.55)
+Yellow Cube: (0.3, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+428,428,"(0.0, 0.4, 0.02)","(-0.3, 0.25, 0.02)","(-0.3, 0.4, 0.02)","(0.15, 0.55, 0.02)",Take the block that is coloured red and place it at [0.   0.25],0,0,,"(0.0, 0.25, 0.02)","(-0.3, 0.25, 0.02)","(-0.3, 0.4, 0.02)","(0.15, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.4)
+Green Cube: (0.15, 0.55)
+Blue Cube: (-0.3, 0.25)
+Yellow Cube: (-0.3, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+430,430,"(0.0, 0.55, 0.02)","(-0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)","(-0.15, 0.4, 0.02)",Take the block that is coloured green and place it 0.15 horizontally and 0.0 vertically relative to the block that is coloured mustard,3,1,2,"(0.0, 0.55, 0.02)","(-0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)","(-0.15, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.55)
+Green Cube: (-0.15, 0.4)
+Blue Cube: (-0.15, 0.25)
+Yellow Cube: (-0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+431,431,"(0.15, 0.25, 0.02)","(0.0, 0.4, 0.02)","(0.15, 0.4, 0.02)","(0.3, 0.25, 0.02)",Take the block that is coloured green and place it between the blocks that are coloured blue and coloured the colour of Mars,3,2,[1 0],"(0.15, 0.25, 0.02)","(0.0, 0.4, 0.02)","(0.15, 0.4, 0.02)","(0.0, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.25)
+Green Cube: (0.3, 0.25)
+Blue Cube: (0.0, 0.4)
+Yellow Cube: (0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+433,433,"(0.0, 0.4, 0.02)","(-0.15, 0.4, 0.02)","(0.3, 0.4, 0.02)","(0.15, 0.25, 0.02)",Take the block that is coloured red and place it at [0.   0.25],0,0,,"(0.0, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(0.3, 0.4, 0.02)","(0.15, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.4)
+Green Cube: (0.15, 0.25)
+Blue Cube: (-0.15, 0.4)
+Yellow Cube: (0.3, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+434,434,"(0.15, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(0.15, 0.4, 0.02)","(0.3, 0.55, 0.02)","Take the block that is (0.0, 0.15) from the red block and place it at [0.3 0.4]",2,0,,"(0.15, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(0.3, 0.4, 0.02)","(0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.25)
+Green Cube: (0.3, 0.55)
+Blue Cube: (-0.15, 0.4)
+Yellow Cube: (0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+441,441,"(0.15, 0.55, 0.02)","(0.15, 0.25, 0.02)","(0.15, 0.4, 0.02)","(-0.3, 0.4, 0.02)",Take the block that is coloured yellow and place it at [0.   0.55],2,0,,"(0.15, 0.55, 0.02)","(0.15, 0.25, 0.02)","(0.0, 0.55, 0.02)","(-0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.55)
+Green Cube: (-0.3, 0.4)
+Blue Cube: (0.15, 0.25)
+Yellow Cube: (0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+442,442,"(0.3, 0.4, 0.02)","(-0.15, 0.25, 0.02)","(-0.3, 0.4, 0.02)","(0.3, 0.25, 0.02)","Take the block that is (0.6, 0.0) from the yellow block and place it at [0.3  0.55]",0,0,,"(0.3, 0.55, 0.02)","(-0.15, 0.25, 0.02)","(-0.3, 0.4, 0.02)","(0.3, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.4)
+Green Cube: (0.3, 0.25)
+Blue Cube: (-0.15, 0.25)
+Yellow Cube: (-0.3, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+446,446,"(-0.15, 0.4, 0.02)","(0.0, 0.55, 0.02)","(-0.15, 0.25, 0.02)","(0.3, 0.25, 0.02)",Take the block that is coloured navy and place it at [0.  0.4],1,0,,"(-0.15, 0.4, 0.02)","(0.0, 0.4, 0.02)","(-0.15, 0.25, 0.02)","(0.3, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.4)
+Green Cube: (0.3, 0.25)
+Blue Cube: (0.0, 0.55)
+Yellow Cube: (-0.15, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+447,447,"(0.3, 0.4, 0.02)","(-0.15, 0.55, 0.02)","(-0.15, 0.25, 0.02)","(0.15, 0.55, 0.02)",Take the block that is coloured blue and place it between the blocks that are lowest and coloured the eco-friendly one,1,2,[2 3],"(0.3, 0.4, 0.02)","(-0.0, 0.4, 0.02)","(-0.15, 0.25, 0.02)","(0.15, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.4)
+Green Cube: (0.15, 0.55)
+Blue Cube: (-0.15, 0.55)
+Yellow Cube: (-0.15, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+450,450,"(0.15, 0.4, 0.02)","(0.0, 0.55, 0.02)","(-0.3, 0.25, 0.02)","(0.3, 0.4, 0.02)",Take the block that is highest and place it at [0.3  0.25],1,0,,"(0.15, 0.4, 0.02)","(0.3, 0.25, 0.02)","(-0.3, 0.25, 0.02)","(0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.4)
+Green Cube: (0.3, 0.4)
+Blue Cube: (0.0, 0.55)
+Yellow Cube: (-0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+451,451,"(-0.15, 0.25, 0.02)","(0.0, 0.25, 0.02)","(0.15, 0.4, 0.02)","(0.15, 0.25, 0.02)",Take the block that is coloured the colour of Mars and place it at [0.15 0.55],0,0,,"(0.15, 0.55, 0.02)","(0.0, 0.25, 0.02)","(0.15, 0.4, 0.02)","(0.15, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.25)
+Green Cube: (0.15, 0.25)
+Blue Cube: (0.0, 0.25)
+Yellow Cube: (0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+453,453,"(0.3, 0.55, 0.02)","(-0.3, 0.55, 0.02)","(0.3, 0.4, 0.02)","(-0.15, 0.4, 0.02)",Take the block that is coloured yellow and place it at [0.3  0.25],2,0,,"(0.3, 0.55, 0.02)","(-0.3, 0.55, 0.02)","(0.3, 0.25, 0.02)","(-0.15, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.55)
+Green Cube: (-0.15, 0.4)
+Blue Cube: (-0.3, 0.55)
+Yellow Cube: (0.3, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+455,455,"(-0.3, 0.4, 0.02)","(0.0, 0.55, 0.02)","(0.15, 0.55, 0.02)","(-0.3, 0.55, 0.02)",Take the block that is coloured the police-coloured one and place it 0.45 horizontally and -0.15 vertically relative to the block that is lowest,1,1,0,"(-0.3, 0.4, 0.02)","(0.15, 0.25, 0.02)","(0.15, 0.55, 0.02)","(-0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.4)
+Green Cube: (-0.3, 0.55)
+Blue Cube: (0.0, 0.55)
+Yellow Cube: (0.15, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+458,458,"(0.15, 0.25, 0.02)","(-0.3, 0.25, 0.02)","(-0.15, 0.25, 0.02)","(0.0, 0.4, 0.02)",Take the block that is rightmost and place it between the blocks that are coloured the colour that signifies 'go' and coloured blue,0,2,[3 1],"(0.0, 0.55, 0.02)","(-0.3, 0.25, 0.02)","(-0.15, 0.25, 0.02)","(0.0, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.25)
+Green Cube: (0.0, 0.4)
+Blue Cube: (-0.3, 0.25)
+Yellow Cube: (-0.15, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+459,459,"(0.15, 0.55, 0.02)","(0.15, 0.4, 0.02)","(-0.3, 0.25, 0.02)","(0.3, 0.25, 0.02)",Take the block that is coloured yellow and place it between the blocks that are highest and rightmost,2,2,[0 3],"(0.15, 0.55, 0.02)","(0.15, 0.4, 0.02)","(0.0, 0.55, 0.02)","(0.3, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.55)
+Green Cube: (0.3, 0.25)
+Blue Cube: (0.15, 0.4)
+Yellow Cube: (-0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+460,460,"(-0.3, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(-0.15, 0.55, 0.02)","(0.15, 0.25, 0.02)","Take the block that is coloured banana-coloured and place it between the blocks that are (0.15, 0.15) from the red block and leftmost",2,2,[1 0],"(-0.3, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(0.3, 0.25, 0.02)","(0.15, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.25)
+Green Cube: (0.15, 0.25)
+Blue Cube: (-0.15, 0.4)
+Yellow Cube: (-0.15, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+461,461,"(-0.15, 0.55, 0.02)","(0.0, 0.55, 0.02)","(0.15, 0.4, 0.02)","(0.3, 0.4, 0.02)",Take the block that is coloured yellow and place it between the blocks that are coloured like a fireball and coloured the royal one,2,2,[0 1],"(-0.15, 0.55, 0.02)","(0.0, 0.55, 0.02)","(0.0, 0.25, 0.02)","(0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.55)
+Green Cube: (0.3, 0.4)
+Blue Cube: (0.0, 0.55)
+Yellow Cube: (0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+463,463,"(0.0, 0.55, 0.02)","(-0.15, 0.4, 0.02)","(0.0, 0.25, 0.02)","(-0.15, 0.25, 0.02)","Take the block that is coloured red and place it between the blocks that are coloured blue and (-0.15, 0.0) from the yellow block",0,2,[1 3],"(0.3, 0.4, 0.02)","(-0.15, 0.4, 0.02)","(0.0, 0.25, 0.02)","(-0.15, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.55)
+Green Cube: (-0.15, 0.25)
+Blue Cube: (-0.15, 0.4)
+Yellow Cube: (0.0, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+464,464,"(-0.3, 0.25, 0.02)","(0.15, 0.25, 0.02)","(-0.3, 0.4, 0.02)","(0.3, 0.55, 0.02)",Take the block that is coloured like a fireball and place it at [-0.15  0.4 ],0,0,,"(-0.15, 0.4, 0.02)","(0.15, 0.25, 0.02)","(-0.3, 0.4, 0.02)","(0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.25)
+Green Cube: (0.3, 0.55)
+Blue Cube: (0.15, 0.25)
+Yellow Cube: (-0.3, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+465,465,"(0.15, 0.25, 0.02)","(-0.15, 0.55, 0.02)","(0.0, 0.4, 0.02)","(0.0, 0.55, 0.02)","Take the block that is coloured the colour that signifies 'go' and place it between the blocks that are leftmost and (0.0, -0.15) from the green block",3,2,[1 2],"(0.15, 0.25, 0.02)","(-0.15, 0.55, 0.02)","(0.0, 0.4, 0.02)","(0.15, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.25)
+Green Cube: (0.0, 0.55)
+Blue Cube: (-0.15, 0.55)
+Yellow Cube: (0.0, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+467,467,"(0.0, 0.25, 0.02)","(0.15, 0.55, 0.02)","(-0.3, 0.25, 0.02)","(0.3, 0.4, 0.02)",Take the block that is leftmost and place it between the blocks that are coloured blue and coloured green,2,2,[1 3],"(0.0, 0.25, 0.02)","(0.15, 0.55, 0.02)","(0.0, 0.4, 0.02)","(0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.25)
+Green Cube: (0.3, 0.4)
+Blue Cube: (0.15, 0.55)
+Yellow Cube: (-0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+468,468,"(0.3, 0.4, 0.02)","(0.3, 0.55, 0.02)","(0.0, 0.55, 0.02)","(0.0, 0.25, 0.02)",Take the block that is coloured yellow and place it -0.45 horizontally and 0.0 vertically relative to the block that is coloured blue,2,1,1,"(0.3, 0.4, 0.02)","(0.3, 0.55, 0.02)","(-0.15, 0.55, 0.02)","(0.0, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.4)
+Green Cube: (0.0, 0.25)
+Blue Cube: (0.3, 0.55)
+Yellow Cube: (0.0, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+469,469,"(0.0, 0.25, 0.02)","(0.0, 0.4, 0.02)","(-0.15, 0.4, 0.02)","(0.0, 0.55, 0.02)",Take the block that is highest and place it -0.3 horizontally and 0.15 vertically relative to the block that is coloured red,3,1,0,"(0.0, 0.25, 0.02)","(0.0, 0.4, 0.02)","(-0.15, 0.4, 0.02)","(-0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.25)
+Green Cube: (0.0, 0.55)
+Blue Cube: (0.0, 0.4)
+Yellow Cube: (-0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+470,470,"(0.3, 0.55, 0.02)","(-0.3, 0.55, 0.02)","(-0.15, 0.4, 0.02)","(0.0, 0.55, 0.02)","Take the block that is (0.3, 0.0) from the blue block and place it 0.15 horizontally and -0.15 vertically relative to the block that is coloured yellow",3,1,2,"(0.3, 0.55, 0.02)","(-0.3, 0.55, 0.02)","(-0.15, 0.4, 0.02)","(0.0, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.55)
+Green Cube: (0.0, 0.55)
+Blue Cube: (-0.3, 0.55)
+Yellow Cube: (-0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+471,471,"(-0.3, 0.25, 0.02)","(-0.3, 0.4, 0.02)","(-0.15, 0.25, 0.02)","(0.15, 0.25, 0.02)",Take the block that is rightmost and place it 0.45 horizontally and 0.15 vertically relative to the block that is coloured yellow,3,1,2,"(-0.3, 0.25, 0.02)","(-0.3, 0.4, 0.02)","(-0.15, 0.25, 0.02)","(0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.25)
+Green Cube: (0.15, 0.25)
+Blue Cube: (-0.3, 0.4)
+Yellow Cube: (-0.15, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+472,472,"(0.0, 0.4, 0.02)","(0.15, 0.25, 0.02)","(0.0, 0.25, 0.02)","(0.0, 0.55, 0.02)","Take the block that is (-0.15, 0.15) from the blue block and place it at [0.3  0.25]",0,0,,"(0.3, 0.25, 0.02)","(0.15, 0.25, 0.02)","(0.0, 0.25, 0.02)","(0.0, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.4)
+Green Cube: (0.0, 0.55)
+Blue Cube: (0.15, 0.25)
+Yellow Cube: (0.0, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+475,475,"(0.0, 0.4, 0.02)","(0.3, 0.4, 0.02)","(0.15, 0.55, 0.02)","(0.15, 0.4, 0.02)",Take the block that is coloured iceberg-coloured and place it between the blocks that are coloured emerald and coloured red,1,2,[3 0],"(0.0, 0.4, 0.02)","(0.15, 0.25, 0.02)","(0.15, 0.55, 0.02)","(0.15, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.4)
+Green Cube: (0.15, 0.4)
+Blue Cube: (0.3, 0.4)
+Yellow Cube: (0.15, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+477,477,"(-0.3, 0.25, 0.02)","(-0.15, 0.55, 0.02)","(0.15, 0.55, 0.02)","(0.3, 0.4, 0.02)",Take the block that is rightmost and place it -0.3 horizontally and -0.3 vertically relative to the block that is coloured yellow,3,1,2,"(-0.3, 0.25, 0.02)","(-0.15, 0.55, 0.02)","(0.15, 0.55, 0.02)","(-0.15, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.25)
+Green Cube: (0.3, 0.4)
+Blue Cube: (-0.15, 0.55)
+Yellow Cube: (0.15, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+478,478,"(0.0, 0.55, 0.02)","(0.3, 0.25, 0.02)","(0.15, 0.55, 0.02)","(-0.3, 0.25, 0.02)","Take the block that is (-0.15, 0.3) from the blue block and place it between the blocks that are coloured screams danger and leftmost",2,2,[0 3],"(0.0, 0.55, 0.02)","(0.3, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(-0.3, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.55)
+Green Cube: (-0.3, 0.25)
+Blue Cube: (0.3, 0.25)
+Yellow Cube: (0.15, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+480,480,"(0.3, 0.25, 0.02)","(0.15, 0.25, 0.02)","(-0.3, 0.4, 0.02)","(0.3, 0.55, 0.02)",Take the block that is leftmost and place it at [-0.15  0.4 ],2,0,,"(0.3, 0.25, 0.02)","(0.15, 0.25, 0.02)","(-0.15, 0.4, 0.02)","(0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.25)
+Green Cube: (0.3, 0.55)
+Blue Cube: (0.15, 0.25)
+Yellow Cube: (-0.3, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+482,482,"(0.0, 0.4, 0.02)","(-0.3, 0.25, 0.02)","(-0.3, 0.4, 0.02)","(-0.15, 0.55, 0.02)",Take the block that is coloured screams danger and place it between the blocks that are highest and lowest,0,2,[3 1],"(0.0, 0.25, 0.02)","(-0.3, 0.25, 0.02)","(-0.3, 0.4, 0.02)","(-0.15, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.4)
+Green Cube: (-0.15, 0.55)
+Blue Cube: (-0.3, 0.25)
+Yellow Cube: (-0.3, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+483,483,"(0.0, 0.4, 0.02)","(-0.3, 0.25, 0.02)","(0.15, 0.4, 0.02)","(0.15, 0.55, 0.02)","Take the block that is coloured yellow and place it 0.3 horizontally and -0.15 vertically relative to the block that is (-0.15, 0.0) from the yellow block",2,1,0,"(0.0, 0.4, 0.02)","(-0.3, 0.25, 0.02)","(0.3, 0.25, 0.02)","(0.15, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.4)
+Green Cube: (0.15, 0.55)
+Blue Cube: (-0.3, 0.25)
+Yellow Cube: (0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+484,484,"(-0.3, 0.4, 0.02)","(0.0, 0.55, 0.02)","(-0.15, 0.55, 0.02)","(0.3, 0.4, 0.02)",Take the block that is coloured green and place it at [0.15 0.55],3,0,,"(-0.3, 0.4, 0.02)","(0.0, 0.55, 0.02)","(-0.15, 0.55, 0.02)","(0.15, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.3, 0.4)
+Green Cube: (0.3, 0.4)
+Blue Cube: (0.0, 0.55)
+Yellow Cube: (-0.15, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+485,485,"(0.0, 0.55, 0.02)","(-0.15, 0.25, 0.02)","(0.3, 0.25, 0.02)","(0.0, 0.25, 0.02)",Take the block that is highest and place it at [0.15 0.55],0,0,,"(0.15, 0.55, 0.02)","(-0.15, 0.25, 0.02)","(0.3, 0.25, 0.02)","(0.0, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.55)
+Green Cube: (0.0, 0.25)
+Blue Cube: (-0.15, 0.25)
+Yellow Cube: (0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+488,488,"(-0.15, 0.25, 0.02)","(-0.3, 0.25, 0.02)","(0.3, 0.55, 0.02)","(0.0, 0.25, 0.02)",Take the block that is coloured blue and place it between the blocks that are coloured banana-coloured and coloured green,1,2,[2 3],"(-0.15, 0.25, 0.02)","(0.15, 0.4, 0.02)","(0.3, 0.55, 0.02)","(0.0, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.25)
+Green Cube: (0.0, 0.25)
+Blue Cube: (-0.3, 0.25)
+Yellow Cube: (0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+490,490,"(0.15, 0.4, 0.02)","(-0.3, 0.25, 0.02)","(0.3, 0.55, 0.02)","(-0.3, 0.55, 0.02)",Take the block that is coloured red and place it between the blocks that are rightmost and lowest,0,2,[2 1],"(0.0, 0.4, 0.02)","(-0.3, 0.25, 0.02)","(0.3, 0.55, 0.02)","(-0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.4)
+Green Cube: (-0.3, 0.55)
+Blue Cube: (-0.3, 0.25)
+Yellow Cube: (0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+492,492,"(-0.15, 0.55, 0.02)","(0.15, 0.4, 0.02)","(0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)",Take the block that is coloured blue and place it between the blocks that are coloured sunflower-hued and coloured red,1,2,[2 0],"(-0.15, 0.55, 0.02)","(-0.0, 0.4, 0.02)","(0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.55)
+Green Cube: (-0.3, 0.55)
+Blue Cube: (0.15, 0.4)
+Yellow Cube: (0.15, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+493,493,"(-0.15, 0.25, 0.02)","(0.0, 0.55, 0.02)","(0.15, 0.4, 0.02)","(0.3, 0.25, 0.02)",Take the block that is rightmost and place it at [0.  0.4],3,0,,"(-0.15, 0.25, 0.02)","(0.0, 0.55, 0.02)","(0.15, 0.4, 0.02)","(0.0, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (-0.15, 0.25)
+Green Cube: (0.3, 0.25)
+Blue Cube: (0.0, 0.55)
+Yellow Cube: (0.15, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+494,494,"(0.3, 0.25, 0.02)","(-0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)","(0.0, 0.25, 0.02)",Take the block that is rightmost and place it at [0.  0.4],0,0,,"(0.0, 0.4, 0.02)","(-0.15, 0.25, 0.02)","(-0.3, 0.55, 0.02)","(0.0, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.3, 0.25)
+Green Cube: (0.0, 0.25)
+Blue Cube: (-0.15, 0.25)
+Yellow Cube: (-0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+495,495,"(0.0, 0.4, 0.02)","(0.15, 0.55, 0.02)","(0.3, 0.25, 0.02)","(-0.15, 0.25, 0.02)",Take the block that is coloured green and place it 0.3 horizontally and 0.0 vertically relative to the block that is coloured screams danger,3,1,0,"(0.0, 0.4, 0.02)","(0.15, 0.55, 0.02)","(0.3, 0.25, 0.02)","(0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.0, 0.4)
+Green Cube: (-0.15, 0.25)
+Blue Cube: (0.15, 0.55)
+Yellow Cube: (0.3, 0.25)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+497,497,"(0.15, 0.4, 0.02)","(0.0, 0.55, 0.02)","(-0.3, 0.55, 0.02)","(0.0, 0.4, 0.02)","Take the block that is (-0.15, 0.0) from the red block and place it -0.45 horizontally and -0.15 vertically relative to the block that is coloured matches stop signs",3,1,0,"(0.15, 0.4, 0.02)","(0.0, 0.55, 0.02)","(-0.3, 0.55, 0.02)","(-0.3, 0.25, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.4)
+Green Cube: (0.0, 0.4)
+Blue Cube: (0.0, 0.55)
+Yellow Cube: (-0.3, 0.55)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
+499,499,"(0.15, 0.4, 0.02)","(-0.3, 0.4, 0.02)","(0.0, 0.4, 0.02)","(0.3, 0.4, 0.02)",Take the block that is coloured crimson and place it at [0.   0.55],0,0,,"(0.0, 0.55, 0.02)","(-0.3, 0.4, 0.02)","(0.0, 0.4, 0.02)","(0.3, 0.4, 0.02)","*** Observation *** 
+Here is the initial position of each block and the end effector: 
+Red Cube: (0.15, 0.4)
+Green Cube: (0.3, 0.4)
+Blue Cube: (-0.3, 0.4)
+Yellow Cube: (0.0, 0.4)
+End Effector: (0, 0.25)
+Note - the arm itself is at 0,0. Assume that the x-axis determines left and right and the y-axis top and bottom."
