@@ -150,5 +150,5 @@ for i,thing in enumerate(failure_tracking):
         remove_list.append(i)
 
 new_data = data.drop(remove_list,inplace=False)
-data.to_csv('../data/task_dataset_clean.csv')
+new_data.to_csv('../data/task_dataset_clean.csv')
 
