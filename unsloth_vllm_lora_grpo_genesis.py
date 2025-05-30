@@ -25,7 +25,8 @@ PatchFastRL("GRPO", FastLanguageModel)
 
 # Load up `Qwen 2.5 3B Instruct`, and set parameters
 #model_name = "Qwen/Qwen2.5-3B-Instruct"
-model_name = 'Qwen/Qwen2.5-7B-Instruct'
+#model_name = 'Qwen/Qwen2.5-7B-Instruct'
+model_name = 'unsloth/Qwen3-8B-Base'
 
 max_seq_length = 4096  # Can increase for longer reasoning traces
 lora_rank = 128  # Larger rank = smarter, but slower
@@ -51,7 +52,7 @@ model = FastLanguageModel.get_peft_model(
         "up_proj",
         "down_proj",
     ],  # Remove QKVO if out of memory
-    lora_alpha=lora_rank,
+    lora_alpha=lora_rank*2 ,# will apparently speed up training
     use_gradient_checkpointing="unsloth",  # Enable long context finetuning
     random_state=3407,
 )
@@ -215,12 +216,23 @@ def xmlcount_reward_func(completions, **kwargs) -> list[float]:
 #
 # Now set up GRPO Trainer and all configurations!
 # wagwan
+from vllm import SamplingParams
+vllm_sampling_params = SamplingParams(
+    min_p = 0.1,
+    top_p = 1.0,
+    top_k = -1,
+    seed = 3407,
+    stop = [tokenizer.eos_token],
+    include_stop_str_in_output = True,
+)
 training_args = GRPOConfig(
+    vllm_sampling_params = vllm_sampling_params,
     use_vllm=True,  # use vLLM for fast inference!
+    temperature = 1.0,
     learning_rate=5e-6,
     adam_beta1=0.9,
     adam_beta2=0.99,
-    weight_decay=0.1,
+    weight_decay=0.01,
     warmup_ratio=0.05,
     lr_scheduler_type="cosine",
     optim="adamw_8bit",
@@ -229,8 +241,8 @@ training_args = GRPOConfig(
     fp16=not is_bfloat16_supported(),
     per_device_train_batch_size=1,
     gradient_accumulation_steps=1,  # Increase to 4 for smoother training
-    num_generations=4,  # Decrease if out of memory
-    max_prompt_length=256,
+    num_generations=6,  # Decrease if out of memory
+    max_prompt_length=4096,
     max_completion_length=4096,
     num_train_epochs=1,  # Set to 1 for a full training run
     max_steps=10000,
