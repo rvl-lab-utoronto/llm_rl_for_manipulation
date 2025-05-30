@@ -25,8 +25,8 @@ PatchFastRL("GRPO", FastLanguageModel)
 
 # Load up `Qwen 2.5 3B Instruct`, and set parameters
 #model_name = "Qwen/Qwen2.5-3B-Instruct"
-#model_name = 'Qwen/Qwen2.5-7B-Instruct'
-model_name = 'unsloth/Qwen3-8B-Base'
+model_name = 'Qwen/Qwen2.5-7B-Instruct'
+#model_name = 'unsloth/Qwen3-8B-Base'
 
 max_seq_length = 4096  # Can increase for longer reasoning traces
 lora_rank = 128  # Larger rank = smarter, but slower
