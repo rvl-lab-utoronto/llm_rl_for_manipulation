@@ -20,7 +20,7 @@ def find_between(s, start, end):
     except:
         plan = ''
     return plan
-def genesis_reward_func_local(prompts, completions, answer, **kwargs) -> list[float]:
+def genesis_reward_func_local(env,prompts, completions, answer, **kwargs) -> list[float]:
     """Reward function that gets signal from Genesis simulator
 
     Args:
@@ -137,7 +137,7 @@ def eval(config: LLMEvalConfig):
         if config.dataset_name == "GSMK8":
             total_correct += sum(gsmk8_correctness_reward_func_local(prompts,completion,question['answer']))
         elif config.dataset_name == 'GENESIS':
-            total_correct += sum(genesis_reward_func_local(prompts,completion,question['answer']))
+            total_correct += sum(genesis_reward_func_local(env,prompts,completion,question['answer']))
     print('*** Eval || Model:',config.base_model,'Lora:',config.use_lora,'Dataset:',config.dataset_name,'***')
     print('Total Correct:', total_correct,'out of ',len(dataset))
     print('Percent Correct:',total_correct/len(dataset))
