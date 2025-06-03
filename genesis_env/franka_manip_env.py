@@ -11,6 +11,8 @@ import numpy as np
 import genesis as gs
 import time
 import pandas as pd
+from datasets import Dataset, load_dataset
+
 with open("prompts/explicit_spatial_reasoning_example.txt","r") as f:
     SYSTEM_PROMPT = f.read()
 class FrankaManipEnv:

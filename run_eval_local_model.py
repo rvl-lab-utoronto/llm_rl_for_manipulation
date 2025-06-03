@@ -120,6 +120,8 @@ def eval(config: LLMEvalConfig):
                 .text
             )
 
+        # TESTING prints output
+        print(output)
         # validates question
         if config.dataset_name == "GSMK8":
             total_correct += sum(gsmk8_correctness_reward_func_local(prompts,output,question['answer']))
