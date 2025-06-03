@@ -129,15 +129,15 @@ def eval(config: LLMEvalConfig):
             )
 
         # TESTING prints output
-        print(output)
+        #print(output)
         # next line is for some stupid dumb thing 
         # to fit the formatting with the existing eval functions
-        completion = [{'content':output}]
+        completion = [[{'content':output}]]
         # validates question
         if config.dataset_name == "GSMK8":
             total_correct += sum(gsmk8_correctness_reward_func_local(prompts,completion,question['answer']))
         elif config.dataset_name == 'GENESIS':
-            total_correct += sum(gsmk8_correctness_reward_func_local(prompts,completion,question['answer']))
+            total_correct += sum(genesis_reward_func_local(prompts,completion,question['answer']))
     print('*** Eval || Model:',config.base_model,'Lora:',config.use_lora,'Dataset:',config.dataset_name,'***')
     print('Total Correct:', total_correct,'out of ',len(dataset))
     print('Percent Correct:',total_correct/len(dataset))
