@@ -13,6 +13,13 @@ import pandas as pd
 from genesis_env import *
 import pyrallis
 from dataclasses import asdict, dataclass
+def find_between(s, start, end):
+    plan = ''
+    try:
+        plan = s.split(start)[1].split(end)[0]
+    except:
+        plan = ''
+    return plan
 def genesis_reward_func_local(prompts, completions, answer, **kwargs) -> list[float]:
     """Reward function that gets signal from Genesis simulator
 
@@ -33,6 +40,7 @@ def genesis_reward_func_local(prompts, completions, answer, **kwargs) -> list[fl
         rewards.append(reward)
         
     return rewards
+
 def gsmk8_correctness_reward_func_local(prompts, completions, answer, **kwargs) -> list[float]:
     responses = [completion[0]['content'] for completion in completions]
     q = prompts[0][-1]['content']
@@ -122,11 +130,14 @@ def eval(config: LLMEvalConfig):
 
         # TESTING prints output
         print(output)
+        # next line is for some stupid dumb thing 
+        # to fit the formatting with the existing eval functions
+        completion = [{'content':output}]
         # validates question
         if config.dataset_name == "GSMK8":
-            total_correct += sum(gsmk8_correctness_reward_func_local(prompts,output,question['answer']))
+            total_correct += sum(gsmk8_correctness_reward_func_local(prompts,completion,question['answer']))
         elif config.dataset_name == 'GENESIS':
-            total_correct += sum(gsmk8_correctness_reward_func_local(prompts,output,question['answer']))
+            total_correct += sum(gsmk8_correctness_reward_func_local(prompts,completion,question['answer']))
     print('*** Eval || Model:',config.base_model,'Lora:',config.use_lora,'Dataset:',config.dataset_name,'***')
     print('Total Correct:', total_correct,'out of ',len(dataset))
     print('Percent Correct:',total_correct/len(dataset))
