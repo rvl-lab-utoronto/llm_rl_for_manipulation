@@ -10,6 +10,9 @@ import math
 import numpy as np
 import genesis as gs
 import time
+import pandas as pd
+with open("prompts/explicit_spatial_reasoning_example.txt","r") as f:
+    SYSTEM_PROMPT = f.read()
 class FrankaManipEnv:
     def __init__(self, 
                  device="cuda",
@@ -401,3 +404,55 @@ class FrankaManipEnv:
         except ValueError:
             return False
     
+
+# uncomment middle messages for 1-shot prompting
+def get_manipulation_questions(path = 'data/task_dataset_clean.csv'):
+    # makes the initial Dataset
+    #xls = ExcelFile(path)
+    #df = xls.parse(xls.sheet_names[0])
+    df = pd.read_csv(path)
+    questions = df['Text Question'].to_list()
+    observations = df['observation'].to_list()
+    # gets starts
+    rcs = df['red_cube_start'].to_list()
+    bcs = df['blue_cube_start'].to_list()
+    ycs = df['yellow_cube_start'].to_list()
+    gcs = df['green_cube_start'].to_list()
+    # gets goals
+    rcg = df['red_cube_goal'].to_list()
+    bcg = df['blue_cube_goal'].to_list()
+    ycg = df['yellow_cube_goal'].to_list()
+    gcg = df['green_cube_goal'].to_list()
+    answers = []
+    for i in range(len(rcg)):
+        answers.append({ # starts
+                        'red_cube_start':eval(rcs[i]),
+                        'blue_cube_start':eval(bcs[i]),
+                        'yellow_cube_start':eval(ycs[i]),
+                        'green_cube_start':eval(gcs[i]),
+                        # goals
+                        'red_cube_goal':eval(rcg[i]),
+                        'blue_cube_goal':eval(bcg[i]),
+                        'yellow_cube_goal':eval(ycg[i]),
+                        'green_cube_goal':eval(gcg[i])})
+    data = Dataset.from_dict({'question':questions,
+                              'answer':answers,
+                              'observations': observations
+                              })
+
+    # does some other fucky thing idk
+    data = data.map(
+        lambda x: {  # type: ignore
+            "prompt": [
+                {"role": "system", "content": SYSTEM_PROMPT + x['observations']},
+                {"role": "user", "content": x["question"]},
+            ],
+            "answer":(x["answer"]),
+        }
+    )  # type: ignore
+    return data  # type: ignore
+
+
+
+
+

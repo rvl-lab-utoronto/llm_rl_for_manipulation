@@ -17,7 +17,7 @@ from trl import GRPOConfig, GRPOTrainer
 from vllm import SamplingParams
 from pandas import *
 import pandas as pd
-from genesis_env import FrankaManipEnv
+from genesis_env import *
 
 
 
@@ -69,8 +69,7 @@ env = FrankaManipEnv(render_video=False)
 
 # Load and prep dataset
 #with open("prompts/base_manip_prompt.txt","r") as f:
-with open("prompts/explicit_spatial_reasoning_example.txt","r") as f:
-    SYSTEM_PROMPT = f.read()
+
 
 XML_COT_FORMAT = """\
 <reasoning>
@@ -87,58 +86,7 @@ def extract_xml_answer(text: str) -> str:
     answer = answer.split("</answer>")[0]
     return answer.strip()
 
-
-# uncomment middle messages for 1-shot prompting
-def get_manipulation_questions(path = 'data/task_dataset_clean.csv'):
-    # makes the initial Dataset
-    #xls = ExcelFile(path)
-    #df = xls.parse(xls.sheet_names[0])
-    df = pd.read_csv(path)
-    questions = df['Text Question'].to_list()
-    observations = df['observation'].to_list()
-    # gets starts
-    rcs = df['red_cube_start'].to_list()
-    bcs = df['blue_cube_start'].to_list()
-    ycs = df['yellow_cube_start'].to_list()
-    gcs = df['green_cube_start'].to_list()
-    # gets goals
-    rcg = df['red_cube_goal'].to_list()
-    bcg = df['blue_cube_goal'].to_list()
-    ycg = df['yellow_cube_goal'].to_list()
-    gcg = df['green_cube_goal'].to_list()
-    answers = []
-    for i in range(len(rcg)):
-        answers.append({ # starts
-                        'red_cube_start':eval(rcs[i]),
-                        'blue_cube_start':eval(bcs[i]),
-                        'yellow_cube_start':eval(ycs[i]),
-                        'green_cube_start':eval(gcs[i]),
-                        # goals
-                        'red_cube_goal':eval(rcg[i]),
-                        'blue_cube_goal':eval(bcg[i]),
-                        'yellow_cube_goal':eval(ycg[i]),
-                        'green_cube_goal':eval(gcg[i])})
-    data = Dataset.from_dict({'question':questions,
-                              'answer':answers,
-                              'observations': observations
-                              })
-
-    # does some other fucky thing idk
-    data = data.map(
-        lambda x: {  # type: ignore
-            "prompt": [
-                {"role": "system", "content": SYSTEM_PROMPT + x['observations']},
-                {"role": "user", "content": x["question"]},
-            ],
-            "answer":(x["answer"]),
-        }
-    )  # type: ignore
-    return data  # type: ignore
-
-
-
 dataset = get_manipulation_questions()
-
 
 # Reward functions
 def find_between(s, start, end):
@@ -148,6 +96,7 @@ def find_between(s, start, end):
     except:
         plan = ''
     return plan
+
 def genesis_reward_func(prompts, completions, answer, **kwargs) -> list[float]:
     """Reward function that gets signal from Genesis simulator
 
@@ -173,8 +122,6 @@ def genesis_reward_func(prompts, completions, answer, **kwargs) -> list[float]:
             f"\nReward:\n{reward}",
         )
     return rewards
-
-
 
 def strict_format_reward_func(completions, **kwargs) -> list[float]:
     """Reward function that checks if the completion has a specific format."""
