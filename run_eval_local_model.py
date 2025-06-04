@@ -13,6 +13,7 @@ import pandas as pd
 from genesis_env import *
 import pyrallis
 from dataclasses import asdict, dataclass
+from tqdm import tqdm
 def find_between(s, start, end):
     plan = ''
     try:
@@ -101,7 +102,7 @@ def eval(config: LLMEvalConfig):
 
     # iterates through questions
     total_correct = 0
-    for question in dataset:
+    for question in tqdm(dataset):
         prompts = question['prompt']
         text = tokenizer.apply_chat_template(
             prompts,
