@@ -122,6 +122,7 @@ def eval(config: LLMEvalConfig):
                     text,
                     sampling_params=sampling_params,
                     lora_request=model.load_lora(config.lora_name),
+                    use_tqdm=False
                 )[0]
                 .outputs[0]
                 .text
@@ -131,6 +132,7 @@ def eval(config: LLMEvalConfig):
                 model.fast_generate(
                     text,
                     sampling_params=sampling_params,
+                    use_tqdm=False,
                 )[0]
                 .outputs[0]
                 .text

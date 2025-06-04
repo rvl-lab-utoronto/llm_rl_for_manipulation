@@ -32,7 +32,7 @@ python run_eval_local_model.py \
 python run_eval_local_model.py \
 --base_model 'Qwen/Qwen2.5-7B-Instruct' \
 --use_lora True \
---lora_name 'grpo_saved_lora_2' \
+--lora_name 'grpo_saved_lora2' \
 --dataset_name 'GSMK8'
 
 # Eval for R1-reasoning distilled Qwen 7B RL post-trained model on manipulation
