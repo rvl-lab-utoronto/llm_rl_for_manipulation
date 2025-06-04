@@ -1,10 +1,10 @@
 ### Manipulation Dataset Scripts
 
 # Eval for base Qwen2.5 7B Instruct model on manipulation
-# python run_eval_local_model.py \
-# --base_model 'Qwen/Qwen2.5-7B-Instruct' \
-# --use_lora False \
-# --dataset_name 'GENESIS'
+python run_eval_local_model.py \
+--base_model 'Qwen/Qwen2.5-7B-Instruct' \
+--use_lora False \
+--dataset_name 'GENESIS'
 
 # Eval for base Qwen2.5 7B RL post-trained model on manipulation
 python run_eval_local_model.py \
