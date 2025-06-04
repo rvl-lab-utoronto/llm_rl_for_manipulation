@@ -139,7 +139,7 @@ def eval(config: LLMEvalConfig):
         #print(output)
         # next line is for some stupid dumb thing 
         # to fit the formatting with the existing eval functions
-        completion = [[{'content':output}]]
+        completion = [{'content':output}]
         # validates question
         if config.dataset_name == "GSMK8":
             total_correct += gsmk8_correctness_reward_func_local(prompts,completion,question['answer'])
