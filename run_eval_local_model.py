@@ -20,7 +20,7 @@ def find_between(s, start, end):
     except:
         plan = ''
     return plan
-def genesis_reward_func_local(env,prompts, completions, answer, **kwargs) -> list[float]:
+def genesis_reward_func_local(env,prompt, completion, answer, **kwargs) -> list[float]:
     """Reward function that gets signal from Genesis simulator
 
     Args:
@@ -31,21 +31,17 @@ def genesis_reward_func_local(env,prompts, completions, answer, **kwargs) -> lis
     Returns:
         list[float]: list of rewards for each prompt etc. 
     """
-    rewards = []
-    for prompt,completion,goal in zip(prompts,completions,answer):
-        env.reset(task_dictionary=goal)
-        llm_plan = find_between(completion[0]["content"],'<answer>','</answer>')
-        #print(llm_plan)
-        reward = env.execute_llm_plan(llm_plan)
-        rewards.append(reward)
+    env.reset(task_dictionary=answer)
+    llm_plan = find_between(completion[0]["content"],'<answer>','</answer>')
+    #print(llm_plan)
+    reward = env.execute_llm_plan(llm_plan)
         
-    return rewards
+    return reward
 
-def gsmk8_correctness_reward_func_local(prompts, completions, answer, **kwargs) -> list[float]:
-    responses = [completion[0]['content'] for completion in completions]
-    q = prompts[0][-1]['content']
-    extracted_responses = [extract_xml_answer(r) for r in responses]
-    return [1.0 if r == a else 0.0 for r, a in zip(extracted_responses, answer)]
+def gsmk8_correctness_reward_func_local(prompt, completion, answer, **kwargs) -> list[float]:
+    response = completion[0]['content']
+    extracted_response = extract_xml_answer(response)
+    return 1.0 if extracted_response == answer else 0.0
 
 @dataclass
 class LLMEvalConfig:
@@ -146,9 +142,9 @@ def eval(config: LLMEvalConfig):
         completion = [[{'content':output}]]
         # validates question
         if config.dataset_name == "GSMK8":
-            total_correct += sum(gsmk8_correctness_reward_func_local(prompts,completion,question['answer']))
+            total_correct += gsmk8_correctness_reward_func_local(prompts,completion,question['answer'])
         elif config.dataset_name == 'GENESIS':
-            total_correct += sum(genesis_reward_func_local(env,prompts,completion,question['answer']))
+            total_correct += genesis_reward_func_local(env,prompts,completion,question['answer'])
     print('*** Eval || Model:',config.base_model,'Lora:',config.use_lora,'Dataset:',config.dataset_name,'***')
     print('Total Correct:', total_correct,'out of ',len(dataset))
     print('Percent Correct:',total_correct/len(dataset))
