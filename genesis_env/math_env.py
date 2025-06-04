@@ -2,15 +2,25 @@
 import re
 from datasets import load_dataset, Dataset
 # Load and prep dataset
-GSMK8_SYSTEM_PROMPT = """
-Respond in the following format:
-<reasoning>
-...
-</reasoning>
-<answer>
-...
-</answer>
-"""
+# GSMK8_SYSTEM_PROMPT = """
+# Respond in the following format:
+# <reasoning>
+# ...
+# </reasoning>
+# <answer>
+# ...
+# </answer>
+# """
+
+reasoning_start = "<reasoning>" # Acts as <think>
+reasoning_end   = "</reasoning>"   # Acts as </think>
+solution_start  = "<answer>"
+solution_end    = "</answer>"
+
+GSMK8_SYSTEM_PROMPT = f"""You are given a math problem.
+Think about the problem and provide your reasoning. Please reason step by step. 
+Place your reasoning between {reasoning_start} and {reasoning_end}.
+Then, provide your solution between {solution_start}{solution_end}"""
 
 XML_COT_FORMAT = """\
 <reasoning>
