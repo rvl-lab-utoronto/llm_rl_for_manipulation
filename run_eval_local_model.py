@@ -139,7 +139,7 @@ def eval(config: LLMEvalConfig):
             )
 
         # TESTING prints output
-        print(output)
+        #print(output)
         # next line is for some stupid dumb thing 
         # to fit the formatting with the existing eval functions
         completion = [{'content':output}]
