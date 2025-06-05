@@ -20,7 +20,9 @@ solution_end    = "</answer>"
 GSMK8_SYSTEM_PROMPT = f"""You are given a math problem.
 Think about the problem and provide your reasoning. Please reason step by step. 
 Place your reasoning between {reasoning_start} and {reasoning_end}.
-Then, provide your solution between {solution_start}{solution_end}"""
+Then, provide your solution between {solution_start}{solution_end}. 
+Only provide the final solution between {solution_start}{solution_end}, do not include other text
+or formatting. Do not include any units in the answer, only the final number."""
 
 XML_COT_FORMAT = """\
 <reasoning>
